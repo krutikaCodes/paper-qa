@@ -1,0 +1,24 @@
+# Extra packages and version fixes for running paper-qa on Windows (see MY_SETUP_LOG.md).
+# Install together with paper-qa:
+#   python -m pip install -e ".[local]" -r team-requirements.txt
+
+# Newer fhlmi breaks paper-qa ('LiteLLMModel' object has no attribute 'get_router');
+# 0.45.0 is the version in uv.lock
+fhlmi==0.45.0
+
+# Image extraction from PDFs needs pillow
+pypdf[image]
+
+# Running the project's own tests; aiohttp and vcrpy match uv.lock
+pytest
+pytest-asyncio
+pytest-recording
+pytest-rerunfailures
+pytest-subtests
+pytest-timeout
+pytest-xdist
+python-dotenv
+httpx-aiohttp
+typeguard
+vcrpy==8.1.1
+aiohttp==3.13.3

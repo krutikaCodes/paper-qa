@@ -312,3 +312,7 @@ tests/example2.*
 
 # Client data
 src/paperqa/clients/client_data/retractions.csv
+
+# Downloaded papers (team_setup.ps1 downloads them; not pushed)
+my_papers/
+papers_later/

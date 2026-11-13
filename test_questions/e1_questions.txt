@@ -1,0 +1,9 @@
+# Enhancement 1 (year filter) - paper folder: test_papers/e1_years
+# Format: [MIN-MAX] question   (either year may be left blank, e.g. [2023-] or [-2018])
+# The years in brackets are the range the question asks for; run_eval.py uses them
+# to score how many cited papers fall inside the range. The agent only sees the question.
+[2020-2021] What retrieval-augmented methods for language models were proposed in 2020 or 2021?
+[2023-] What approaches published in 2023 or later let language models use external tools?
+[-2018] Before 2019, what model architectures were proposed for language understanding?
+[2022-2022] What did papers published in 2022 propose for improving reasoning in large language models?
+[2024-2024] What systems published in 2024 answer scientific questions using language agents?

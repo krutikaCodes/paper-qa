@@ -1,0 +1,5 @@
+index=phase2_e3_before
+indexing_crashed=True
+error=HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.semanticscholar.org/graph/v1/paper/search/match?query=ReAct%3A+Synergizing+Reasoning+and+Acting+in+Language+Models&fields=authors%2CexternalIds%2Cjournal%2Ctitle%2Cyear'
+metadata_client_warnings=4
+time_before_crash_s=4.8

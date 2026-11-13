@@ -1,0 +1,17 @@
+{
+  "profile": "claude_cheap",
+  "overrides": [
+    "parsing.use_doc_details=true"
+  ],
+  "metadata_clients": [
+    "CrossrefProvider",
+    "JournalQualityPostProcessor"
+  ],
+  "papers": "test_papers\\e2_trust",
+  "questions": "test_questions\\e2_questions.txt",
+  "runs": 2,
+  "index": "phase2_e2_before",
+  "llm": "anthropic/claude-haiku-4-5",
+  "agent_llm": "anthropic/claude-haiku-4-5",
+  "embedding": "sparse"
+}

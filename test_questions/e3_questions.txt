@@ -1,0 +1,8 @@
+# Enhancement 3 (source diversity) - paper folder: test_papers/e3_diversity
+# Broad questions on purpose: the 4 FutureHouse papers tend to dominate the first search,
+# so we can see whether the agent searches again for sources from other institutions.
+How do language agents answer questions about the scientific literature?
+How are language models evaluated on biology research tasks?
+How are language agents trained or improved on scientific tasks?
+How do language agents decide when to retrieve information or use tools?
+What makes a language agent's answers reliable and well cited?

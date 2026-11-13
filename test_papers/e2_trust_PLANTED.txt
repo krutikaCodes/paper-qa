@@ -1,3 +1,4 @@
 ﻿# Planted papers for Enhancement 2 (one per line): file name | why it is low-trust | DOI if any
+# Keep this file OUTSIDE the e2_trust folder: PaperQA indexes .txt files as papers.
 # Example: 2501.01234.pdf | arXiv preprint, 0 citations, no journal | none
 # Example: retracted_paper.pdf | retracted (Retraction Watch) | 10.xxxx/xxxxx

@@ -76,14 +76,16 @@ foreach ($folder in $folders.Keys) {
 }
 
 # E2 needs hand-picked low-trust and retracted papers; leave a template for the teammate
-$planted = Join-Path $root "e2_trust\PLANTED.txt"
+# Kept OUTSIDE the e2_trust folder, otherwise PaperQA would index it as a paper
+$planted = Join-Path $root "e2_trust_PLANTED.txt"
 if (-not (Test-Path $planted)) {
     @"
 # Planted papers for Enhancement 2 (one per line): file name | why it is low-trust | DOI if any
+# Keep this file OUTSIDE the e2_trust folder: PaperQA indexes .txt files as papers.
 # Example: 2501.01234.pdf | arXiv preprint, 0 citations, no journal | none
 # Example: retracted_paper.pdf | retracted (Retraction Watch) | 10.xxxx/xxxxx
 "@ | Set-Content -Encoding utf8 $planted
 }
 
 Write-Host "`nDone. Downloaded $downloaded new paper(s)."
-Write-Host "E2: add 2-3 low-trust papers and 1 retracted paper to test_papers\e2_trust, and list them in PLANTED.txt."
+Write-Host "E2: add 2-3 low-trust papers and 1 retracted paper to test_papers\e2_trust, and list them in test_papers\e2_trust_PLANTED.txt."

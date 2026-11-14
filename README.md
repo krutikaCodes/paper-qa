@@ -1007,9 +1007,10 @@ will return much faster than the first query and we'll be certain the authors ma
 | `answer.group_contexts_by_question`          | `False`                                | Groups the final contexts by the underlying `gather_evidence` question in the final context prompt.                           |
 | `answer.evidence_relevance_score_cutoff`     | `1`                                    | Cutoff evidence relevance score to include in the answer context (inclusive)                                                  |
 | `answer.skip_evidence_citation_strip`        | `False`                                | Skip removal of citations from the `gather_evidence` contexts                                                                 |
-| `answer.use_trust_score`                     | `False`                                | Rank evidence by relevance times paper trust score, and warn about low-trust sources.                                         |
+| `answer.use_trust_score`                     | `True`                                 | Use trust scores when weighing evidence; include scores in references and a descending table of cited papers. Trust-score comparison questions list all indexed papers. |
 | `parsing.page_size_limit`                    | `1,280,000`                            | Character limit per page.                                                                                                     |
 | `parsing.use_doc_details`                    | `True`                                 | Whether to get metadata details for docs.                                                                                     |
+| `parsing.extract_author_affiliations_from_front_matter` | `True`                      | Extract author affiliations from the opening text when metadata providers do not supply them.                                |
 | `parsing.metadata_clients`                   | `None`                                 | Metadata sources by name (e.g. `openalex`); `None` uses Crossref, Semantic Scholar and journal quality.                       |
 | `parsing.reader_config`                      | `dict`                                 | Optional keyword arguments for the document reader.                                                                           |
 | `parsing.multimodal`                         | `True`                                 | Control to parse both text and media from applicable documents, as well as potentially enriching them with text descriptions. |
@@ -1063,6 +1064,19 @@ will return much faster than the first query and we'll be certain the authors ma
 | `agent.index.sync_with_paper_directory`      | `True`                                 | Whether to sync index with paper directory on load.                                                                           |
 | `agent.index.batch_size`                     | `1`                                    | Number of files to process before committing to the index.                                                                    |
 | `agent.index.files_filter`                   | `lambda f: f.suffix in {...}`          | Filter function to mark files in the paper directory to index.                                                                |
+
+When trust scoring is enabled, author affiliations contribute 10% of the score if
+they match the top 100 institutions in the [THE World University Rankings 2027](https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking).
+PaperQA uses provider affiliations when available and can extract them from the
+document's opening text as a fallback. Add `openalex` to `parsing.metadata_clients`
+to use OpenAlex affiliation metadata; the default metadata clients do not include it.
+Institutional affiliation is a limited proxy and does not guarantee a paper's quality.
+
+When OpenAlex is enabled, PaperQA derives venue quality from the best available source
+across the work's locations: CWTS Core sources score 3, DOAJ sources 2, and journal,
+conference, or book-series sources with neither flag score 1. Repositories and other
+source types remain unknown. This uses OpenAlex's curated-list flags rather than
+citation metrics.
 
 ## Where do I get papers?
 

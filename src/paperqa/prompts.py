@@ -98,6 +98,17 @@ structured_citation_prompt = (
     "Citation JSON:"
 )
 
+author_affiliation_prompt = (
+    "Extract the university or research-institution names explicitly shown as author"
+    " affiliations in the opening text below. Do not infer institutions from author"
+    " names or external knowledge. Exclude departments unless they are part of the"
+    " institution's name. Return only a JSON object with an `institutions` key whose"
+    " value is a list of distinct institution names; use an empty list if none are"
+    " stated.\n\n"
+    "{text}\n\n"
+    "Affiliations JSON:"
+)
+
 default_system_prompt = (
     "Answer in a direct and concise tone. "
     "Your audience is an expert, so be highly specific. "

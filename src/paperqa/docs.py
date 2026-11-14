@@ -27,7 +27,11 @@ from paperqa.llms import (
     NumpyVectorStore,
     VectorStore,
 )
-from paperqa.prompts import CANNOT_ANSWER_PHRASE, EMPTY_CONTEXTS
+from paperqa.prompts import (
+    CANNOT_ANSWER_PHRASE,
+    EMPTY_CONTEXTS,
+    author_affiliation_prompt,
+)
 from paperqa.readers import read_doc
 from paperqa.settings import MaybeSettings, get_settings
 from paperqa.types import Doc, DocDetails, DocKey, PQASession, Text
@@ -40,6 +44,48 @@ from paperqa.utils import (
 )
 
 logger = logging.getLogger(__name__)
+
+
+def _is_trust_score_comparison(question: str) -> bool:
+    normalized = " ".join(question.casefold().replace("-", " ").split())
+    words = set(normalized.split())
+    return "trust score" in normalized and bool(
+        words
+        & {
+            "compare",
+            "compares",
+            "comparison",
+            "rank",
+            "ranking",
+            "order",
+            "sort",
+            "table",
+            "list",
+        }
+    )
+
+
+def _parse_front_matter_institutions(response: str) -> list[str] | None:
+    try:
+        parsed = llm_parse_json(response)
+    except json.JSONDecodeError:
+        logger.warning("Failed to parse author affiliations from document front matter.")
+        return None
+
+    raw_institutions = parsed.get("institutions")
+    if isinstance(raw_institutions, str):
+        raw_institutions = [raw_institutions]
+    if not isinstance(raw_institutions, list):
+        return None
+
+    institutions = list(
+        dict.fromkeys(
+            name.strip()
+            for name in raw_institutions
+            if isinstance(name, str) and name.strip()
+        )
+    )
+    return institutions or None
 
 
 class Docs(BaseModel):  # noqa: PLW1641  # TODO: add __hash__
@@ -340,6 +386,31 @@ class Docs(BaseModel):  # noqa: PLW1641  # TODO: add __hash__
                 f"This does not look like a text document: {path}. Pass disable_check"
                 " to ignore this error."
             )
+        if (
+            parse_config.use_doc_details
+            and parse_config.extract_author_affiliations_from_front_matter
+            and not getattr(doc, "institutions", None)
+            and texts
+        ):
+            result = await llm_model.call_single(
+                messages=[
+                    Message(
+                        content=author_affiliation_prompt.format(
+                            text=texts[0].text[:12_000]
+                        )
+                    )
+                ]
+            )
+            institutions = _parse_front_matter_institutions(
+                cast("str", result.text)
+            )
+            if institutions:
+                if isinstance(doc, DocDetails):
+                    doc.institutions = institutions
+                else:
+                    doc = DocDetails(**doc.model_dump(), institutions=institutions)
+                for text in texts:
+                    text.doc = doc
         if await self.aadd_texts(texts, doc, all_settings, embedding_model):
             return doc.docname
         return None
@@ -606,6 +677,26 @@ class Docs(BaseModel):  # noqa: PLW1641  # TODO: add __hash__
         answer_config = query_settings.answer
         prompt_config = query_settings.prompts
 
+        session = (
+            PQASession(question=query, config_md5=query_settings.md5)
+            if isinstance(query, str)
+            else query
+        )
+        if answer_config.use_trust_score and _is_trust_score_comparison(
+            session.question
+        ):
+            session.contexts = []
+            session.raw_answer = (
+                "Trust score comparison of indexed papers:"
+                if self.docs
+                else "No indexed papers are available to compare trust scores."
+            )
+            session.populate_formatted_answers_and_bib_from_raw_answer(
+                use_trust_score=True,
+                all_docs=list(self.docs.values()),
+            )
+            return session
+
         if llm_model is None:
             llm_model = query_settings.get_llm()
         if summary_llm_model is None:
@@ -613,11 +704,6 @@ class Docs(BaseModel):  # noqa: PLW1641  # TODO: add __hash__
         if embedding_model is None:
             embedding_model = query_settings.get_embedding_model()
 
-        session = (
-            PQASession(question=query, config_md5=query_settings.md5)
-            if isinstance(query, str)
-            else query
-        )
         contexts = session.contexts
         if answer_config.get_evidence_if_no_contexts and not contexts:
             session = await self.aget_evidence(
@@ -723,6 +809,8 @@ class Docs(BaseModel):  # noqa: PLW1641  # TODO: add __hash__
         session.contexts = contexts
         session.context = context_str
 
-        session.populate_formatted_answers_and_bib_from_raw_answer()
+        session.populate_formatted_answers_and_bib_from_raw_answer(
+            use_trust_score=query_settings.answer.use_trust_score
+        )
 
         return session

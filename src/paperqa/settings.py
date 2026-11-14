@@ -46,6 +46,7 @@ from pydantic_core.core_schema import SerializationInfo
 from pydantic_settings import BaseSettings, CliSettingsSource, SettingsConfigDict
 
 import paperqa.configs
+from paperqa.trust import context_rank_score, get_trust_score
 from paperqa._ldp_shims import (
     HAS_LDP_INSTALLED,
     Agent,
@@ -172,7 +173,7 @@ class AnswerSettings(BaseModel):
         description="Whether to skip stripping citations from evidence.",
     )
     use_trust_score: bool = Field(
-        default=False,
+        default=True,
         description=(
             "Phase 2 enhancement 2: rank evidence by relevance times the paper's"
             " trust score, and warn the agent about low-trust sources."
@@ -252,6 +253,13 @@ class ParsingSettings(BaseModel):
     )
     use_doc_details: bool = Field(
         default=True, description="Whether to try to get metadata details for a Doc."
+    )
+    extract_author_affiliations_from_front_matter: bool = Field(
+        default=True,
+        description=(
+            "Use the parsing LLM to extract author affiliations from the opening text"
+            " when metadata providers do not supply them."
+        ),
     )
     metadata_clients: list[str] | None = Field(
         default=None,
@@ -1253,10 +1261,13 @@ class Settings(BaseSettings):
         answer_config = self.answer
         prompt_config = self.prompts
 
-        # sort by first score, then name
+        # Sort by effective relevance, then name.
         filtered_contexts = sorted(
             contexts,
-            key=lambda x: (-x.score, x.text.name),
+            key=lambda x: (
+                -context_rank_score(x, answer_config.use_trust_score),
+                x.text.name,
+            ),
         )[: answer_config.answer_max_sources]
         # remove any contexts with a score below the cutoff
         filtered_contexts = [
@@ -1266,6 +1277,19 @@ class Settings(BaseSettings):
         ]
 
         context_inner_prompt = prompt_config.context_inner
+
+        def format_context(context: Context) -> str:
+            formatted = context_inner_prompt.format(
+                name=context.id,
+                text=context.context,
+                citation=context.text.doc.formatted_citation,
+                **(context.model_extra or {}),
+            )
+            if answer_config.use_trust_score:
+                trust = get_trust_score(context.text.doc)
+                return f"Source trust score: {trust:.2f}/1.00\n{formatted}"
+            return formatted
+
         context_str_body = ""
         if answer_config.group_contexts_by_question:
             contexts_by_question: dict[str, list[Context]] = defaultdict(list)
@@ -1278,15 +1302,7 @@ class Settings(BaseSettings):
 
             context_sections = []
             for context_question, contexts_in_group in contexts_by_question.items():
-                inner_strs = [
-                    context_inner_prompt.format(
-                        name=c.id,
-                        text=c.context,
-                        citation=c.text.doc.formatted_citation,
-                        **(c.model_extra or {}),
-                    )
-                    for c in contexts_in_group
-                ]
+                inner_strs = [format_context(c) for c in contexts_in_group]
                 # Create a section with a question heading
                 section_header = (
                     f'Contexts related to the question: "{context_question}"'
@@ -1295,16 +1311,16 @@ class Settings(BaseSettings):
                 context_sections.append(section)
             context_str_body = "\n\n---\n\n".join(context_sections)
         else:
-            inner_context_strs = [
-                context_inner_prompt.format(
-                    name=c.id,
-                    text=c.context,
-                    citation=c.text.doc.formatted_citation,
-                    **(c.model_extra or {}),
-                )
-                for c in filtered_contexts
-            ]
+            inner_context_strs = [format_context(c) for c in filtered_contexts]
             context_str_body = "\n\n".join(inner_context_strs)
+
+        if answer_config.use_trust_score:
+            context_str_body = (
+                "When evaluating evidence, weigh each source's trust score alongside"
+                " its relevance. Scores range from 0.00 to 1.00; higher scores"
+                " indicate greater trust, but do not treat them as proof.\n\n"
+                + context_str_body
+            )
 
         if pre_str:
             context_str_body += f"\n\nExtra background information: {pre_str}"

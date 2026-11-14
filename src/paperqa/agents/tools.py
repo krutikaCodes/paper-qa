@@ -106,12 +106,30 @@ class NamedTool(BaseModel):
     model_config = ConfigDict(extra="forbid", arbitrary_types_allowed=True)
 
 
+def year_in_range(
+    year: int | None, min_year: int | None, max_year: int | None
+) -> bool | None:
+    """Check a paper's year against an inclusive range (either end may be open).
+
+    Returns:
+        True or False, or None if the paper's year is unknown.
+    """
+    if year is None:
+        return None
+    return (min_year is None or year >= min_year) and (
+        max_year is None or year <= max_year
+    )
+
+
 class PaperSearch(NamedTool):
     TOOL_FN_NAME = "paper_search"
 
     # This tool is safe to run concurrently. The only stateful operation on the state
     # is docs.aadd_texts, which itself is concurrency safe.
     CONCURRENCY_SAFE = True
+    # Phase 2 enhancement 1: how many pages of search_count results the year filter
+    # may look through to fill one page of in-range papers
+    YEAR_FILTER_MAX_PAGES: ClassVar[int] = 5
 
     settings: Settings
     embedding_model: EmbeddingModel
@@ -174,12 +192,56 @@ class PaperSearch(NamedTool):
 
         logger.info(f"Starting paper search for {query!r}.")
         index = await get_directory_index(settings=self.settings, build=False)
-        results: list[Docs] = await index.query(
-            query,
-            top_n=self.settings.agent.search_count,
-            offset=offset,
-            field_subset=[f for f in index.fields if f != "year"],
-        )
+        search_count = self.settings.agent.search_count
+        use_year_filter = self.settings.agent.apply_year_filter and year is not None
+        results: list[Docs] = []
+        year_filter_note = ""
+        if not use_year_filter:
+            results = await index.query(
+                query,
+                top_n=search_count,
+                offset=offset,
+                field_subset=[f for f in index.fields if f != "year"],
+            )
+            searched = search_count
+        else:
+            # Phase 2 enhancement 1: keep only papers within the requested years,
+            # looking further down the ranking (up to a few pages) to fill the page
+            searched = outside = unknown = 0
+            for _ in range(self.YEAR_FILTER_MAX_PAGES):
+                page: list[Docs] = await index.query(
+                    query,
+                    top_n=search_count,
+                    offset=offset + searched,
+                    field_subset=[f for f in index.fields if f != "year"],
+                )
+                searched += search_count
+                for r in page:
+                    paper_year = getattr(next(iter(r.docs.values())), "year", None)
+                    in_range = year_in_range(
+                        paper_year, cleaned_min_year, cleaned_max_year
+                    )
+                    if in_range:
+                        results.append(r)
+                    elif in_range is None:
+                        unknown += 1
+                    else:
+                        outside += 1
+                if len(results) >= search_count or len(page) < search_count:
+                    break  # Page is full, or there are no more matches
+            # NOTE: no truncation to search_count, otherwise in-range papers on the
+            # last page would be skipped forever, as continuation starts after it
+            year_filter_note = (
+                f"Year filter {year}: kept {len(results)} paper(s), skipped"
+                f" {outside} outside these years and {unknown} with unknown year."
+            )
+            if not results:
+                year_filter_note += (
+                    " No papers from these years match this query; repeating it"
+                    " will not help, so try different keywords or answer with the"
+                    " evidence you have."
+                )
+            logger.info(year_filter_note)
         logger.info(
             f"{self.TOOL_FN_NAME} for query {query!r} and offset {offset} returned"
             f" {len(results)} papers."
@@ -201,7 +263,9 @@ class PaperSearch(NamedTool):
         status = state.status
         logger.info(status)
         # mark how far we've searched so that continuation will start at the right place
-        self.previous_searches[search_key] += self.settings.agent.search_count
+        self.previous_searches[search_key] += searched
+        if year_filter_note:
+            status = f"{year_filter_note}\n{status}"
         if self.settings.agent.return_paper_metadata:
             retrieved_papers = "\n".join(
                 [f"{x.title} ({x.year})" for x in all_doc_details]

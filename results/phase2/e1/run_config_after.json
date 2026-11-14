@@ -1,0 +1,18 @@
+{
+  "profile": "claude_cheap",
+  "overrides": [
+    "parsing.use_doc_details=true",
+    "agent.apply_year_filter=true"
+  ],
+  "metadata_clients": [
+    "OpenAlexProvider",
+    "JournalQualityPostProcessor"
+  ],
+  "papers": "test_papers\\e1_years",
+  "questions": "test_questions\\e1_questions.txt",
+  "runs": 2,
+  "index": "phase2_e1_after",
+  "llm": "anthropic/claude-haiku-4-5",
+  "agent_llm": "anthropic/claude-haiku-4-5",
+  "embedding": "sparse"
+}

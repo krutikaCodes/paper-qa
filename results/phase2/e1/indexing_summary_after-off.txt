@@ -2,4 +2,4 @@ index=phase2_e1_after_off
 papers=12
 failed_papers=0
 metadata_client_warnings=0
-index_time_s=120.2
+index_time_s=0.1

@@ -5,15 +5,16 @@ Example (baseline for Enhancement 1, original code):
         --questions test_questions/e1_questions.txt --papers test_papers/e1_years ^
         --set parsing.use_doc_details=true
 
-Example (after, with the new year filter on):
+Example (after, OpenAlex metadata and the new year filter on):
     python scripts/run_eval.py --feature e1 --label after ^
         --questions test_questions/e1_questions.txt --papers test_papers/e1_years ^
-        --set parsing.use_doc_details=true --set agent.apply_year_filter=true
+        --set parsing.use_doc_details=true --clients openalex,journal_quality ^
+        --set agent.apply_year_filter=true
 
 What it does:
 1. Builds (or reuses) a search index named phase2_<feature>_<label>, so the "before"
    and "after" runs never share stale paper metadata.
-2. Saves papers.csv: every indexed paper with the year, citation count, journal
+2. Saves papers_<label>.csv: every indexed paper with the year, citation count, journal
    quality, trust score, institutions and countries that PaperQA stored for it.
 3. Asks every question --runs times and appends one row per run to results.csv:
    time (s), cost (USD), papers read, searches, cited papers and their years, etc.
@@ -173,11 +174,11 @@ def remove_log(handler: logging.Handler) -> None:
 # ---------- indexing ----------
 
 
-async def build_index(settings: Settings, out_dir: Path) -> None:
-    """Build the named index once (timed), then save papers.csv."""
+async def build_index(settings: Settings, out_dir: Path, label: str) -> None:
+    """Build the named index once (timed), then save papers_<label>.csv."""
     client_errors = CountingHandler()
     logging.getLogger("paperqa.clients").addHandler(client_errors)
-    log = add_file_log(out_dir / "logs" / "indexing.log")
+    log = add_file_log(out_dir / "logs" / f"indexing_{label}.log")
     start = time.perf_counter()
     try:
         index = await get_directory_index(settings=settings)
@@ -186,13 +187,13 @@ async def build_index(settings: Settings, out_dir: Path) -> None:
         while isinstance(cause, BaseExceptionGroup) and cause.exceptions:
             cause = cause.exceptions[0]
         message = f"{type(cause).__name__}: {cause}".splitlines()[0][:300]
-        (out_dir / "indexing_summary.txt").write_text(
+        (out_dir / f"indexing_summary_{label}.txt").write_text(
             f"index={settings.agent.index.name}\nindexing_crashed=True\nerror={message}\n"
             f"metadata_client_warnings={client_errors.count}\n"
             f"time_before_crash_s={time.perf_counter() - start:.1f}\n",
             encoding="utf-8",
         )
-        sys.exit(f"\nIndexing crashed: {message}\n(Recorded in {out_dir / 'indexing_summary.txt'})")
+        sys.exit(f"\nIndexing crashed: {message}\n(Recorded in {out_dir / f'indexing_summary_{label}.txt'})")
     finally:
         remove_log(log)
         logging.getLogger("paperqa.clients").removeHandler(client_errors)
@@ -220,11 +221,11 @@ async def build_index(settings: Settings, out_dir: Path) -> None:
             "countries": "; ".join(as_list(doc_field(doc, "countries"))),
         })
 
-    with (out_dir / "papers.csv").open("w", newline="", encoding="utf-8") as f:
+    with (out_dir / f"papers_{label}.csv").open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=PAPER_COLUMNS)
         writer.writeheader()
         writer.writerows(rows)
-    with (out_dir / "indexing_summary.txt").open("w", encoding="utf-8") as f:
+    with (out_dir / f"indexing_summary_{label}.txt").open("w", encoding="utf-8") as f:
         f.write(
             f"index={settings.agent.index.name}\npapers={len(rows)}\nfailed_papers={failed}\n"
             f"metadata_client_warnings={client_errors.count}\nindex_time_s={elapsed:.1f}\n"
@@ -351,7 +352,7 @@ async def main() -> None:
         help="comma-separated metadata services, e.g. crossref,journal_quality"
         f" (choices: {', '.join(CLIENT_CLASSES)}). Default: the code's DEFAULT_CLIENTS",
     )
-    parser.add_argument("--index-only", action="store_true", help="build the index and papers.csv, ask no questions (still makes one cheap LLM call per new paper to read its citation)")
+    parser.add_argument("--index-only", action="store_true", help="build the index and papers_<label>.csv, ask no questions (still makes one cheap LLM call per new paper to read its citation)")
     args = parser.parse_args()
 
     if not args.index_only and not os.environ.get("ANTHROPIC_API_KEY"):
@@ -387,7 +388,7 @@ async def main() -> None:
         encoding="utf-8",
     )
 
-    await build_index(settings, out_dir)
+    await build_index(settings, out_dir, args.label)
     if args.index_only:
         return
     settings.agent.rebuild_index = False  # index is built; keep question timings clean

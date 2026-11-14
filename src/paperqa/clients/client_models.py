@@ -128,6 +128,14 @@ class DOIOrTitleBasedProvider(MetadataProvider[DOIQuery | TitleAuthorQuery]):
                 f" {client_query.doi if isinstance(client_query, DOIQuery) else client_query.title} in"
                 f" {self.__class__.__name__}."
             )
+        # Phase 2: an HTTP error status (e.g. 429 rate limit from Semantic Scholar)
+        # used to crash indexing of the whole folder; now this provider is skipped
+        except httpx.HTTPStatusError as exc:
+            logger.warning(
+                f"HTTP {exc.response.status_code} error for"
+                f" {client_query.doi if isinstance(client_query, DOIQuery) else client_query.title} in"
+                f" {self.__class__.__name__}, skipping this provider."
+            )
         except RetryError:
             logger.warning(
                 "Metadata service is down for"

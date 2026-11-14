@@ -849,6 +849,20 @@ class DocDetails(Doc):
     is_retracted: bool | None = Field(
         default=None, description="Flag for whether the paper is retracted."
     )
+    institutions: list[str] | None = Field(
+        default=None,
+        description=(
+            "Distinct institutions of the first few authors (from OpenAlex)."
+            " None means unknown."
+        ),
+    )
+    countries: list[str] | None = Field(
+        default=None,
+        description=(
+            "Distinct ISO country codes of the first few authors' institutions"
+            " (from OpenAlex). None means unknown."
+        ),
+    )
     doi: str | None = None
     doi_url: str | None = None
     doc_id: str | None = Field(

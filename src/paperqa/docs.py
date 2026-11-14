@@ -21,7 +21,7 @@ from lmi.types import set_llm_session_ids
 from lmi.utils import gather_with_concurrency
 from pydantic import BaseModel, ConfigDict, Field
 
-from paperqa.clients import DEFAULT_CLIENTS, DocMetadataClient
+from paperqa.clients import DEFAULT_CLIENTS, DocMetadataClient, get_clients_by_name
 from paperqa.core import llm_parse_json, map_fxn_summary
 from paperqa.llms import (
     NumpyVectorStore,
@@ -269,7 +269,14 @@ class Docs(BaseModel):  # noqa: PLW1641  # TODO: add __hash__
             else:
                 metadata_client = DocMetadataClient(
                     http_client=kwargs.pop("http_client", None),
-                    metadata_clients=kwargs.pop("clients", DEFAULT_CLIENTS),
+                    metadata_clients=kwargs.pop(
+                        "clients",
+                        (
+                            get_clients_by_name(parse_config.metadata_clients)
+                            if parse_config.metadata_clients is not None
+                            else DEFAULT_CLIENTS
+                        ),
+                    ),
                 )
 
             # Query here means a query to a metadata provider

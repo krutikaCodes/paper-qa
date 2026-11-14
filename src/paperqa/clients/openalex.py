@@ -64,6 +64,47 @@ def get_openalex_api_key() -> str | None:
     return os.getenv("OPENALEX_API_KEY")
 
 
+# PaperQA's field names (as used for Crossref/Semantic Scholar, e.g. by the index
+# builder's fields=["title", "author", "journal", "year"]) -> OpenAlex "select" names.
+# OpenAlex answers HTTP 400 to any name it doesn't know, e.g. "author" or "journal".
+OPENALEX_FIELD_MAPPING: dict[str, tuple[str, ...]] = {
+    "author": ("authorships",),
+    "authors": ("authorships",),
+    "journal": ("primary_location",),
+    "publisher": ("primary_location",),
+    "issn": ("primary_location",),
+    "year": ("publication_year", "publication_date"),
+    "publication_date": ("publication_year", "publication_date"),
+    "citation_count": ("cited_by_count",),
+    "volume": ("biblio",),
+    "issue": ("biblio",),
+    "pages": ("biblio",),
+    "url": ("doi",),
+    "pdf_url": ("best_oa_location",),
+    "license": ("best_oa_location",),
+    "bibtex_type": ("type",),
+    "institutions": ("authorships",),
+    "countries": ("authorships",),
+}
+# Always selected: cheap, and needed to match the paper and for its citation count
+OPENALEX_BASE_SELECT_FIELDS = ("doi", "title", "cited_by_count", "type")
+
+
+def to_openalex_select_fields(fields: Collection[str]) -> list[str]:
+    """Translate requested field names into OpenAlex 'select' field names.
+
+    Names without a mapping (e.g. 'open_access') are assumed to be OpenAlex names,
+    and if every name is an OpenAlex name the request is left unchanged.
+    """
+    if not any(field in OPENALEX_FIELD_MAPPING for field in fields):
+        return list(fields)
+    selected = dict.fromkeys(OPENALEX_BASE_SELECT_FIELDS)
+    for field in fields:
+        for name in OPENALEX_FIELD_MAPPING.get(field, (field,)):
+            selected[name] = None
+    return list(selected)
+
+
 async def get_doc_details_from_openalex(  # noqa: PLR0912
     client: httpx.AsyncClient,
     doi: str | None = None,
@@ -105,7 +146,7 @@ async def get_doc_details_from_openalex(  # noqa: PLR0912
         params["filter"] = f"title.search:{title}"
 
     if fields:
-        params["select"] = ",".join(fields)
+        params["select"] = ",".join(to_openalex_select_fields(fields))
     try:
         # Seen on 11/4/2025 with OpenAlex and both a client-level timeout of 15-sec
         # and API request timeout of 15-sec, we repeatedly saw httpx.ConnectTimeout
@@ -173,6 +214,42 @@ async def get_doc_details_from_openalex(  # noqa: PLR0912
     return parse_openalex_to_doc_details(results_data)
 
 
+AFFILIATION_AUTHOR_LIMIT = 3  # Phase 2: look at the first 3 authors only
+
+
+def get_first_author_affiliations(
+    authorships: list[dict[str, Any] | None] | None,
+    max_authors: int = AFFILIATION_AUTHOR_LIMIT,
+) -> tuple[list[str] | None, list[str] | None]:
+    """Get the distinct institutions and countries of the first few authors.
+
+    Args:
+        authorships: The 'authorships' list of an OpenAlex work.
+        max_authors: How many authors (from the start of the list) to look at.
+
+    Returns:
+        Two lists, institution names and ISO country codes, without duplicates and
+            in order of appearance. Each is None if OpenAlex had no such data.
+    """
+    institutions: list[str] = []
+    countries: list[str] = []
+    for authorship in (authorships or [])[:max_authors]:
+        if not authorship:
+            continue
+        for inst in authorship.get("institutions") or []:
+            name = (inst or {}).get("display_name")
+            if name and name not in institutions:
+                institutions.append(name)
+            code = (inst or {}).get("country_code")
+            if code and code not in countries:
+                countries.append(code)
+        # Some authors have countries but no institutions listed
+        for code in authorship.get("countries") or []:
+            if code and code not in countries:
+                countries.append(code)
+    return institutions or None, countries or None
+
+
 def parse_openalex_to_doc_details(message: dict[str, Any]) -> DocDetails:
     """Parse OpenAlex API response to DocDetails.
 
@@ -221,6 +298,7 @@ def parse_openalex_to_doc_details(message: dict[str, Any]) -> DocDetails:
         publication_date = None
 
     bibtex_type = BIBTEX_MAPPING.get(message.get("type") or "other", "misc")
+    institutions, countries = get_first_author_affiliations(message.get("authorships"))
 
     return DocDetails(
         key=None,
@@ -241,6 +319,8 @@ def parse_openalex_to_doc_details(message: dict[str, Any]) -> DocDetails:
         doi=doi,
         license=oa_license,
         pdf_url=pdf_url,
+        institutions=institutions,
+        countries=countries,
         other=message,
     )
 

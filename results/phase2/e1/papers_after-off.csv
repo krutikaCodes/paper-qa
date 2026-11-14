@@ -1,0 +1,13 @@
+file,status,docname,title,year,citation_count,source_quality,is_retracted,trust_score,institutions,countries
+1706.03762.pdf,ok,vaswani2017attentionisall,Attention Is All You Need,2017,136318,-1,,,Google (United States); University of Southern California,US
+1810.04805.pdf,ok,devlin2018bertpretrainingof,BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding,2018,76993,-1,,,Google (United States); National Technical University of Athens,US; GR
+2002.08909.pdf,ok,guu2020realmretrievalaugmentedlanguage,REALM: Retrieval-Augmented Language Model Pre-Training,2020,965,-1,,,Google (United States),US
+2004.04906.pdf,ok,karpukhin2020densepassageretrieval,Dense Passage Retrieval for Open-Domain Question Answering,2020,5429,-1,,,Meta (Israel); University of Washington,IL; US
+2005.11401.pdf,ok,lewis2020retrievalaugmentedgenerationfor,Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks,2020,6197,-1,,,Meta (United States); University College London; New York University,US; GB
+2112.09332.pdf,ok,nakano2021webgptbrowserassistedquestionanswering,WebGPT: Browser-assisted question-answering with human feedback,2021,2222,-1,,,,
+2201.11903.pdf,ok,wei2022chainofthoughtpromptingelicits,Chain-Of-Thought Prompting Elicits Reasoning in Large Language Models,2022,14051,-1,,,,
+2210.03629.pdf,ok,yao2022reactsynergizingreasoning,ReAct: Synergizing Reasoning and Acting in Language Models,2022,5870,-1,,,Princeton University; Google (United States),US
+2302.04761.pdf,ok,schick2023toolformerlanguagemodels,Toolformer: Language Models Can Teach Themselves to Use Tools,2023,3257,-1,,,,
+2303.11366.pdf,ok,shinn2023reflexionlanguageagents,Reflexion: language agents with verbal reinforcement learning,2023,3334,-1,,,,
+2310.11511.pdf,ok,asai2023selfraglearningto,"Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",2023,1088,-1,,,IBM (United States); University of Washington,US
+2409.13740.pdf,ok,skarlinski2024languageagentsachieve,Language agents achieve superhuman synthesis of scientific knowledge,2024,273,-1,,,"Future House, Inc.; University of Rochester",US

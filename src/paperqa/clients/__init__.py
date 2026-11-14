@@ -35,6 +35,29 @@ ALL_CLIENTS: Collection[type[MetadataPostProcessor | MetadataProvider]] = (
     RetractionDataPostProcessor,
 )
 
+# Short names for picking metadata clients from settings (ParsingSettings.metadata_clients)
+CLIENTS_BY_NAME: dict[str, type[MetadataPostProcessor | MetadataProvider]] = {
+    "crossref": CrossrefProvider,
+    "semantic_scholar": SemanticScholarProvider,
+    "openalex": OpenAlexProvider,
+    "unpaywall": UnpaywallProvider,
+    "journal_quality": JournalQualityPostProcessor,
+    "retractions": RetractionDataPostProcessor,
+}
+
+
+def get_clients_by_name(
+    names: Collection[str],
+) -> tuple[type[MetadataPostProcessor | MetadataProvider], ...]:
+    """Turn client short names (e.g. 'openalex') into client classes, in order."""
+    unknown = [n for n in names if n not in CLIENTS_BY_NAME]
+    if unknown:
+        raise ValueError(
+            f"Unknown metadata client(s) {unknown}, choose from {list(CLIENTS_BY_NAME)}."
+        )
+    return tuple(CLIENTS_BY_NAME[n] for n in names)
+
+
 MetadataClientQuerier: TypeAlias = (
     MetadataProvider
     | MetadataPostProcessor

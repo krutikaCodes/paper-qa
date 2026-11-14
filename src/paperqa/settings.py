@@ -171,6 +171,13 @@ class AnswerSettings(BaseModel):
         default=False,
         description="Whether to skip stripping citations from evidence.",
     )
+    use_trust_score: bool = Field(
+        default=False,
+        description=(
+            "Phase 2 enhancement 2: rank evidence by relevance times the paper's"
+            " trust score, and warn the agent about low-trust sources."
+        ),
+    )
 
 
 class ChunkingOptions(StrEnum):
@@ -246,6 +253,17 @@ class ParsingSettings(BaseModel):
     use_doc_details: bool = Field(
         default=True, description="Whether to try to get metadata details for a Doc."
     )
+    metadata_clients: list[str] | None = Field(
+        default=None,
+        description=(
+            "Optional metadata sources used when use_doc_details is on, by short name:"
+            " crossref, semantic_scholar, openalex, unpaywall, journal_quality,"
+            " retractions. Leaving as the default of None uses crossref,"
+            " semantic_scholar and journal_quality. Note the index name does not"
+            " include this setting, so rebuild the index after changing it."
+        ),
+        examples=[["openalex", "journal_quality", "retractions"]],
+    )
     reader_config: dict[str, Any] = Field(
         default_factory=lambda: {"chunk_chars": 5000, "overlap": 250},
         description="Optional keyword arguments for the document reader.",
@@ -311,6 +329,16 @@ class ParsingSettings(BaseModel):
             if not isinstance(resolved, PDFParserFn):
                 raise TypeError(f"Value {v!r} is not a PDF parser function.")
             return resolved
+        return v
+
+    @field_validator("metadata_clients")
+    @classmethod
+    def _check_metadata_clients(cls, v: list[str] | None) -> list[str] | None:
+        """Fail early on a misspelled client name, rather than during indexing."""
+        if v is not None:
+            from paperqa.clients import get_clients_by_name  # Avoid circular import
+
+            get_clients_by_name(v)
         return v
 
     @model_serializer(mode="wrap")
@@ -650,6 +678,20 @@ class AgentSettings(BaseModel):
         description=(
             "Set True to have the search tool include paper title/year information as"
             " part of its return."
+        ),
+    )
+    apply_year_filter: bool = Field(
+        default=False,
+        description=(
+            "Phase 2 enhancement 1: have the paper search tool keep only papers"
+            " published between its min_year and max_year arguments."
+        ),
+    )
+    show_source_diversity: bool = Field(
+        default=False,
+        description=(
+            "Phase 2 enhancement 3: show how many distinct institutions and countries"
+            " the gathered evidence comes from, so the agent can widen its search."
         ),
     )
     search_count: int = 8

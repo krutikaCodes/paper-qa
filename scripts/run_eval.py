@@ -162,6 +162,9 @@ def add_file_log(path: Path) -> logging.Handler:
     handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s"))
     for name in ("paperqa", "lmi", "aviary"):
         logging.getLogger(name).addHandler(handler)
+    # The tools log what they tell the agent (status, year filter, source diversity)
+    # at INFO, but Python's default level is WARNING, so let INFO through for them
+    logging.getLogger("paperqa.agents.tools").setLevel(logging.INFO)
     return handler
 
 

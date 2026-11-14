@@ -34,6 +34,49 @@ def make_status(
     )
 
 
+def source_diversity_summary(
+    contexts: list[Context], dominance_threshold: float = 2 / 3
+) -> str:
+    """Phase 2 enhancement 3: describe where the relevant evidence comes from.
+
+    Args:
+        contexts: Relevant contexts (evidence) gathered so far.
+        dominance_threshold: Share of papers (with affiliation data) above which one
+            institution counts as dominating the evidence.
+
+    Returns:
+        One line like 'Source diversity: Institutions=3 | Countries=2 (...)',
+            with a hint to widen the search if one institution dominates.
+    """
+    papers = {c.text.doc.dockey: c.text.doc for c in contexts}.values()
+    institutions: set[str] = set()
+    countries: set[str] = set()
+    papers_per_institution: dict[str, int] = {}
+    known = 0
+    for doc in papers:
+        doc_institutions = getattr(doc, "institutions", None) or []
+        doc_countries = getattr(doc, "countries", None) or []
+        if doc_institutions or doc_countries:
+            known += 1
+        institutions.update(doc_institutions)
+        countries.update(doc_countries)
+        for inst in set(doc_institutions):
+            papers_per_institution[inst] = papers_per_institution.get(inst, 0) + 1
+    summary = (
+        f"Source diversity: Institutions={len(institutions)}"
+        f" | Countries={len(countries)} (from {len(papers)} relevant paper(s),"
+        f" {len(papers) - known} without affiliation data)."
+    )
+    if papers_per_institution and known >= 2:  # noqa: PLR2004
+        top, count = max(papers_per_institution.items(), key=lambda x: x[1])
+        if count / known >= dominance_threshold:
+            summary += (
+                f" {count} of {known} papers come from {top}; consider searching"
+                " for sources from other institutions before answering."
+            )
+    return summary
+
+
 def default_status(state: "EnvironmentState") -> str:
     relevant_contexts = state.get_relevant_contexts()
     return make_status(
@@ -280,6 +323,13 @@ class EmptyDocsError(RuntimeError):
 
 class GatherEvidence(NamedTool):
     TOOL_FN_NAME = "gather_evidence"
+    # Phase 2 enhancement 3: added to the tool description if show_source_diversity
+    SOURCE_DIVERSITY_DESCRIPTION: ClassVar[str] = (
+        "\n\nThe result also shows how many distinct institutions and countries the"
+        " relevant evidence comes from. If most evidence comes from one institution,"
+        " search with different keywords for papers from other research groups,"
+        " so the answer is not based on a single group's view."
+    )
 
     settings: Settings
     summary_llm_model: LiteLLMModel
@@ -371,6 +421,11 @@ class GatherEvidence(NamedTool):
                     ]
                 )
             )
+
+        if self.settings.agent.show_source_diversity:
+            diversity = source_diversity_summary(state.get_relevant_contexts())
+            logger.info(diversity)
+            status += "\n" + diversity
 
         return f"Added {l1 - l0} pieces of evidence.{best_evidence}\n\n" + status
 

@@ -103,6 +103,9 @@ def settings_to_tools(  # noqa: PLR0912
                 )
 
             tool = make_tool(gather_evidence_tool.gather_evidence)
+            if settings.agent.show_source_diversity:
+                # Phase 2 enhancement 3: only change the description when enabled
+                tool.info.description += GatherEvidence.SOURCE_DIVERSITY_DESCRIPTION
 
         elif issubclass(tool_type, GenerateAnswer):
             generate_answer_tool = GenerateAnswer(

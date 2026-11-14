@@ -21,6 +21,14 @@ from paperqa.types import Context, DocDetails, PQASession
 
 from .search import get_directory_index
 
+
+
+
+import json
+
+from paperqa.agents.credibility import extract_metadata
+
+
 logger = logging.getLogger(__name__)
 
 
@@ -687,6 +695,61 @@ class ClinicalTrialsSearch(NamedTool):
             )
         return f"Error in clinical trial query syntax: {error_message}"
 
+# Our new tool
+# Our new credibility evaluation tool
+class EvaluateSourceCredibility(NamedTool):
+
+    TOOL_FN_NAME = "evaluate_source_credibility"
+
+    async def evaluate_source_credibility(
+        self,
+        title: str,
+        state: EnvironmentState
+    ) -> str:
+        """
+        Evaluate the credibility of a research paper.
+
+        Args:
+            title: Title of the research paper.
+            state: Current state containing the documents.
+
+        Returns:
+            Source metadata and credibility information.
+        """
+
+        # Go through all the research papers
+        for doc in state.docs.docs.values():
+
+            # Check if the paper has detailed information
+            if isinstance(doc, DocDetails):
+
+                # Check if the paper has a title
+                if doc.title is not None:
+
+                    # Check if this is the requested paper
+                    if doc.title.lower() == title.lower():
+
+                        # Extract the paper's metadata
+                        metadata = extract_metadata(doc)
+
+                        # Return the metadata as text
+                        return json.dumps(metadata, indent=4)
+
+        # If the paper is not found
+        return "Research paper not found or metadata unavailable."
+
+
+# PaperQA's existing tool registry
+AVAILABLE_TOOL_NAME_TO_CLASS: dict[str, type[NamedTool]] = {
+    cls.TOOL_FN_NAME: cls
+    for _, cls in inspect.getmembers(
+        sys.modules[__name__],
+        predicate=lambda v: inspect.isclass(v)
+        and issubclass(v, NamedTool)
+        and v is not NamedTool,
+    )
+}
+
 
 AVAILABLE_TOOL_NAME_TO_CLASS: dict[str, type[NamedTool]] = {
     cls.TOOL_FN_NAME: cls
@@ -707,6 +770,8 @@ DEFAULT_TOOL_NAMES: list[str] = [
     PaperSearch.TOOL_FN_NAME,
     GatherEvidence.TOOL_FN_NAME,
     GenerateAnswer.TOOL_FN_NAME,
+     # Our new tool
+    EvaluateSourceCredibility.TOOL_FN_NAME,
     Reset.TOOL_FN_NAME,
     Complete.TOOL_FN_NAME,
 ]

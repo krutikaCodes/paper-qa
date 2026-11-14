@@ -37,6 +37,7 @@ from .tools import (
     NamedTool,
     PaperSearch,
     Reset,
+    EvaluateSourceCredibility,  # Our new tool
 )
 
 logger = logging.getLogger(__name__)
@@ -59,6 +60,7 @@ def settings_to_tools(  # noqa: PLR0912
     summary_llm_model = summary_llm_model or settings.get_summary_llm()
     embedding_model = embedding_model or settings.get_embedding_model()
     tools: list[Tool] = []
+
     for tool_type in (
         [AVAILABLE_TOOL_NAME_TO_CLASS[name] for name in DEFAULT_TOOL_NAMES]
         if settings.agent.tool_names is None
@@ -69,18 +71,23 @@ def settings_to_tools(  # noqa: PLR0912
     ):
 
         def make_tool(fn: Callable, tool_type: type[NamedTool] = tool_type) -> Tool:
-            return Tool.from_function(fn, concurrency_safe=tool_type.CONCURRENCY_SAFE)
+            return Tool.from_function(
+                fn, concurrency_safe=tool_type.CONCURRENCY_SAFE
+            )
 
         if issubclass(tool_type, PaperSearch):
             tool = make_tool(
                 PaperSearch(
-                    settings=settings, embedding_model=embedding_model
+                    settings=settings,
+                    embedding_model=embedding_model,
                 ).paper_search
             )
+
             for pname in ("min_year", "max_year"):
                 tool.info.get_properties()[pname]["description"] = cast(
                     "str", tool.info.get_properties()[pname]["description"]
                 ).format(current_year=get_year())
+
         elif issubclass(tool_type, GatherEvidence):
             gather_evidence_tool = GatherEvidence(
                 settings=settings,
@@ -88,9 +95,8 @@ def settings_to_tools(  # noqa: PLR0912
                 embedding_model=embedding_model,
             )
 
-            # if we're using the SearchClinicalTrialsTool,
-            # we override this tool's docstring/prompt
-            # because the default prompt is unaware of the clinical trials tool
+            # If we're using the SearchClinicalTrialsTool,
+            # override the tool's docstring/prompt.
 
             if ClinicalTrialsSearch.TOOL_FN_NAME in (
                 settings.agent.tool_names or DEFAULT_TOOL_NAMES
@@ -121,24 +127,37 @@ def settings_to_tools(  # noqa: PLR0912
 
             tool = make_tool(generate_answer_tool.gen_answer)
 
+        # Our new credibility evaluation tool
+        elif issubclass(tool_type, EvaluateSourceCredibility):
+            tool = make_tool(
+                EvaluateSourceCredibility().evaluate_source_credibility
+            )
+
         elif issubclass(tool_type, Reset):
             tool = make_tool(Reset().reset)
+
         elif issubclass(tool_type, Complete):
             tool = make_tool(Complete().complete)
+
         elif issubclass(tool_type, ClinicalTrialsSearch):
             tool = make_tool(
                 ClinicalTrialsSearch(
-                    search_count=settings.agent.search_count, settings=settings
+                    search_count=settings.agent.search_count,
+                    settings=settings,
                 ).clinical_trials_search
             )
+
         else:
-            raise NotImplementedError(f"Didn't handle tool type {tool_type}.")
+            raise NotImplementedError(
+                f"Didn't handle tool type {tool_type}."
+            )
+
         if tool.info.name == Complete.complete.__name__:
             tools.append(tool)  # Place at the end
         else:
             tools.insert(0, tool)
-    return tools
 
+    return tools
 
 def make_clinical_trial_status(
     total_paper_count: int,

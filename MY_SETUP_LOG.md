@@ -19,8 +19,14 @@ and writes an answer with the **exact pages** it used, like
 `(Skarlinski2024 pages 1-3)`. If the papers don't contain the answer, it says
 "I cannot answer" instead of making something up.
 
-This copy runs the **original code unchanged**. We only added this guide, a few
-helper files, and settings to use **Anthropic's Claude** instead of OpenAI.
+This copy uses **Anthropic's Claude** instead of OpenAI. It has two branches:
+
+| Branch | What it has |
+|---|---|
+| `main` | Phase 1: the **original code unchanged**, plus this guide and helper files |
+| `phase2` | Phase 2: **three enhancements** to the agent (year filter, trust score, source diversity), each with an on/off setting. See [Phase 2](#phase-2-the-three-enhancements) |
+
+**Use `phase2`** (Step 2 shows how). With all Phase 2 settings off, it behaves like the original.
 
 ---
 
@@ -73,9 +79,15 @@ mkdir C:\Projects -Force
 cd C:\Projects
 git clone https://github.com/krutikaCodes/paper-qa.git
 cd paper-qa
+git checkout phase2
 ```
 
-**You should see:** `Cloning into 'paper-qa'...` and then `done`.
+**You should see:** `Cloning into 'paper-qa'...`, `done`, and then
+`Switched to a new branch 'phase2'`.
+
+> **Already cloned it in Phase 1?** Skip the `git clone` line and run
+> `cd C:\Projects\paper-qa`, `git fetch origin`, `git checkout phase2` and
+> `git pull` instead. Then redo Step 4 (install), because the code changed.
 
 > From now on, **every command must be run inside this `paper-qa` folder.**
 > Your PowerShell line should end with `\paper-qa>`. Never `cd` into
@@ -145,6 +157,16 @@ This does two things for you:
 
 **You should see:** `Setup done. my_papers has PaperQA2 and ReAct; papers_later has Toolformer.`
 
+3. **Phase 2 only:** download the test papers for the three enhancements
+   (about 15 papers from arXiv, 1-2 minutes):
+
+```powershell
+.\scripts\get_phase2_papers.ps1
+```
+
+**You should see:** three sections (`== e1_years ==`, `== e2_trust ==`,
+`== e3_diversity ==`), then `Done. Downloaded N new paper(s).`
+
 ---
 
 ## Step 6: Get your Anthropic API key (one time)
@@ -160,6 +182,22 @@ Your key starts with `sk-ant-api03-`.
 > **Keep your key secret.** Never paste it into chat, email, GitHub, or any
 > file in this project. Anyone with your key can spend your money.
 > A claude.ai Pro/Max subscription is **not** an API key and does not work here.
+
+### Phase 2 only: set your email for the paper databases (one time)
+
+The enhancements look papers up on **OpenAlex** (years, citation counts,
+author institutions) and the **Crossref** retraction list. Both ask for an
+email address so they know who is sending requests. Any email you check works:
+
+```powershell
+setx OPENALEX_MAILTO "you@example.com"
+setx CROSSREF_MAILTO "you@example.com"
+```
+
+**You should see:** `SUCCESS: Specified value was saved.` twice.
+Then **close all PowerShell and VS Code windows** and open a new one:
+`setx` only applies to windows opened after it.
+An email is not a secret like the API key, but still keep it out of files.
 
 ---
 
@@ -182,6 +220,12 @@ try { Invoke-RestMethod "https://api.anthropic.com/v1/models" -Headers @{"x-api-
 
 **You should see:** `KEY OK`.
 
+**Phase 2: check your email is set** (should print your email, not an empty line):
+
+```powershell
+echo $env:OPENALEX_MAILTO
+```
+
 ---
 
 ## Free checks (no API key needed)
@@ -192,7 +236,16 @@ try { Invoke-RestMethod "https://api.anthropic.com/v1/models" -Headers @{"x-api-
 python -m pytest tests/test_configs.py tests/test_utils.py --record-mode=none -p no:cacheprovider -q --basetemp C:\pqa_test_tmp
 ```
 
-**You should see:** `24 passed` (and `93 subtests passed`).
+**You should see:** `24 passed` (and `97 subtests passed`).
+
+### Check 1b (Phase 2): the enhancements' own tests pass
+
+```powershell
+python -m pytest tests/test_phase2_metadata.py tests/test_year_filter.py tests/test_diversity.py -p no:cacheprovider -q
+```
+
+**You should see:** `35 passed` (more once the trust-score tests are added).
+These tests use fake papers, so they need no API key and cost nothing.
 
 ### Check 2: paper-qa can read a PDF
 
@@ -289,6 +342,75 @@ Remove-Item -Recurse -Force "$HOME\.pqa\indexes" -ErrorAction SilentlyContinue
 
 ---
 
+## Phase 2: the three enhancements
+
+Each enhancement changes what the AI agent does, and has a setting to turn it on
+or off. **All three are off by default**, so the commands above behave like the
+original.
+
+| # | Enhancement | Setting | What the agent does differently |
+|---|---|---|---|
+| E1 | **Year filter** | `agent.apply_year_filter` | When a question asks for certain years, the search keeps only papers from those years and tells the agent how many it skipped |
+| E2 | **Trust score** | `answer.use_trust_score` | Ranks evidence by relevance × paper trust (citations, venue, retractions) and warns about low-trust sources |
+| E3 | **Source diversity** | `agent.show_source_diversity` | Tells the agent how many institutions and countries its evidence comes from, and to search wider if one group dominates |
+
+The enhancements need **correct paper details** (years, citations,
+institutions). These come from OpenAlex, so they need
+`parsing.use_doc_details=true` and the OpenAlex source.
+
+### Try one enhancement on one question (about 5-15 cents)
+
+The script `scripts/run_eval.py` asks questions from a file, records time,
+cost and which papers were read and cited, and saves logs. `--feature demo`
+keeps your practice runs separate from the official results.
+
+**E1, year filter on**, question 1 ("...proposed in 2020 or 2021?"):
+
+```powershell
+python scripts/run_eval.py --feature demo --label e1_on --questions test_questions/e1_questions.txt --papers test_papers/e1_years --set parsing.use_doc_details=true --clients openalex,journal_quality --set agent.apply_year_filter=true --only 1 --runs 1
+```
+
+**E3, source diversity on**, question 5:
+
+```powershell
+python scripts/run_eval.py --feature demo --label e3_on --questions test_questions/e3_questions.txt --papers test_papers/e3_diversity --set parsing.use_doc_details=true --clients openalex,journal_quality --set agent.show_source_diversity=true --only 5 --runs 1
+```
+
+**You should see:** first `Indexing ...` (only the first time, 1-3 minutes),
+then one line per question with the time, cost and papers read, and a summary
+at the end.
+
+**Where to look afterwards** (open these in VS Code, not Excel):
+
+| File | What's in it |
+|---|---|
+| `results\phase2\demo\papers_<label>.csv` | Every paper with the year, citation count and institutions PaperQA found |
+| `results\phase2\demo\results.csv` | One row per question: time, cost, papers read, searches, cited papers |
+| `results\phase2\demo\logs\<label>_q1_run1.log` | The answer, plus what the tools told the agent. Search for `Year filter` (E1) or `Source diversity` (E3) |
+
+To compare, run the same command with the setting off (leave out the
+`--set agent....=true` part and use a different `--label`).
+
+**Useful options:** `--only 2 4` (only questions 2 and 4), `--runs 1` (one run
+per question), `--fresh-index` (reload all papers, e.g. after adding one).
+
+The official before/after results of the team are in `results\phase2\e1`,
+`e2` and `e3`. Please don't add practice runs there.
+
+### Using a setting with `pqa`
+
+Any setting can also be given to `pqa` directly, for example:
+
+```powershell
+pqa -s claude_cheap --parsing.use_doc_details true --parsing.metadata_clients '["openalex","journal_quality"]' --agent.apply_year_filter true ask "What retrieval methods were proposed in 2020 or 2021?"
+```
+
+If you change `parsing.use_doc_details` or `parsing.metadata_clients`, first
+delete the old index (`Remove-Item -Recurse -Force "$HOME\.pqa\indexes"`), because
+the stored paper details don't update by themselves.
+
+---
+
 ## Understanding the output
 
 While a question runs, paper-qa prints a status line after each step, like:
@@ -305,7 +427,10 @@ While a question runs, paper-qa prints a status line after each step, like:
 At the very start, all of these are 0. That's normal: the AI hasn't read
 anything yet.
 
-**Messages you can ignore:** `CROSSREF_MAILTO ... not set`,
+With **E3** on, the agent also sees a line like
+`Source diversity: Institutions=3 | Countries=1 (from 2 relevant paper(s), ...)`.
+
+**Messages you can ignore:** `CROSSREF_MAILTO ... not set`, `OPENALEX_MAILTO ... not set` (Phase 1 commands only),
 `SEMANTIC_SCHOLAR_API_KEY ... not set`, `DeprecationWarning`, and a message
 about "symlinks on Windows".
 
@@ -336,12 +461,17 @@ it describes every image with AI, which can cost several dollars per paper.
 | `UnicodeEncodeError` | Run `$env:PYTHONUTF8 = 1` |
 | Test 2 says `Cannot find path` | Toolformer is already in `my_papers`; skip the `Move-Item` line |
 | `Current Cost=` climbing fast | Press **Ctrl + C** to stop |
+| `PermissionError: ... Permission denied: ...csv` | The CSV is open in Excel, which locks it. Close it and run again |
+| `Missing Anthropic API Key` in a log, a paper shows `FAILED` | The key wasn't set when papers were loaded. Set it, then run again with `--fresh-index` |
+| `echo $env:OPENALEX_MAILTO` prints nothing | Close **all** VS Code/PowerShell windows after `setx` and reopen |
+| `Unknown metadata client(s)` | A typo in `--clients`; use `crossref`, `semantic_scholar`, `openalex`, `unpaywall`, `journal_quality`, `retractions` |
+| `test_settings_default_instantiation` fails | Add `--basetemp C:\pqa_test_tmp` to the command (a Windows temp-folder issue, also in the original) |
 
 ---
 
 ## What's different from the original project
 
-**The original source code was not changed.** We only added files and
+**On `main` (Phase 1), the original source code was not changed.** We only added files and
 settings:
 
 | Added | Why |
@@ -364,6 +494,22 @@ settings:
 
 To prove the code is original: `git log` shows the original FutureHouse
 commits, and our changes are only the files listed above.
+
+**On `phase2`, we changed the code** (everything is behind on/off settings):
+
+| File | Change |
+|---|---|
+| `src/paperqa/clients/openalex.py` | Saves institutions and countries of the first 3 authors. **Bug fix:** translates field names (`author` → `authorships`, ...), because OpenAlex rejected every lookup during indexing with HTTP 400 |
+| `src/paperqa/clients/client_models.py` | **Bug fix:** an HTTP error such as `429 Too Many Requests` now skips that source instead of crashing indexing of the whole folder |
+| `src/paperqa/clients/__init__.py`, `docs.py` | Choose metadata sources by name (`parsing.metadata_clients`) |
+| `src/paperqa/types.py` | New paper fields `institutions` and `countries` |
+| `src/paperqa/settings.py`, `README.md` | New settings `parsing.metadata_clients`, `agent.apply_year_filter`, `agent.show_source_diversity`, `answer.use_trust_score` |
+| `src/paperqa/agents/tools.py`, `agents/env.py` | E1 year filter in `paper_search`; E3 diversity line in `gather_evidence` |
+| `tests/test_phase2_metadata.py`, `test_year_filter.py`, `test_diversity.py` | Offline tests (no API) |
+| `scripts/run_eval.py`, `scripts/get_phase2_papers.ps1`, `test_questions/` | Evaluation runner, test papers, test questions |
+| `results/phase2/` | Before/after results |
+
+To see every change since Phase 1: `git diff phase2-baseline phase2 --stat`.
 
 ---
 

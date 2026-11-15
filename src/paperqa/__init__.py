@@ -19,6 +19,11 @@ from paperqa.llms import (
     VectorStore,
 )
 from paperqa.settings import Settings, get_settings
+from paperqa.trust import (
+    calculate_trust,
+    score_trust,
+    trust_score,
+)
 from paperqa.types import Context, Doc, DocDetails, Text
 from paperqa.version import __version__
 
@@ -44,6 +49,9 @@ __all__ = [
     "__version__",
     "agent_query",
     "ask",
+    "calculate_trust",
     "embedding_model_factory",
     "get_settings",
+    "score_trust",
+    "trust_score",
 ]

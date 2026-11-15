@@ -250,6 +250,35 @@ def get_first_author_affiliations(
     return institutions or None, countries or None
 
 
+def _source_quality_from_openalex_source(source: dict[str, Any]) -> int | None:
+    if source.get("is_core") is True:
+        return 3
+    if source.get("is_in_doaj") is True:
+        return 2
+    if source.get("type") in {"journal", "conference", "book series"}:
+        return 1
+    return None
+
+
+def _openalex_source_quality(work: dict[str, Any]) -> int | None:
+    sources: list[dict[str, Any]] = []
+    primary_location = work.get("primary_location")
+    if isinstance(primary_location, dict):
+        primary_source = primary_location.get("source")
+        if isinstance(primary_source, dict):
+            sources.append(primary_source)
+    for location in work.get("locations") or []:
+        if isinstance(location, dict) and isinstance(location.get("source"), dict):
+            sources.append(location["source"])
+
+    qualities = [
+        quality
+        for source in sources
+        if (quality := _source_quality_from_openalex_source(source)) is not None
+    ]
+    return max(qualities, default=None)
+
+
 def parse_openalex_to_doc_details(message: dict[str, Any]) -> DocDetails:
     """Parse OpenAlex API response to DocDetails.
 
@@ -282,6 +311,7 @@ def parse_openalex_to_doc_details(message: dict[str, Any]) -> DocDetails:
     title = message.get("title")
     citation_count = message.get("cited_by_count")
     publication_year = message.get("publication_year")
+    source_quality = _openalex_source_quality(message)
 
     best_oa_location = message.get("best_oa_location") or {}
     pdf_url = best_oa_location.get("pdf_url", None)
@@ -316,6 +346,7 @@ def parse_openalex_to_doc_details(message: dict[str, Any]) -> DocDetails:
         url=doi,
         title=title,
         citation_count=citation_count,
+        source_quality=source_quality,
         doi=doi,
         license=oa_license,
         pdf_url=pdf_url,

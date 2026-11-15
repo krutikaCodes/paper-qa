@@ -37,6 +37,7 @@ from pydantic import (
     model_validator,
 )
 
+from paperqa.trust import get_trust_score
 from paperqa.utils import (
     compute_unique_doc_id,
     create_bibtex_key,
@@ -473,14 +474,33 @@ class PQASession(BaseModel):
 
     def populate_formatted_answers_and_bib_from_raw_answer(
         self,
+        use_trust_score: bool = False,
+        all_docs: Sequence[Doc | DocDetails] | None = None,
     ) -> None:
         """Format a raw answer for display, mutating the session in place."""
         formatted_without_references = self.raw_answer
 
         id_to_name_map = {c.id: c.text.name for c in self.contexts}
-        name_to_citation_map = {
-            c.text.name: c.text.doc.formatted_citation for c in self.contexts
-        }
+        name_to_citation_map: dict[str, str] = {}
+        name_to_doc_map: dict[str, Doc | DocDetails] = {}
+        for context in self.contexts:
+            name = context.text.name
+            if name in name_to_citation_map:
+                continue
+            name_to_doc_map[name] = context.text.doc
+            citation = context.text.doc.formatted_citation
+            if use_trust_score:
+                citation += (
+                    f" Trust score: {get_trust_score(context.text.doc):.2f}/1.00."
+                )
+                if affiliations := getattr(
+                    context.text.doc, "top_university_affiliations", None
+                ):
+                    citation += (
+                        " THE 2027 top-100 affiliation: "
+                        f"{', '.join(affiliations)}."
+                    )
+            name_to_citation_map[name] = citation
         name_bib = {}
 
         for parenthetical in get_parenthetical_substrings(formatted_without_references):
@@ -513,6 +533,42 @@ class PQASession(BaseModel):
             formatted_without_references = formatted_without_references.replace(
                 hallucinated_key, ""
             )
+
+        if use_trust_score:
+            if all_docs is not None:
+                docs_with_scores = [
+                    (doc.docname, doc, get_trust_score(doc)) for doc in all_docs
+                ]
+                table_heading = "Papers ranked by trust score"
+            else:
+                docs_with_scores = [
+                    (name, name_to_doc_map[name], get_trust_score(name_to_doc_map[name]))
+                    for name in name_bib
+                ]
+                table_heading = "Papers cited, ranked by trust score"
+
+            if docs_with_scores:
+                docs_with_scores.sort(
+                    key=lambda item: (
+                        -item[2],
+                        (
+                            getattr(item[1], "title", None)
+                            or item[1].formatted_citation
+                        ).casefold(),
+                        item[0],
+                    )
+                )
+                table_rows = [
+                    table_heading,
+                    "",
+                    "| Rank | Paper | Trust score |",
+                    "| ---: | --- | ---: |",
+                ]
+                for rank, (_, doc, score) in enumerate(docs_with_scores, start=1):
+                    paper = getattr(doc, "title", None) or doc.formatted_citation
+                    paper = " ".join(paper.split()).replace("|", r"\|")
+                    table_rows.append(f"| {rank} | {paper} | {score:.2f} |")
+                formatted_without_references += "\n\n" + "\n".join(table_rows)
 
         formatted_with_references = (
             f"Question: {self.question}\n\n{formatted_without_references}"
@@ -785,10 +841,10 @@ class BibTeXSource(StrEnum):
 # as defined in https://jfp.csc.fi/en/web/haku/kayttoohje
 # which is a recommended ranking system
 SOURCE_QUALITY_MESSAGES = {
-    0: "poor quality or predatory journal",
-    1: "peer-reviewed journal",
-    2: "domain leading peer-reviewed journal",
-    3: "highest quality peer-reviewed journal",
+    0: "low-quality or predatory publication venue",
+    1: "scholarly publication venue",
+    2: "curated or domain-leading scholarly venue",
+    3: "top-tier or CWTS Core-listed scholarly venue",
 }
 
 CITATION_FALLBACK_DATA: dict[str, str | list[str]] = {
@@ -840,10 +896,23 @@ class DocDetails(Doc):
     source_quality: int | None = Field(
         default=None,
         description=(
-            "Quality of journal/venue of paper.  We use None as a sentinel for unset"
-            " values (like for determining hydration)  So, we use -1 means unknown"
-            " quality and None means it needs to be hydrated."
+            "Quality of the publication venue. OpenAlex assigns 3 for CWTS Core,"
+            " 2 for DOAJ, and 1 for journal, conference, or book-series sources"
+            " without either flag; repositories and other sources remain unknown."
+            " The -1 value means unknown quality and None means it needs hydration."
         ),
+    )
+    trust_score: float | None = None
+    top_university_affiliations: list[str] | None = Field(
+        default=None,
+        description=(
+            "Author institutions matched to the top 100 of the THE World University"
+            " Rankings 2027."
+        ),
+    )
+    top_university_rank: int | None = Field(
+        default=None,
+        description="Best THE World University Rankings 2027 rank among affiliations.",
     )
 
     is_retracted: bool | None = Field(
@@ -1349,6 +1418,19 @@ class DocDetails(Doc):
                     )
                 else:
                     merged_data[field] = max(self_value, other_value)
+            # The journal-quality sentinel means missing data, not a score.
+            elif (
+                field == "source_quality"
+                and other_value == self.UNDEFINED_JOURNAL_QUALITY
+                and self_value not in (None, self.UNDEFINED_JOURNAL_QUALITY)
+            ):
+                merged_data[field] = self_value
+            elif (
+                field == "source_quality"
+                and self_value == self.UNDEFINED_JOURNAL_QUALITY
+                and other_value not in (None, self.UNDEFINED_JOURNAL_QUALITY)
+            ):
+                merged_data[field] = other_value
             elif field == "content_hash" and (
                 # Hashes are both present but differ
                 self_value

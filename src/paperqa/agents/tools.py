@@ -17,6 +17,7 @@ from pydantic import BaseModel, ConfigDict, Field, computed_field
 from paperqa.docs import Docs
 from paperqa.settings import Settings
 from paperqa.sources.clinical_trials import add_clinical_trials_to_docs
+from paperqa.trust import context_rank_score, get_trust_score
 from paperqa.types import Context, DocDetails, PQASession
 
 from .search import get_directory_index
@@ -397,12 +398,17 @@ class GatherEvidence(NamedTool):
                 for c in state.session.contexts
                 if c.question is None or c.question == question
             ),
-            key=lambda x: x.score,
+            key=lambda x: context_rank_score(x, self.settings.answer.use_trust_score),
             reverse=True,
         )
 
         top_contexts = "\n\n".join(
-            f"- {sc.context}"
+            (
+                f"- [Trust score: {get_trust_score(sc.text.doc):.2f}/1.00]"
+                f" {sc.context}"
+                if self.settings.answer.use_trust_score
+                else f"- {sc.context}"
+            )
             for sc in sorted_contexts[: self.settings.agent.agent_evidence_n]
         )
 

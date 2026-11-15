@@ -7,6 +7,14 @@ from typing import Any
 
 from paperqa.university_rankings import top_university_matches
 
+# Phase 2 plan: missing data counts as neutral, not as bad. Not knowing a paper's
+# venue (e.g. an arXiv-only paper) is not evidence that the paper is weak.
+NEUTRAL_SCORE = 0.5
+# Matches DocDetails.UNDEFINED_JOURNAL_QUALITY: the venue's quality is unknown
+UNKNOWN_SOURCE_QUALITY = -1
+# Papers scoring below this are called low-trust in the gather_evidence warning
+LOW_TRUST_THRESHOLD = 0.6
+
 
 def _get_value(obj: Any, *names: str, default: Any = None) -> Any:
     if isinstance(obj, Mapping):
@@ -63,8 +71,8 @@ def _normalize_bool(value: Any) -> bool | None:
 
 
 def _normalize_source_quality(value: Any) -> float:
-    if value is None:
-        return 0.0
+    if value is None or value == UNKNOWN_SOURCE_QUALITY:
+        return NEUTRAL_SCORE
 
     if isinstance(value, str):
         cleaned = " ".join(
@@ -120,15 +128,15 @@ def _citation_score(citation_count: Any, year: Any) -> float:
     try:
         citations = int(citation_count)
     except (TypeError, ValueError):
-        return 0.0
+        return NEUTRAL_SCORE  # Citation count unknown
 
     if citations <= 0:
-        return 0.0
+        return 0.0  # Known to have no citations
 
     try:
         publication_year = int(year)
     except (TypeError, ValueError):
-        return 0.0
+        return NEUTRAL_SCORE  # Can't compute citations per year
 
     if publication_year <= 0:
         return 0.0
@@ -192,7 +200,7 @@ def score_trust(file: Any) -> float:
 
     source_score = _normalize_source_quality(source_quality)
     citation_score = _citation_score(citations, year)
-    retraction_score = 1.0 if retracted is False else 0.0
+    retraction_score = 1.0 if retracted is False else NEUTRAL_SCORE
     university_score = 1.0 if university_matches else 0.0
 
     required_fields = [

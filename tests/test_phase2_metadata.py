@@ -134,11 +134,36 @@ def test_score_trust_stores_normalized_score_on_doc_details() -> None:
     assert doc.trust_score == score
 
 
-def test_score_trust_does_not_assume_unknown_sources_are_unretracted() -> None:
+def test_score_trust_treats_missing_data_as_neutral() -> None:
+    # Phase 2 plan: unknown venue, citations and retraction status count 0.5 each,
+    # and the 9% completeness part is 0 because all four fields are missing
     record: dict[str, Any] = {}
+    expected = 0.36 * 0.5 + 0.315 * 0.5 + 0.135 * 0.5
 
-    assert score_trust(record) == 0.0
-    assert record["trust_score"] == 0.0
+    assert score_trust(record) == pytest.approx(expected)
+    assert record["trust_score"] == pytest.approx(expected)
+
+
+def test_score_trust_unknown_venue_is_neutral_known_zero_citations_is_not() -> None:
+    unknown_venue = score_trust(
+        {"source_quality": -1, "citation_count": 0, "year": 2024, "is_retracted": False}
+    )
+    poor_venue = score_trust(
+        {"source_quality": 0, "citation_count": 0, "year": 2024, "is_retracted": False}
+    )
+    assert unknown_venue == pytest.approx(poor_venue + 0.36 * 0.5)
+    assert score_trust(
+        {"source_quality": -1, "citation_count": None, "year": 2024}
+    ) > score_trust({"source_quality": -1, "citation_count": 0, "year": 2024})
+
+
+def test_score_trust_retracted_is_zero() -> None:
+    assert (
+        score_trust(
+            {"source_quality": 3, "citation_count": 5000, "year": 2019, "is_retracted": True}
+        )
+        == 0.0
+    )
 
 
 def test_score_trust_adds_ten_percent_for_top_university_affiliation() -> None:

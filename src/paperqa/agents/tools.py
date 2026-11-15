@@ -17,7 +17,7 @@ from pydantic import BaseModel, ConfigDict, Field, computed_field
 from paperqa.docs import Docs
 from paperqa.settings import Settings
 from paperqa.sources.clinical_trials import add_clinical_trials_to_docs
-from paperqa.trust import context_rank_score, get_trust_score
+from paperqa.trust import LOW_TRUST_THRESHOLD, context_rank_score, get_trust_score
 from paperqa.types import Context, DocDetails, PQASession
 
 from .search import get_directory_index
@@ -76,6 +76,44 @@ def source_diversity_summary(
                 " for sources from other institutions before answering."
             )
     return summary
+
+
+def low_trust_summary(ranked_contexts: list[Context], max_sources: int) -> str:
+    """Phase 2 enhancement 2: warn about low-trust papers among the top sources.
+
+    Args:
+        ranked_contexts: Contexts in ranking order (best first).
+        max_sources: How many distinct top papers to check, e.g. answer_max_sources.
+
+    Returns:
+        One line like 'Trust check: 2 of your top 5 sources are low-trust ...'.
+    """
+    top_docs = list({c.text.doc.dockey: c.text.doc for c in ranked_contexts}.values())
+    top_docs = top_docs[:max_sources]
+    if not top_docs:
+        return "Trust check: no sources yet."
+    low = [
+        (doc, score)
+        for doc in top_docs
+        if (score := get_trust_score(doc)) < LOW_TRUST_THRESHOLD
+    ]
+    if not low:
+        return (
+            f"Trust check: all top {len(top_docs)} source(s) are trusted"
+            f" (trust score {LOW_TRUST_THRESHOLD:.2f} or higher)."
+        )
+    listed = ", ".join(
+        f"{doc.docname} ({score:.2f}"
+        + (", RETRACTED, do not cite" if getattr(doc, "is_retracted", None) else "")
+        + ")"
+        for doc, score in low
+    )
+    return (
+        f"Trust check: {len(low)} of your top {len(top_docs)} source(s) are"
+        f" low-trust (trust score below {LOW_TRUST_THRESHOLD:.2f}): {listed}."
+        " Prefer higher-trust evidence, or search for better-supported papers"
+        " before answering."
+    )
 
 
 def default_status(state: "EnvironmentState") -> str:
@@ -324,6 +362,13 @@ class EmptyDocsError(RuntimeError):
 
 class GatherEvidence(NamedTool):
     TOOL_FN_NAME = "gather_evidence"
+    # Phase 2 enhancement 2: added to the tool description if use_trust_score
+    TRUST_DESCRIPTION: ClassVar[str] = (
+        "\n\nThe result also includes a trust check of the top sources (trust score"
+        " 0-1 from venue quality, citations per year and retraction status). If it"
+        " warns that sources are low-trust, prefer higher-trust evidence, search for"
+        " better-supported papers, and never rely on a retracted paper."
+    )
     # Phase 2 enhancement 3: added to the tool description if show_source_diversity
     SOURCE_DIVERSITY_DESCRIPTION: ClassVar[str] = (
         "\n\nThe result also shows how many distinct institutions and countries the"
@@ -427,6 +472,14 @@ class GatherEvidence(NamedTool):
                     ]
                 )
             )
+
+        if self.settings.answer.use_trust_score:
+            relevant = [c for c in sorted_contexts if c.score > 0]
+            trust_check = low_trust_summary(
+                relevant, self.settings.answer.answer_max_sources
+            )
+            logger.info(trust_check)
+            status += "\n" + trust_check
 
         if self.settings.agent.show_source_diversity:
             diversity = source_diversity_summary(state.get_relevant_contexts())

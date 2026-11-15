@@ -70,7 +70,8 @@ def get_openalex_api_key() -> str | None:
 OPENALEX_FIELD_MAPPING: dict[str, tuple[str, ...]] = {
     "author": ("authorships",),
     "authors": ("authorships",),
-    "journal": ("primary_location",),
+    # "locations": all venues of the work, used for its source quality (E2)
+    "journal": ("primary_location", "locations"),
     "publisher": ("primary_location",),
     "issn": ("primary_location",),
     "year": ("publication_year", "publication_date"),
@@ -87,7 +88,8 @@ OPENALEX_FIELD_MAPPING: dict[str, tuple[str, ...]] = {
     "countries": ("authorships",),
 }
 # Always selected: cheap, and needed to match the paper and for its citation count
-OPENALEX_BASE_SELECT_FIELDS = ("doi", "title", "cited_by_count", "type")
+# is_retracted: Phase 2 enhancement 2 (retracted papers get trust score 0)
+OPENALEX_BASE_SELECT_FIELDS = ("doi", "title", "cited_by_count", "type", "is_retracted")
 
 
 def to_openalex_select_fields(fields: Collection[str]) -> list[str]:
@@ -312,6 +314,7 @@ def parse_openalex_to_doc_details(message: dict[str, Any]) -> DocDetails:
     citation_count = message.get("cited_by_count")
     publication_year = message.get("publication_year")
     source_quality = _openalex_source_quality(message)
+    is_retracted = message.get("is_retracted")  # True/False, None if not selected
 
     best_oa_location = message.get("best_oa_location") or {}
     pdf_url = best_oa_location.get("pdf_url", None)
@@ -350,6 +353,7 @@ def parse_openalex_to_doc_details(message: dict[str, Any]) -> DocDetails:
         doi=doi,
         license=oa_license,
         pdf_url=pdf_url,
+        is_retracted=is_retracted,
         institutions=institutions,
         countries=countries,
         other=message,

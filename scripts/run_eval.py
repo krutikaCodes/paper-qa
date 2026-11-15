@@ -62,6 +62,8 @@ RESULT_COLUMNS = [
     "cited_in_range_pct", "papers_read_in_range_pct", "cannot_answer",
     "avg_trust_cited", "cited_retracted", "distinct_institutions_cited",
     "distinct_countries_cited", "log_file",
+    # E2 (added later; old results.csv files are upgraded, see upgrade_results_header)
+    "cited_low_trust", "cited_low_trust_names", "low_trust_warnings",
 ]
 # --clients names -> metadata client classes in paperqa.clients
 CLIENT_CLASSES = {
@@ -137,6 +139,47 @@ def doc_field(doc: Any, name: str) -> Any:
     if value is None and isinstance(getattr(doc, "other", None), dict):
         value = doc.other.get(name)
     return value
+
+
+def trust_of(doc: Any) -> float | None:
+    """Trust score of a paper: the stored one, else computed with E2's formula.
+
+    Computed on a copy, so that measuring never changes the paper the agent used.
+    Gives None on code without E2 (e.g. the phase2-baseline tag).
+    """
+    if doc is None:
+        return None
+    stored = doc_field(doc, "trust_score")
+    if stored is not None:
+        return float(stored)
+    try:
+        from paperqa.trust import score_trust
+    except ImportError:
+        return None
+    return score_trust(doc.model_dump())
+
+
+def low_trust_threshold() -> float:
+    try:
+        from paperqa.trust import LOW_TRUST_THRESHOLD
+    except ImportError:
+        return 0.6
+    return LOW_TRUST_THRESHOLD
+
+
+def upgrade_results_header(results_csv: Path) -> None:
+    """If results.csv has an older header, rewrite it with the current columns."""
+    if not results_csv.exists():
+        return
+    with results_csv.open(encoding="utf-8", newline="") as f:
+        reader = csv.DictReader(f)
+        if reader.fieldnames == RESULT_COLUMNS:
+            return
+        rows = list(reader)
+    with results_csv.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=RESULT_COLUMNS)
+        writer.writeheader()
+        writer.writerows({c: r.get(c, "") for c in RESULT_COLUMNS} for r in rows)
 
 
 def as_list(value: Any) -> list[str]:
@@ -219,7 +262,7 @@ async def build_index(settings: Settings, out_dir: Path, label: str) -> None:
             "citation_count": doc_field(doc, "citation_count") if doc_field(doc, "citation_count") is not None else "",
             "source_quality": doc_field(doc, "source_quality") if doc_field(doc, "source_quality") is not None else "",
             "is_retracted": doc_field(doc, "is_retracted") if doc_field(doc, "is_retracted") is not None else "",
-            "trust_score": doc_field(doc, "trust_score") if doc_field(doc, "trust_score") is not None else "",
+            "trust_score": f"{t:.2f}" if (t := trust_of(doc)) is not None else "",
             "institutions": "; ".join(as_list(doc_field(doc, "institutions"))),
             "countries": "; ".join(as_list(doc_field(doc, "countries"))),
         })
@@ -271,9 +314,17 @@ async def run_one(
     cited_years = [doc_field(d, "year") for d in cited_docs]
     has_range = lo is not None or hi is not None
     tools = [name for step in session.tool_history for name in step]
-    trusts = [float(t) for d in cited_docs if (t := doc_field(d, "trust_score")) is not None]
+    trust_by_doc = {d.dockey: trust_of(d) for d in cited_docs}
+    trusts = [t for t in trust_by_doc.values() if t is not None]
+    low_trust = sorted(
+        d.docname for d in cited_docs
+        if (t := trust_by_doc[d.dockey]) is not None and t < low_trust_threshold()
+    )
     institutions = {i for d in cited_docs for i in as_list(doc_field(d, "institutions"))}
     countries = {c for d in cited_docs for c in as_list(doc_field(d, "countries"))}
+
+    log_text = (out_dir / "logs" / log_name).read_text(encoding="utf-8")
+    low_trust_warnings = log_text.count("source(s) are low-trust")  # E2 warnings shown
 
     with (out_dir / "logs" / log_name).open("a", encoding="utf-8") as f:
         f.write(f"\n\n===== STATUS: {response.status} =====\n{session.formatted_answer}\n")
@@ -311,6 +362,9 @@ async def run_one(
         "distinct_institutions_cited": len(institutions),
         "distinct_countries_cited": len(countries),
         "log_file": f"logs/{log_name}",
+        "cited_low_trust": len(low_trust),
+        "cited_low_trust_names": "; ".join(low_trust),
+        "low_trust_warnings": low_trust_warnings,
     }
 
 
@@ -333,7 +387,8 @@ def summarize(results_csv: Path, label: str) -> None:
         ("paper_searches", "searches"), ("cited_papers", "papers"),
         ("cited_in_range_pct", "%"), ("papers_read_in_range_pct", "%"),
         ("avg_trust_cited", "0-1"), ("distinct_institutions_cited", "count"),
-        ("distinct_countries_cited", "count"),
+        ("distinct_countries_cited", "count"), ("cited_low_trust", "papers"),
+        ("cited_retracted", "papers"), ("low_trust_warnings", "warnings"),
     ]:
         print(f"  avg {col:<28} {avg(col):>8} {unit}")
     print(f"  cannot_answer: {sum(r['cannot_answer'] == 'True' for r in rows)} of {len(rows)} runs")
@@ -397,6 +452,7 @@ async def main() -> None:
     settings.agent.rebuild_index = False  # index is built; keep question timings clean
 
     results_csv = out_dir / "results.csv"
+    upgrade_results_header(results_csv)
     new_file = not results_csv.exists()
     for q_no, (lo, hi, question) in enumerate(questions, start=1):
         if args.only and q_no not in args.only:

@@ -1,8 +1,8 @@
 # Enhancement 2 (trust score) - paper folder: test_papers/e2_trust
-# DRAFT: the E2 owner should adjust these once the planted low-trust and retracted
-# papers are chosen, so that each question is likely to retrieve at least one of them.
-What methods improve retrieval-augmented generation for knowledge-intensive tasks?
+# Each of questions 1-4 matches one planted low-trust or retracted paper
+# (see test_papers/e2_trust_PLANTED.txt). Question 5 is a control with no planted paper.
+What methods improve retrieval-augmented generation, including at test time?
+Can large language models solve university mathematics and computer science course questions?
+How do large language models perform structured multi-step reasoning?
+How are dense retrieval and generative retrieval combined for finding relevant documents?
 How do language models learn to use external tools?
-How can language model agents improve themselves through reflection or feedback?
-What techniques improve multi-step reasoning in large language models?
-How does dense retrieval compare to sparse retrieval for open-domain question answering?

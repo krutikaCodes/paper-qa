@@ -1,8 +1,8 @@
 # Phase 2: download the test papers for each enhancement (see course_docs/Phase2_Plan.md).
 # Creates three folders under test_papers and fills them from arXiv:
 #   e1_years      - 12 papers from 2017-2024, for the year filter (Enhancement 1)
-#   e2_trust      - the same 12 well-cited papers, as the high-trust base for Enhancement 2
-#                   (the teammate adds the planted low-trust and retracted papers by hand)
+#   e2_trust      - the same 12 well-cited papers (high trust) + 3 planted low-trust preprints
+#                   + 1 retracted paper, for the trust score (Enhancement 2)
 #   e3_diversity  - 4 FutureHouse papers + 3 from other institutions (Enhancement 3)
 # Papers already present (here or in my_papers) are copied instead of downloaded again.
 # Run from the paper-qa folder:
@@ -35,7 +35,18 @@ $e3 = [ordered]@{
     "2302.04761" = "Meta - Toolformer"
     "2310.11511" = "U. Washington/AI2 - Self-RAG"
 }
-$folders = [ordered]@{ "e1_years" = $e1; "e2_trust" = $e1; "e3_diversity" = $e3 }
+# E2 planted papers (see test_papers\e2_trust_PLANTED.txt). Version 1 of each, because
+# later arXiv versions of the retracted paper were withdrawn.
+$e2planted = [ordered]@{
+    "2511.01059v1" = "LOW-TRUST 2025 Efficient Test-Time RAG (0 citations)"
+    "2306.08997v1" = "RETRACTED 2023 MIT Mathematics and EECS Curriculum with LLMs"
+    "2511.22832v1" = "LOW-TRUST 2025 Structured Multi-Step Reasoning for Entity Matching (0 citations)"
+    "2502.18877v1" = "LOW-TRUST 2025 Hierarchical corpus encoder (0 citations)"
+}
+$e2 = [ordered]@{}
+foreach ($k in $e1.Keys) { $e2[$k] = $e1[$k] }
+foreach ($k in $e2planted.Keys) { $e2[$k] = $e2planted[$k] }
+$folders = [ordered]@{ "e1_years" = $e1; "e2_trust" = $e2; "e3_diversity" = $e3 }
 
 function Find-Existing([string]$id) {
     # Any earlier copy, e.g. my_papers\2210.03629v3.pdf or test_papers\e1_years\2210.03629.pdf
@@ -88,4 +99,4 @@ if (-not (Test-Path $planted)) {
 }
 
 Write-Host "`nDone. Downloaded $downloaded new paper(s)."
-Write-Host "E2: add 2-3 low-trust papers and 1 retracted paper to test_papers\e2_trust, and list them in test_papers\e2_trust_PLANTED.txt."
+Write-Host "E2: test_papers\e2_trust has 12 well-cited + 4 planted papers (listed in test_papers\e2_trust_PLANTED.txt)."

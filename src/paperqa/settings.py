@@ -173,7 +173,7 @@ class AnswerSettings(BaseModel):
         description="Whether to skip stripping citations from evidence.",
     )
     use_trust_score: bool = Field(
-        default=True,
+        default=False,
         description=(
             "Phase 2 enhancement 2: rank evidence by relevance times the paper's"
             " trust score, and warn the agent about low-trust sources."
@@ -255,7 +255,7 @@ class ParsingSettings(BaseModel):
         default=True, description="Whether to try to get metadata details for a Doc."
     )
     extract_author_affiliations_from_front_matter: bool = Field(
-        default=True,
+        default=False,
         description=(
             "Use the parsing LLM to extract author affiliations from the opening text"
             " when metadata providers do not supply them."

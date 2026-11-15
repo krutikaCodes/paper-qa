@@ -9,6 +9,7 @@ from typing import Any
 
 import httpx
 import pytest
+from lmi import LiteLLMModel
 from pydantic import ValidationError
 
 from paperqa import Settings
@@ -187,12 +188,12 @@ async def test_docs_aadd_uses_front_matter_affiliations_as_fallback(
                 doi="10.1234/example",
             )
 
-    class FakeLLM:
-        async def call_single(self, messages):
-            captured["prompt"] = messages[0].content
-            return SimpleNamespace(
-                text='{"institutions": ["University of Oxford"]}'
-            )
+    async def fake_call_single(self, messages, **kwargs):  # noqa: ARG001
+        captured["prompt"] = messages[0].content
+        return SimpleNamespace(text='{"institutions": ["University of Oxford"]}')
+
+    # A real LiteLLMModel (the type checker rejects other classes), with no API call
+    monkeypatch.setattr(LiteLLMModel, "call_single", fake_call_single)
 
     async def fake_read_doc(path, doc, **kwargs):
         text = Text(
@@ -225,7 +226,7 @@ async def test_docs_aadd_uses_front_matter_affiliations_as_fallback(
                 "extract_author_affiliations_from_front_matter": True,
             }
         ),
-        llm_model=FakeLLM(),
+        llm_model=LiteLLMModel(name="fake-model"),
         metadata_client=MetadataClient(),
     )
 
@@ -338,10 +339,12 @@ def test_metadata_clients_setting() -> None:
 
 
 def test_phase2_switches_default() -> None:
+    # All Phase 2 switches are off by default, so "off" means the original behavior
     s = Settings()
     assert s.agent.apply_year_filter is False
     assert s.agent.show_source_diversity is False
-    assert s.answer.use_trust_score is True
+    assert s.answer.use_trust_score is False
+    assert s.parsing.extract_author_affiliations_from_front_matter is False
 
 
 @pytest.mark.asyncio

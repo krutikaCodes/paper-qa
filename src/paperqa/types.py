@@ -841,10 +841,10 @@ class BibTeXSource(StrEnum):
 # as defined in https://jfp.csc.fi/en/web/haku/kayttoohje
 # which is a recommended ranking system
 SOURCE_QUALITY_MESSAGES = {
-    0: "low-quality or predatory publication venue",
-    1: "scholarly publication venue",
-    2: "curated or domain-leading scholarly venue",
-    3: "top-tier or CWTS Core-listed scholarly venue",
+    0: "poor quality or predatory journal",
+    1: "peer-reviewed journal",
+    2: "domain leading peer-reviewed journal",
+    3: "highest quality peer-reviewed journal",
 }
 
 CITATION_FALLBACK_DATA: dict[str, str | list[str]] = {

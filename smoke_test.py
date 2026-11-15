@@ -44,10 +44,10 @@ async def claude_question(pdf: str, question: str) -> None:
     )
     settings.agent.agent_llm = CLAUDE_MODEL
     settings.parsing.enrichment_llm = CLAUDE_MODEL
-    settings.parsing.use_doc_details = True
+    settings.parsing.use_doc_details = False  # skip rate-limited metadata lookup
 
     docs = Docs()
-    await docs.aadd(pdf, settings=settings)
+    await docs.aadd(pdf, citation="Test paper", docname="paper", settings=settings)
     session = await docs.aquery(question, settings=settings)
     print("\nAnswer:\n" + session.formatted_answer)
 

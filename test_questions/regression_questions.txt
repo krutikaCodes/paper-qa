@@ -1,0 +1,8 @@
+# Regression check: the Phase 1 tests, run again with all three Phase 2 switches on.
+# Paper folder: my_papers (PaperQA2, ReAct, Toolformer), the same papers as in Phase 1.
+# Q1 = Phase 1 Test 1 (one paper), Q2 = Test 2 (several papers), Q3 = Test 3 (not in the papers).
+# Test 4 (step limit) asks Q2 again with --set agent.max_timesteps=3.
+# Test 5 (memory) is free: pqa -i answers search "PaperQA2" finds the answers saved by these runs.
+What is PaperQA2?
+Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.
+How can tool-using AI agents be attacked through indirect prompt injection?

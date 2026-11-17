@@ -1314,7 +1314,9 @@ class Settings(BaseSettings):
             inner_context_strs = [format_context(c) for c in filtered_contexts]
             context_str_body = "\n\n".join(inner_context_strs)
 
-        if answer_config.use_trust_score:
+        # Only with evidence: with none, the note was the whole context and the answer
+        # described it (found in the regression check, out-of-corpus question)
+        if answer_config.use_trust_score and filtered_contexts:
             context_str_body = (
                 "When evaluating evidence, weigh each source's trust score alongside"
                 " its relevance. Scores range from 0.00 to 1.00; higher scores"

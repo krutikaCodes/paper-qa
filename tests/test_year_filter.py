@@ -116,13 +116,26 @@ async def test_filter_on_keeps_only_requested_years(fake_index: FakeIndex) -> No
     status = await _make_tool(apply_year_filter=True).paper_search(
         "retrieval", min_year=2020, max_year=2021, state=state
     )
-    assert _years(state) == [2020, 2020, 2021, 2020], "Only 2020-2021 papers added"
+    assert _years(state) == [2020, 2020, None, 2021, 2020], (
+        "Only 2020-2021 papers added, plus the one whose year is unknown"
+    )
     # Had to look through 3 pages of 3 to fill one page with in-range papers
     assert fake_index.calls == [(0, 3), (3, 3), (6, 3)]
     assert (
-        "Year filter 2020-2021: kept 4 paper(s), skipped 4 outside these years"
-        " and 1 with unknown year." in status
+        "Year filter 2020-2021: kept 4 paper(s) from these years and 1 with unknown"
+        " year, skipped 4 outside these years." in status
     )
+
+
+@pytest.mark.asyncio
+async def test_filter_keeps_paper_with_unknown_year(fake_index: FakeIndex) -> None:
+    # Regression check: Toolformer's metadata lookup failed (HTTP 429), so its year
+    # was unknown, and the agent could never find it when it searched with years
+    state = _state()
+    await _make_tool(apply_year_filter=True, search_count=10).paper_search(
+        "anything", min_year=2023, max_year=None, state=state
+    )
+    assert None in _years(state), "Unknown year: kept, as without the filter"
 
 
 @pytest.mark.asyncio
@@ -135,7 +148,8 @@ async def test_filter_continuation_starts_after_last_page(
     await tool.paper_search("retrieval", min_year=2020, max_year=2021, state=state)
     assert fake_index.calls[3] == (9, 3), "Repeat search continues after page 3"
     # All 4 in-range papers found once, none lost between the two searches
-    assert sorted(_years(state)) == [2020, 2020, 2020, 2021]  # type: ignore[type-var]
+    known = sorted(y for y in _years(state) if y is not None)
+    assert known == [2020, 2020, 2020, 2021]
 
 
 @pytest.mark.asyncio
@@ -144,7 +158,7 @@ async def test_filter_open_ended_range(fake_index: FakeIndex) -> None:  # noqa: 
     await _make_tool(apply_year_filter=True, search_count=10).paper_search(
         "tools", min_year=2023, max_year=None, state=state
     )
-    assert sorted(_years(state)) == [2023, 2024]  # type: ignore[type-var]
+    assert sorted(y for y in _years(state) if y is not None) == [2023, 2024]
 
 
 @pytest.mark.asyncio
@@ -153,7 +167,7 @@ async def test_filter_no_matches_tells_agent(fake_index: FakeIndex) -> None:
     status = await _make_tool(apply_year_filter=True).paper_search(
         "anything", min_year=2010, max_year=2012, state=state
     )
-    assert not state.docs.docs
+    assert _years(state) == [None], "Only the unknown-year paper"
     assert "No papers from these years match this query" in status
     assert len(fake_index.calls) == 4, "Stops when the ranking runs out"
 

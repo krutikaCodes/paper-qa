@@ -148,3 +148,15 @@ def test_openalex_selects_retraction_and_all_venues() -> None:
     selected = to_openalex_select_fields(["title", "author", "journal", "year"])
     assert "is_retracted" in selected
     assert "locations" in selected, "All venues, for the venue quality"
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("with_evidence", [True, False])
+async def test_trust_note_only_added_with_evidence(with_evidence: bool) -> None:
+    # Regression check: with no evidence the note was the whole context, and the
+    # out-of-corpus answer described the note instead of just "I cannot answer"
+    contexts = [_context("attention", 0.80)] if with_evidence else []
+    context_str = await Settings(
+        embedding="sparse", answer={"use_trust_score": True}
+    ).context_serializer(contexts, question="q", pre_str=None)
+    assert ("weigh each source's trust score" in context_str) is with_evidence

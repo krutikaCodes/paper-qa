@@ -288,7 +288,9 @@ class PaperSearch(NamedTool):
             searched = search_count
         else:
             # Phase 2 enhancement 1: keep only papers within the requested years,
-            # looking further down the ranking (up to a few pages) to fill the page
+            # looking further down the ranking (up to a few pages) to fill the page.
+            # Papers whose year is unknown (e.g. the metadata lookup failed) are kept:
+            # a failed lookup must not hide a paper the original search would find.
             searched = outside = unknown = 0
             for _ in range(self.YEAR_FILTER_MAX_PAGES):
                 page: list[Docs] = await index.query(
@@ -303,21 +305,22 @@ class PaperSearch(NamedTool):
                     in_range = year_in_range(
                         paper_year, cleaned_min_year, cleaned_max_year
                     )
-                    if in_range:
-                        results.append(r)
-                    elif in_range is None:
-                        unknown += 1
-                    else:
+                    if in_range is False:
                         outside += 1
+                        continue
+                    results.append(r)
+                    if in_range is None:
+                        unknown += 1
                 if len(results) >= search_count or len(page) < search_count:
                     break  # Page is full, or there are no more matches
             # NOTE: no truncation to search_count, otherwise in-range papers on the
             # last page would be skipped forever, as continuation starts after it
             year_filter_note = (
-                f"Year filter {year}: kept {len(results)} paper(s), skipped"
-                f" {outside} outside these years and {unknown} with unknown year."
+                f"Year filter {year}: kept {len(results) - unknown} paper(s) from these"
+                f" years and {unknown} with unknown year, skipped {outside} outside"
+                " these years."
             )
-            if not results:
+            if len(results) == unknown:  # Nothing known to be from these years
                 year_filter_note += (
                     " No papers from these years match this query; repeating it"
                     " will not help, so try different keywords or answer with the"

@@ -1,0 +1,144 @@
+2026-11-15 11:22:53,257 INFO paperqa.agents.tools: Starting paper search for 'large language models university mathematics computer science course questions'.
+2026-11-15 11:22:53,257 INFO paperqa.agents.tools: Starting paper search for 'LLM mathematical reasoning problem solving'.
+2026-11-15 11:22:53,257 INFO paperqa.agents.tools: Starting paper search for 'language models solving academic exams STEM'.
+2026-11-15 11:22:53,335 INFO paperqa.agents.tools: paper_search for query 'large language models university mathematics computer science course questions' and offset 0 returned 8 papers.
+2026-11-15 11:22:53,335 INFO paperqa.agents.tools: Status: Paper Count=8 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:22:53,341 INFO paperqa.agents.tools: paper_search for query 'LLM mathematical reasoning problem solving' and offset 0 returned 8 papers.
+2026-11-15 11:22:53,341 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:22:53,345 INFO paperqa.agents.tools: paper_search for query 'language models solving academic exams STEM' and offset 0 returned 8 papers.
+2026-11-15 11:22:53,345 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:22:55,335 INFO paperqa.agents.tools: gather_evidence starting for question 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:23:04,491 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.0148
+2026-11-15 11:23:06,299 INFO paperqa.agents.tools: Trust check: 1 of your top 2 source(s) are low-trust (trust score below 0.60): zhang2023exploringthemit (0.00, RETRACTED, do not cite). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:23:08,581 INFO paperqa.agents.tools: Starting paper search for 'GPT-4 mathematics problem solving evaluation'.
+2026-11-15 11:23:08,581 INFO paperqa.agents.tools: Starting paper search for 'large language models calculus linear algebra discrete mathematics'.
+2026-11-15 11:23:08,664 INFO paperqa.agents.tools: paper_search for query 'GPT-4 mathematics problem solving evaluation' and offset 0 returned 8 papers.
+2026-11-15 11:23:08,664 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.0148
+2026-11-15 11:23:08,667 INFO paperqa.agents.tools: paper_search for query 'large language models calculus linear algebra discrete mathematics' and offset 0 returned 8 papers.
+2026-11-15 11:23:08,667 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.0148
+2026-11-15 11:23:10,314 INFO paperqa.agents.tools: gather_evidence starting for question 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:23:20,134 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0296
+2026-11-15 11:23:22,057 INFO paperqa.agents.tools: Trust check: 1 of your top 2 source(s) are low-trust (trust score below 0.60): zhang2023exploringthemit (0.00, RETRACTED, do not cite). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:23:24,439 INFO paperqa.agents.tools: Starting paper search for 'MATH dataset benchmark language models'.
+2026-11-15 11:23:24,439 INFO paperqa.agents.tools: Starting paper search for 'chain of thought reasoning mathematics LLM'.
+2026-11-15 11:23:24,536 INFO paperqa.agents.tools: paper_search for query 'MATH dataset benchmark language models' and offset 0 returned 8 papers.
+2026-11-15 11:23:24,536 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0296
+2026-11-15 11:23:24,540 INFO paperqa.agents.tools: paper_search for query 'chain of thought reasoning mathematics LLM' and offset 0 returned 8 papers.
+2026-11-15 11:23:24,540 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0296
+2026-11-15 11:23:26,503 INFO paperqa.agents.tools: gather_evidence starting for question 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:23:35,797 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=2 | Current Evidence=6 | Current Cost=$0.0440
+2026-11-15 11:23:37,613 INFO paperqa.agents.tools: Trust check: 1 of your top 2 source(s) are low-trust (trust score below 0.60): zhang2023exploringthemit (0.00, RETRACTED, do not cite). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:23:40,299 INFO paperqa.agents.tools: Starting paper search for 'GPT-3 GPT-4 exam performance academic questions'.
+2026-11-15 11:23:40,299 INFO paperqa.agents.tools: Starting paper search for 'language models algorithm design data structures'.
+2026-11-15 11:23:40,402 INFO paperqa.agents.tools: paper_search for query 'GPT-3 GPT-4 exam performance academic questions' and offset 0 returned 8 papers.
+2026-11-15 11:23:40,402 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=2 | Current Evidence=6 | Current Cost=$0.0440
+2026-11-15 11:23:40,402 INFO paperqa.agents.tools: paper_search for query 'language models algorithm design data structures' and offset 0 returned 8 papers.
+2026-11-15 11:23:40,402 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=2 | Current Evidence=6 | Current Cost=$0.0440
+2026-11-15 11:23:42,395 INFO paperqa.agents.tools: gather_evidence starting for question 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:23:52,291 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=2 | Current Evidence=8 | Current Cost=$0.0588
+2026-11-15 11:23:54,255 INFO paperqa.agents.tools: Trust check: 1 of your top 2 source(s) are low-trust (trust score below 0.60): zhang2023exploringthemit (0.00, RETRACTED, do not cite). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:23:55,869 INFO paperqa.agents.tools: Generating answer for 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:23:59,348 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=2 | Current Evidence=8 | Current Cost=$0.0612
+2026-11-15 11:24:01,285 INFO paperqa.agents.tools: Resetting 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:24:04,094 INFO paperqa.agents.tools: Starting paper search for 'LLM performance university exams mathematics'.
+2026-11-15 11:24:04,094 INFO paperqa.agents.tools: Starting paper search for 'GPT-4 college level problem solving'.
+2026-11-15 11:24:04,094 INFO paperqa.agents.tools: Starting paper search for 'transformer models mathematical reasoning evaluation'.
+2026-11-15 11:24:04,168 INFO paperqa.agents.tools: paper_search for query 'LLM performance university exams mathematics' and offset 0 returned 8 papers.
+2026-11-15 11:24:04,168 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0612
+2026-11-15 11:24:04,171 INFO paperqa.agents.tools: paper_search for query 'GPT-4 college level problem solving' and offset 0 returned 8 papers.
+2026-11-15 11:24:04,171 INFO paperqa.agents.tools: Status: Paper Count=14 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0612
+2026-11-15 11:24:04,171 INFO paperqa.agents.tools: paper_search for query 'transformer models mathematical reasoning evaluation' and offset 0 returned 8 papers.
+2026-11-15 11:24:04,175 INFO paperqa.agents.tools: Status: Paper Count=14 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0612
+2026-11-15 11:24:06,132 INFO paperqa.agents.tools: gather_evidence starting for question 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:24:15,016 INFO paperqa.agents.tools: Status: Paper Count=14 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.0758
+2026-11-15 11:24:16,972 INFO paperqa.agents.tools: Trust check: 1 of your top 2 source(s) are low-trust (trust score below 0.60): zhang2023exploringthemit (0.00, RETRACTED, do not cite). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:24:19,997 INFO paperqa.agents.tools: Starting paper search for 'MATH benchmark dataset solving'.
+2026-11-15 11:24:19,997 INFO paperqa.agents.tools: Starting paper search for 'code generation programming benchmarks LLM'.
+2026-11-15 11:24:19,997 INFO paperqa.agents.tools: Starting paper search for 'language models step-by-step reasoning mathematics'.
+2026-11-15 11:24:20,076 INFO paperqa.agents.tools: paper_search for query 'MATH benchmark dataset solving' and offset 0 returned 8 papers.
+2026-11-15 11:24:20,076 INFO paperqa.agents.tools: Status: Paper Count=14 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.0758
+2026-11-15 11:24:20,082 INFO paperqa.agents.tools: paper_search for query 'code generation programming benchmarks LLM' and offset 0 returned 8 papers.
+2026-11-15 11:24:20,082 INFO paperqa.agents.tools: Status: Paper Count=14 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.0758
+2026-11-15 11:24:20,085 INFO paperqa.agents.tools: paper_search for query 'language models step-by-step reasoning mathematics' and offset 0 returned 8 papers.
+2026-11-15 11:24:20,085 INFO paperqa.agents.tools: Status: Paper Count=14 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.0758
+2026-11-15 11:24:22,043 INFO paperqa.agents.tools: gather_evidence starting for question 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:24:32,066 INFO paperqa.agents.tools: Status: Paper Count=14 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0903
+2026-11-15 11:24:34,336 INFO paperqa.agents.tools: Trust check: 1 of your top 2 source(s) are low-trust (trust score below 0.60): zhang2023exploringthemit (0.00, RETRACTED, do not cite). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:24:36,923 INFO paperqa.agents.tools: Starting paper search for 'GPT-3 GPT-4 performance standardized tests'.
+2026-11-15 11:24:36,923 INFO paperqa.agents.tools: Starting paper search for 'large language models solving problems benchmark'.
+2026-11-15 11:24:36,988 INFO paperqa.agents.tools: paper_search for query 'GPT-3 GPT-4 performance standardized tests' and offset 0 returned 8 papers.
+2026-11-15 11:24:36,988 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0903
+2026-11-15 11:24:36,995 INFO paperqa.agents.tools: paper_search for query 'large language models solving problems benchmark' and offset 0 returned 8 papers.
+2026-11-15 11:24:36,995 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0903
+2026-11-15 11:24:38,799 INFO paperqa.agents.tools: gather_evidence starting for question 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:24:49,562 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=2 | Current Evidence=6 | Current Cost=$0.1046
+2026-11-15 11:24:51,474 INFO paperqa.agents.tools: Trust check: 1 of your top 2 source(s) are low-trust (trust score below 0.60): zhang2023exploringthemit (0.00, RETRACTED, do not cite). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:24:53,721 INFO paperqa.agents.tools: Starting paper search for 'language models solving math word problems'.
+2026-11-15 11:24:53,721 INFO paperqa.agents.tools: Starting paper search for 'neural networks computer science problem solving'.
+2026-11-15 11:24:53,784 INFO paperqa.agents.tools: paper_search for query 'language models solving math word problems' and offset 0 returned 8 papers.
+2026-11-15 11:24:53,784 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=2 | Current Evidence=6 | Current Cost=$0.1046
+2026-11-15 11:24:53,784 INFO paperqa.agents.tools: paper_search for query 'neural networks computer science problem solving' and offset 0 returned 8 papers.
+2026-11-15 11:24:53,784 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=2 | Current Evidence=6 | Current Cost=$0.1046
+2026-11-15 11:24:55,401 INFO paperqa.agents.tools: Generating answer for 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:24:59,648 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=2 | Current Evidence=6 | Current Cost=$0.1077
+2026-11-15 11:25:01,356 INFO paperqa.agents.tools: Resetting 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:25:04,391 INFO paperqa.agents.tools: Starting paper search for 'GPT-4 technical problem solving capabilities'.
+2026-11-15 11:25:04,391 INFO paperqa.agents.tools: Starting paper search for 'evaluating language models on academic tasks'.
+2026-11-15 11:25:04,391 INFO paperqa.agents.tools: Starting paper search for 'LLM reasoning mathematical proof verification'.
+2026-11-15 11:25:04,503 INFO paperqa.agents.tools: paper_search for query 'evaluating language models on academic tasks' and offset 0 returned 8 papers.
+2026-11-15 11:25:04,503 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1077
+2026-11-15 11:25:04,503 INFO paperqa.agents.tools: paper_search for query 'GPT-4 technical problem solving capabilities' and offset 0 returned 8 papers.
+2026-11-15 11:25:04,503 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1077
+2026-11-15 11:25:04,503 INFO paperqa.agents.tools: paper_search for query 'LLM reasoning mathematical proof verification' and offset 0 returned 8 papers.
+2026-11-15 11:25:04,503 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1077
+2026-11-15 11:25:06,384 INFO paperqa.agents.tools: gather_evidence starting for question 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:25:16,560 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.1219
+2026-11-15 11:25:19,194 INFO paperqa.agents.tools: Trust check: 1 of your top 2 source(s) are low-trust (trust score below 0.60): zhang2023exploringthemit (0.00, RETRACTED, do not cite). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:25:22,233 INFO paperqa.agents.tools: Starting paper search for 'language models exam questions performance'.
+2026-11-15 11:25:22,233 INFO paperqa.agents.tools: Starting paper search for 'prompt engineering mathematics problem solving'.
+2026-11-15 11:25:22,233 INFO paperqa.agents.tools: Starting paper search for 'LLM limitations mathematical reasoning'.
+2026-11-15 11:25:22,317 INFO paperqa.agents.tools: paper_search for query 'language models exam questions performance' and offset 0 returned 8 papers.
+2026-11-15 11:25:22,317 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.1219
+2026-11-15 11:25:22,329 INFO paperqa.agents.tools: paper_search for query 'prompt engineering mathematics problem solving' and offset 0 returned 8 papers.
+2026-11-15 11:25:22,329 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.1219
+2026-11-15 11:25:22,329 INFO paperqa.agents.tools: paper_search for query 'LLM limitations mathematical reasoning' and offset 0 returned 8 papers.
+2026-11-15 11:25:22,329 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.1219
+2026-11-15 11:25:24,225 INFO paperqa.agents.tools: gather_evidence starting for question 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:25:34,676 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.1363
+2026-11-15 11:25:36,569 INFO paperqa.agents.tools: Trust check: 1 of your top 2 source(s) are low-trust (trust score below 0.60): zhang2023exploringthemit (0.00, RETRACTED, do not cite). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:25:38,426 INFO paperqa.agents.tools: Starting paper search for 'transformer models solving competition math problems'.
+2026-11-15 11:25:38,426 INFO paperqa.agents.tools: Starting paper search for 'deep learning algorithm design problem solving'.
+2026-11-15 11:25:38,526 INFO paperqa.agents.tools: paper_search for query 'transformer models solving competition math problems' and offset 0 returned 8 papers.
+2026-11-15 11:25:38,526 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.1363
+2026-11-15 11:25:38,526 INFO paperqa.agents.tools: paper_search for query 'deep learning algorithm design problem solving' and offset 0 returned 8 papers.
+2026-11-15 11:25:38,526 INFO paperqa.agents.tools: Status: Paper Count=16 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.1363
+2026-11-15 11:25:40,028 INFO paperqa.agents.tools: gather_evidence starting for question 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:25:49,900 INFO paperqa.agents.tools: Status: Paper Count=16 | Relevant Papers=2 | Current Evidence=6 | Current Cost=$0.1506
+2026-11-15 11:25:51,864 INFO paperqa.agents.tools: Trust check: 1 of your top 2 source(s) are low-trust (trust score below 0.60): zhang2023exploringthemit (0.00, RETRACTED, do not cite). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:25:53,586 INFO paperqa.agents.tools: Generating answer for 'Can large language models solve university mathematics and computer science course questions?'.
+2026-11-15 11:25:56,750 INFO paperqa.agents.tools: Status: Paper Count=16 | Relevant Papers=2 | Current Evidence=6 | Current Cost=$0.1538
+2026-11-15 11:25:58,024 INFO paperqa.agents.tools: Completing 'Can large language models solve university mathematics and computer science course questions?' as 'unsure'.
+
+
+===== STATUS: unsure =====
+Question: Can large language models solve university mathematics and computer science course questions?
+
+I cannot answer this question definitively based on the provided context.
+
+The context presents evidence from the Reflexion framework demonstrating that LLMs can improve through self-reflection and iterative learning on specific benchmarks: programming tasks (HumanEval at 91% pass@1), decision-making tasks (AlfWorld), and reasoning tasks (HotPotQA) (shinn2023reflexionlanguageagents pages 1-2). However, the sources contain conflicting assessments regarding university-level coursework.
+
+One source suggests capability on "technical course material" based on performance on coding and reasoning tasks (shinn2023reflexionlanguageagents pages 1-2). In contrast, two sources explicitly state that the research "does not specifically address university-level mathematics and computer science course questions" (shinn2023reflexionlanguageagents pages 1-2).
+
+The critical limitation is that the evaluated benchmarks represent narrow, specialized task domains rather than comprehensive university curricula. The 91% pass@1 on HumanEval demonstrates coding ability on a specific benchmark, but this does not encompass the diverse problem types, theoretical concepts, and mathematical rigor required across university mathematics and computer science courses.
+
+To adequately answer whether LLMs can solve university mathematics and computer science course questions would require direct evaluation on university-level examinations or course materials, which the provided sources do not address.
+
+Papers cited, ranked by trust score
+
+| Rank | Paper | Trust score |
+| ---: | --- | ---: |
+| 1 | Reflexion: language agents with verbal reinforcement learning | 0.90 |
+
+References
+
+1. (shinn2023reflexionlanguageagents pages 1-2): Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu Yao. Reflexion: language agents with verbal reinforcement learning. neural information processing systems, Jan 2023. URL: https://doi.org/10.52202/075280-0377, doi:10.52202/075280-0377. This article has 3358 citations and is from a highest quality peer-reviewed journal. Trust score: 0.90/1.00.

@@ -1,0 +1,16 @@
+
+
+===== STATUS: success =====
+Question: How do language agents answer questions about the scientific literature?
+
+Language agents answer questions about scientific literature through a retrieval-augmented generative approach that integrates multiple coordinated tools. An agent LLM orchestrates the process by deploying specialized components: a search tool retrieves relevant papers from Google Scholar, a gather evidence tool uses maximal marginal relevance search to extract text chunks from retrieved papers, and an answer question tool synthesizes the final response (lala2023paperqaretrievalaugmentedgenerative pages 5-6).
+
+The evidence gathering phase employs a summary LLM that summarizes retrieved text chunks and assigns relevance scores, enabling the system to reject irrelevant context and mitigate PDF parsing errors (lala2023paperqaretrievalaugmentedgenerative pages 5-6). This multi-step evaluation of evidence quality ensures that retrieved information meets quality standards against ground-truth sources (lala2023paperqaretrievalaugmentedgenerative pages 19-20).
+
+The final answer generation combines retrieved context from papers with parametric knowledge from the LLM, with each component of the answer accompanied by source citations (lala2023paperqaretrievalaugmentedgenerative pages 19-20). Critically, the system recognizes potential contradictions between background knowledge and retrieved evidence; it may refrain from answering when such conflicts arise (lala2023paperqaretrievalaugmentedgenerative pages 19-20). When context from papers is insufficient, parametric knowledge enables detailed responses while maintaining citation transparency (lala2023paperqaretrievalaugmentedgenerative pages 19-20). This hybrid approach demonstrates competitive performance compared to ground-truth evidence while identifying complementary information to enhance answer quality (lala2023paperqaretrievalaugmentedgenerative pages 19-20).
+
+References
+
+1. (lala2023paperqaretrievalaugmentedgenerative pages 5-6): Jakub L'ala, Odhran O'Donoghue, Aleksandar Shtedritski, Sam Cox, Samuel G. Rodriques, and Andrew D. White. Paperqa: retrieval-augmented generative agent for scientific research. arXiv (Cornell University), Dec 2023. URL: https://doi.org/10.48550/arxiv.2312.07559, doi:10.48550/arxiv.2312.07559. This article has 318 citations.
+
+2. (lala2023paperqaretrievalaugmentedgenerative pages 19-20): Jakub L'ala, Odhran O'Donoghue, Aleksandar Shtedritski, Sam Cox, Samuel G. Rodriques, and Andrew D. White. Paperqa: retrieval-augmented generative agent for scientific research. arXiv (Cornell University), Dec 2023. URL: https://doi.org/10.48550/arxiv.2312.07559, doi:10.48550/arxiv.2312.07559. This article has 318 citations.

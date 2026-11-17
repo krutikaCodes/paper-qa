@@ -1,0 +1,26 @@
+2026-11-17 12:10:11,069 INFO paperqa.agents.tools: Starting paper search for 'PaperQA2'.
+2026-11-17 12:10:11,101 INFO paperqa.agents.tools: paper_search for query 'PaperQA2' and offset 0 returned 1 papers.
+2026-11-17 12:10:11,101 INFO paperqa.agents.tools: Status: Paper Count=1 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-17 12:10:11,704 INFO paperqa.agents.tools: gather_evidence starting for question 'What is PaperQA2?'.
+2026-11-17 12:10:20,275 INFO paperqa.agents.tools: Status: Paper Count=1 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.0155
+2026-11-17 12:10:20,803 INFO paperqa.agents.tools: Generating answer for 'What is PaperQA2?'.
+2026-11-17 12:10:23,906 INFO paperqa.agents.tools: Status: Paper Count=1 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.0187
+2026-11-17 12:10:24,598 INFO paperqa.agents.tools: Completing 'What is PaperQA2?' as 'certain'.
+
+
+===== STATUS: success =====
+Question: What is PaperQA2?
+
+PaperQA2 is a frontier language model agent optimized for factuality in scientific research tasks (skarlinski2024languageagentsachieve pages 1-3). It is a retrieval-augmented generation (RAG) system designed to synthesize scientific knowledge from academic literature (skarlinski2024languageagentsachieve pages 17-19).
+
+The system decomposes RAG into multiple specialized tools: a "Paper Search" tool that transforms user queries into keyword searches, a "Gather Evidence" tool that ranks paper chunks using dense vector retrieval followed by LLM reranking and contextual summarization (RCS), a "Generate Answer" tool that produces final responses, and a "Citation Traversal" tool that exploits citation graphs for hierarchical indexing (skarlinski2024languageagentsachieve pages 3-5). PaperQA2 parses papers using Grobid and stores contextual summaries in agent state (skarlinski2024languageagentsachieve pages 3-5).
+
+On the LitQA2 benchmark, PaperQA2 achieved 85.2% precision and 66.0% accuracy, outperforming other RAG systems and achieving superhuman precision compared to human PhD-level annotators (73.8%) (skarlinski2024languageagentsachieve pages 3-5). The system demonstrates superhuman performance on three realistic literature research tasks: information retrieval from scientific literature, summarization of scientific topics into cited Wikipedia-style articles, and contradiction detection within scientific papers (skarlinski2024languageagentsachieve pages 1-3). It can identify contradictions in biology papers at scale with 70% validation by human experts (skarlinski2024languageagentsachieve pages 1-3).
+
+References
+
+1. (skarlinski2024languageagentsachieve pages 1-3): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 304 citations.
+
+2. (skarlinski2024languageagentsachieve pages 17-19): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 304 citations.
+
+3. (skarlinski2024languageagentsachieve pages 3-5): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 304 citations.

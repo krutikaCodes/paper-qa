@@ -1,0 +1,14 @@
+
+
+===== STATUS: success =====
+Question: How does dense retrieval compare to sparse retrieval for open-domain question answering?
+
+Dense retrieval can outperform and potentially replace traditional sparse retrieval methods such as TF-IDF and BM25 in open-domain question answering (karpukhin2020densepassageretrieval pages 8-10). While sparse vector methods have historically served as the standard approach, dense representations trained with discriminative encoders achieve high similarity scores for semantically relevant text pairs without requiring exact token matching (karpukhin2020densepassageretrieval pages 8-10).
+
+However, dense representations alone typically demonstrate inferior performance compared to sparse methods (karpukhin2020densepassageretrieval pages 8-10). The Dense Passage Retrieval (DPR) approach addresses this limitation through a simple dual-encoder framework that achieves state-of-the-art results across multiple open-domain QA benchmarks (karpukhin2020densepassageretrieval pages 8-10). This framework demonstrates that effective dense retrieval does not require complex model architectures; rather, critical training ingredients and empirical analysis reveal that simpler dense retrieval approaches can match or exceed the performance of more sophisticated model frameworks (karpukhin2020densepassageretrieval pages 8-10).
+
+In summary, while dense retrieval methods have inherent limitations when used in isolation, properly trained dual-encoder systems can effectively compete with and surpass traditional sparse retrieval approaches for open-domain question answering tasks, suggesting that dense methods may eventually replace sparse retrieval as the standard paradigm.
+
+References
+
+1. (karpukhin2020densepassageretrieval pages 8-10): Vladimir Karpukhin, Barlas Oguz, Sewon Min, Patrick Lewis, Ledell Wu, Sergey Edunov, Danqi Chen, and Wen-tau Yih. Dense passage retrieval for open-domain question answering. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), Jan 2020. URL: https://doi.org/10.18653/v1/2020.emnlp-main.550, doi:10.18653/v1/2020.emnlp-main.550.

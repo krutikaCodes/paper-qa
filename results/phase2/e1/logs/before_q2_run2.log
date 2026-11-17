@@ -1,0 +1,18 @@
+
+
+===== STATUS: unsure =====
+Question: What approaches published in 2023 or later let language models use external tools?
+
+ReAct (Reasoning and Acting in Language Models) is a framework published at ICLR 2023 that enables language models to use external tools through a structured approach (Yao2023 pages 17-20, Yao2023 pages 25-28).
+
+The ReAct framework operates through an iterative cycle where language models alternate between reasoning and acting phases (Yao2023 pages 17-20, Yao2023 pages 25-28). During reasoning phases, models generate thoughts to decompose complex problems. During acting phases, models execute actions to interact with external information sources and environments (Yao2023 pages 17-20, Yao2023 pages 25-28).
+
+ReAct supports multiple action types for tool interaction. Search and Lookup actions enable models to query external information sources and retrieve specific details from search results (Yao2023 pages 17-20). Beyond information retrieval, ReAct demonstrates applicability to interactive environments, including simulated tasks where models execute commands such as opening fridges, cleaning items, and placing objects (Yao2023 pages 25-28).
+
+The framework's effectiveness derives from its synergistic combination of reasoning and acting capabilities. This approach enables language models to leverage external tools and interactive environments to solve complex multi-step reasoning tasks and decision-making problems (Yao2023 pages 17-20, Yao2023 pages 25-28). The thought-action-observation cycle allows systematic task decomposition and iterative refinement of solutions.
+
+References
+
+1. (Yao2023 pages 17-20): Yao, Shunyu, et al. "ReAct: Synergizing Reasoning and Acting in Language Models." *Proceedings of the International Conference on Learning Representations*, 2023.
+
+2. (Yao2023 pages 25-28): Yao, Shunyu, et al. "ReAct: Synergizing Reasoning and Acting in Language Models." *Proceedings of the International Conference on Learning Representations*, 2023.

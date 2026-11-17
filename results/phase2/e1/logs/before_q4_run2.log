@@ -1,0 +1,18 @@
+
+
+===== STATUS: success =====
+Question: What did papers published in 2022 propose for improving reasoning in large language models?
+
+In 2022, Wei et al. proposed chain-of-thought prompting as a method to improve reasoning capabilities in large language models (wei2022chainofthoughtpromptingelicits pages 24-25, wei2022chainofthoughtpromptingelicits pages 7-9). This technique augments model outputs with intermediate reasoning steps that precede the final answer, enabling models to decompose multi-hop reasoning tasks into sequential steps rather than producing direct answers (wei2022chainofthoughtpromptingelicits pages 24-25, wei2022chainofthoughtpromptingelicits pages 41-43).
+
+Chain-of-thought prompting operates through few-shot exemplars that demonstrate step-by-step reasoning processes across multiple domains, including robot task planning and mathematical word problems (wei2022chainofthoughtpromptingelicits pages 41-43). Critically, the method requires no finetuning on labeled datasets; instead, it works through prompting alone on off-the-shelf language models of sufficient scale (wei2022chainofthoughtpromptingelicits pages 24-25).
+
+The approach demonstrates significant performance improvements across arithmetic reasoning, commonsense reasoning, and symbolic reasoning tasks compared to standard prompting (wei2022chainofthoughtpromptingelicits pages 7-9). Notably, chain-of-thought reasoning emerges as a scaling phenomenon, with larger models containing 100B+ parameters showing dramatic improvements in reasoning capabilities (wei2022chainofthoughtpromptingelicits pages 7-9). This advancement enables various reasoning abilities without requiring gradient updates or extensive labeled annotation sets (wei2022chainofthoughtpromptingelicits pages 24-25).
+
+References
+
+1. (wei2022chainofthoughtpromptingelicits pages 24-25): Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc V Le, and Denny Zhou. Chain-of-thought prompting elicits reasoning in large language models. Advances in Neural Information Processing Systems 35, Jan 2022. URL: https://doi.org/10.52202/068431-1800, doi:10.52202/068431-1800.
+
+2. (wei2022chainofthoughtpromptingelicits pages 7-9): Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc V Le, and Denny Zhou. Chain-of-thought prompting elicits reasoning in large language models. Advances in Neural Information Processing Systems 35, Jan 2022. URL: https://doi.org/10.52202/068431-1800, doi:10.52202/068431-1800.
+
+3. (wei2022chainofthoughtpromptingelicits pages 41-43): Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc V Le, and Denny Zhou. Chain-of-thought prompting elicits reasoning in large language models. Advances in Neural Information Processing Systems 35, Jan 2022. URL: https://doi.org/10.52202/068431-1800, doi:10.52202/068431-1800.

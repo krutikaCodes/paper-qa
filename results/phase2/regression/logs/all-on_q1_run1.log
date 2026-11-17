@@ -1,0 +1,36 @@
+2026-11-17 11:29:06,507 INFO paperqa.agents.tools: Starting paper search for 'PaperQA2'.
+2026-11-17 11:29:06,570 INFO paperqa.agents.tools: paper_search for query 'PaperQA2' and offset 0 returned 1 papers.
+2026-11-17 11:29:06,572 INFO paperqa.agents.tools: Status: Paper Count=1 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-17 11:29:07,170 INFO paperqa.agents.tools: gather_evidence starting for question 'What is PaperQA2?'.
+2026-11-17 11:29:16,069 INFO paperqa.agents.tools: Status: Paper Count=1 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.0155
+2026-11-17 11:29:22,989 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:29:22,989 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:29:23,498 INFO paperqa.agents.tools: Generating answer for 'What is PaperQA2?'.
+2026-11-17 11:29:26,765 INFO paperqa.agents.tools: Status: Paper Count=1 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.0189
+2026-11-17 11:29:27,455 INFO paperqa.agents.tools: Completing 'What is PaperQA2?' as 'certain'.
+
+
+===== STATUS: success =====
+Question: What is PaperQA2?
+
+PaperQA2 is a frontier language model agent optimized for factuality in scientific research tasks (skarlinski2024languageagentsachieve pages 1-3). It functions as a retrieval-augmented generation (RAG) system that synthesizes scientific knowledge from academic papers by decomposing RAG into multiple specialized tools (skarlinski2024languageagentsachieve pages 3-5, skarlinski2024languageagentsachieve pages 17-19).
+
+The system comprises several key components: a "Paper Search" tool that transforms user queries into keyword searches, a "Gather Evidence" tool that ranks paper chunks using dense vector retrieval followed by LLM reranking and contextual summarization (RCS), a "Generate Answer" tool that produces final responses, and a "Citation Traversal" tool that exploits citation graphs for hierarchical indexing (skarlinski2024languageagentsachieve pages 3-5). Document parsing is performed using Grobid, and the RCS step is powered by frontier LLM models including Claude-3-Opus, Gemini-1.5-Pro, or GPT-4-Turbo (skarlinski2024languageagentsachieve pages 17-19).
+
+PaperQA2 demonstrates superhuman performance on three realistic literature research tasks: information retrieval from scientific literature, summarization of scientific topics into cited Wikipedia-style articles, and contradiction detection within scientific papers (skarlinski2024languageagentsachieve pages 1-3). On the LitQA2 benchmark, it achieved 85.2% precision and 66.0% accuracy, outperforming other RAG systems and exceeding PhD-level human annotators (73.8% precision) (skarlinski2024languageagentsachieve pages 3-5). The system can identify contradictions in biology papers at scale with 70% validation by human experts (skarlinski2024languageagentsachieve pages 1-3).
+
+Papers cited, ranked by trust score
+
+| Rank | Paper | Trust score |
+| ---: | --- | ---: |
+| 1 | Language agents achieve superhuman synthesis of scientific knowledge | 0.72 |
+| 2 | Language agents achieve superhuman synthesis of scientific knowledge | 0.72 |
+| 3 | Language agents achieve superhuman synthesis of scientific knowledge | 0.72 |
+
+References
+
+1. (skarlinski2024languageagentsachieve pages 1-3): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 304 citations. Trust score: 0.72/1.00.
+
+2. (skarlinski2024languageagentsachieve pages 3-5): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 304 citations. Trust score: 0.72/1.00.
+
+3. (skarlinski2024languageagentsachieve pages 17-19): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 304 citations. Trust score: 0.72/1.00.

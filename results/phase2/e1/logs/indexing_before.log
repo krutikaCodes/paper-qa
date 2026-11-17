@@ -1,0 +1,8 @@
+2026-11-13 15:26:47,713 WARNING paperqa.clients.crossref: CROSSREF_MAILTO environment variable not set. Crossref API rate limits may apply.
+2026-11-13 15:26:47,713 WARNING paperqa.clients.crossref: CROSSREF_API_KEY environment variable not set. Crossref API rate limits may apply.
+2026-11-13 15:27:13,567 WARNING paperqa.clients.client_models: Metadata not found for REALM: Retrieval-Augmented Language Model Pre-Training in CrossrefProvider.
+2026-11-13 15:27:28,881 WARNING paperqa.clients.client_models: Metadata not found for Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks in CrossrefProvider.
+2026-11-13 15:27:34,410 WARNING paperqa.clients.client_models: Metadata not found for WebGPT: Browser-Assisted Question-Answering with Human Feedback in CrossrefProvider.
+2026-11-13 15:27:51,897 WARNING paperqa.clients.client_models: Metadata not found for ReAct: Synergizing Reasoning and Acting in Language Models in CrossrefProvider.
+2026-11-13 15:28:18,104 WARNING paperqa.clients.client_models: Metadata not found for Self-RAG: Learning to Retrieve, Generate, and Critique Through Self-Reflection in CrossrefProvider.
+2026-11-13 15:28:24,219 WARNING paperqa.clients.client_models: Metadata not found for Language Agents Achieve Superhuman Synthesis of Scientific Knowledge in CrossrefProvider.

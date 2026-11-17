@@ -1,0 +1,227 @@
+2026-11-17 12:01:04,715 INFO paperqa.agents.tools: Starting paper search for 'indirect prompt injection tool-using AI agents attacks'.
+2026-11-17 12:01:04,715 INFO paperqa.agents.tools: Starting paper search for 'prompt injection attacks language models'.
+2026-11-17 12:01:04,771 INFO paperqa.agents.tools: Year filter 2020-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:01:04,771 INFO paperqa.agents.tools: paper_search for query 'indirect prompt injection tool-using AI agents attacks' and offset 0 returned 3 papers.
+2026-11-17 12:01:04,771 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-17 12:01:04,772 INFO paperqa.agents.tools: Year filter 2020-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:01:04,772 INFO paperqa.agents.tools: paper_search for query 'prompt injection attacks language models' and offset 0 returned 3 papers.
+2026-11-17 12:01:04,772 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-17 12:01:05,550 INFO paperqa.agents.tools: gather_evidence starting for question 'How can tool-using AI agents be attacked through indirect prompt injection?'.
+2026-11-17 12:01:12,475 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0138
+2026-11-17 12:01:12,475 INFO paperqa.agents.tools: Trust check: no sources yet.
+2026-11-17 12:01:12,475 INFO paperqa.agents.tools: Source diversity: Institutions=0 | Countries=0 (from 0 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:01:13,854 INFO paperqa.agents.tools: Starting paper search for 'prompt injection vulnerability AI agents tools'.
+2026-11-17 12:01:13,854 INFO paperqa.agents.tools: Starting paper search for 'indirect prompt injection attacks'.
+2026-11-17 12:01:13,965 INFO paperqa.agents.tools: Year filter 2021-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:01:13,965 INFO paperqa.agents.tools: paper_search for query 'indirect prompt injection attacks' and offset 0 returned 3 papers.
+2026-11-17 12:01:13,965 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0138
+2026-11-17 12:01:13,965 INFO paperqa.agents.tools: Year filter 2021-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:01:13,981 INFO paperqa.agents.tools: paper_search for query 'prompt injection vulnerability AI agents tools' and offset 0 returned 3 papers.
+2026-11-17 12:01:13,981 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0138
+2026-11-17 12:01:14,582 INFO paperqa.agents.tools: gather_evidence starting for question 'indirect prompt injection attacks on AI agents'.
+2026-11-17 12:01:22,065 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0278
+2026-11-17 12:01:22,065 INFO paperqa.agents.tools: Trust check: no sources yet.
+2026-11-17 12:01:22,065 INFO paperqa.agents.tools: Source diversity: Institutions=0 | Countries=0 (from 0 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:01:23,402 INFO paperqa.agents.tools: Starting paper search for 'prompt injection LLM security'.
+2026-11-17 12:01:23,402 INFO paperqa.agents.tools: Starting paper search for 'adversarial attacks language models agents'.
+2026-11-17 12:01:23,469 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:01:23,469 INFO paperqa.agents.tools: paper_search for query 'prompt injection LLM security' and offset 0 returned 3 papers.
+2026-11-17 12:01:23,469 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0278
+2026-11-17 12:01:23,469 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:01:23,469 INFO paperqa.agents.tools: paper_search for query 'adversarial attacks language models agents' and offset 0 returned 3 papers.
+2026-11-17 12:01:23,469 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0278
+2026-11-17 12:01:24,214 INFO paperqa.agents.tools: gather_evidence starting for question 'How can tool-using AI agents be attacked through indirect prompt injection?'.
+2026-11-17 12:01:29,853 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0414
+2026-11-17 12:01:29,855 INFO paperqa.agents.tools: Trust check: no sources yet.
+2026-11-17 12:01:29,855 INFO paperqa.agents.tools: Source diversity: Institutions=0 | Countries=0 (from 0 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:01:31,138 INFO paperqa.agents.tools: Starting paper search for 'tool use language models security vulnerabilities'.
+2026-11-17 12:01:31,138 INFO paperqa.agents.tools: Starting paper search for 'prompt injection external data sources'.
+2026-11-17 12:01:31,232 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:01:31,232 INFO paperqa.agents.tools: paper_search for query 'tool use language models security vulnerabilities' and offset 0 returned 2 papers.
+2026-11-17 12:01:31,232 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0414
+2026-11-17 12:01:31,232 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:01:31,232 INFO paperqa.agents.tools: paper_search for query 'prompt injection external data sources' and offset 0 returned 2 papers.
+2026-11-17 12:01:31,232 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0414
+2026-11-17 12:01:31,983 INFO paperqa.agents.tools: gather_evidence starting for question 'indirect prompt injection attacks tool-using agents'.
+2026-11-17 12:01:38,394 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0547
+2026-11-17 12:01:39,544 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 12:01:39,546 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:01:40,829 INFO paperqa.agents.tools: Starting paper search for 'indirect prompt injection web search retrieval'.
+2026-11-17 12:01:40,830 INFO paperqa.agents.tools: Starting paper search for 'prompt injection attacks RAG retrieval augmented generation'.
+2026-11-17 12:01:40,861 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:01:40,861 INFO paperqa.agents.tools: paper_search for query 'prompt injection attacks RAG retrieval augmented generation' and offset 0 returned 2 papers.
+2026-11-17 12:01:40,861 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0547
+2026-11-17 12:01:40,862 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:01:40,862 INFO paperqa.agents.tools: paper_search for query 'indirect prompt injection web search retrieval' and offset 0 returned 2 papers.
+2026-11-17 12:01:40,862 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0547
+2026-11-17 12:01:41,639 INFO paperqa.agents.tools: gather_evidence starting for question 'How can tool-using AI agents be attacked through indirect prompt injection?'.
+2026-11-17 12:01:47,875 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0685
+2026-11-17 12:01:47,875 INFO paperqa.agents.tools: Trust check: no sources yet.
+2026-11-17 12:01:47,875 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:01:49,213 INFO paperqa.agents.tools: Starting paper search for 'prompt injection attack vectors LLM agents'.
+2026-11-17 12:01:49,213 INFO paperqa.agents.tools: Starting paper search for 'data poisoning prompt injection untrusted sources'.
+2026-11-17 12:01:49,261 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 12:01:49,261 INFO paperqa.agents.tools: paper_search for query 'data poisoning prompt injection untrusted sources' and offset 0 returned 1 papers.
+2026-11-17 12:01:49,261 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0685
+2026-11-17 12:01:49,265 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 12:01:49,265 INFO paperqa.agents.tools: paper_search for query 'prompt injection attack vectors LLM agents' and offset 0 returned 1 papers.
+2026-11-17 12:01:49,265 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0685
+2026-11-17 12:01:50,000 INFO paperqa.agents.tools: gather_evidence starting for question 'indirect prompt injection attacks on tool-using agents'.
+2026-11-17 12:01:57,279 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0826
+2026-11-17 12:01:58,802 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 12:01:58,802 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:02:00,165 INFO paperqa.agents.tools: Starting paper search for 'prompt injection attack web search information retrieval'.
+2026-11-17 12:02:00,166 INFO paperqa.agents.tools: Starting paper search for 'adversarial prompt injection LLM tool use'.
+2026-11-17 12:02:00,207 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:02:00,207 INFO paperqa.agents.tools: paper_search for query 'adversarial prompt injection LLM tool use' and offset 0 returned 2 papers.
+2026-11-17 12:02:00,207 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0826
+2026-11-17 12:02:00,208 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:02:00,208 INFO paperqa.agents.tools: paper_search for query 'prompt injection attack web search information retrieval' and offset 0 returned 2 papers.
+2026-11-17 12:02:00,208 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0826
+2026-11-17 12:02:00,736 INFO paperqa.agents.tools: Resetting 'How can tool-using AI agents be attacked through indirect prompt injection?'.
+2026-11-17 12:02:01,952 INFO paperqa.agents.tools: Starting paper search for 'prompt injection attacks'.
+2026-11-17 12:02:01,952 INFO paperqa.agents.tools: Starting paper search for 'indirect prompt injection'.
+2026-11-17 12:02:02,043 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:02:02,043 INFO paperqa.agents.tools: paper_search for query 'indirect prompt injection' and offset 0 returned 3 papers.
+2026-11-17 12:02:02,043 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0826
+2026-11-17 12:02:02,043 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:02:02,043 INFO paperqa.agents.tools: paper_search for query 'prompt injection attacks' and offset 0 returned 3 papers.
+2026-11-17 12:02:02,043 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0826
+2026-11-17 12:02:02,801 INFO paperqa.agents.tools: gather_evidence starting for question 'indirect prompt injection attacks on AI agents'.
+2026-11-17 12:02:09,593 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0967
+2026-11-17 12:02:09,595 INFO paperqa.agents.tools: Trust check: no sources yet.
+2026-11-17 12:02:09,595 INFO paperqa.agents.tools: Source diversity: Institutions=0 | Countries=0 (from 0 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:02:10,926 INFO paperqa.agents.tools: Starting paper search for 'prompt injection vulnerability LLM'.
+2026-11-17 12:02:10,927 INFO paperqa.agents.tools: Starting paper search for 'tool-using agents security attacks'.
+2026-11-17 12:02:11,007 INFO paperqa.agents.tools: Year filter 2023-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:02:11,007 INFO paperqa.agents.tools: paper_search for query 'tool-using agents security attacks' and offset 0 returned 1 papers.
+2026-11-17 12:02:11,007 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0967
+2026-11-17 12:02:11,014 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:02:11,014 INFO paperqa.agents.tools: paper_search for query 'prompt injection vulnerability LLM' and offset 0 returned 2 papers.
+2026-11-17 12:02:11,014 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0967
+2026-11-17 12:02:11,711 INFO paperqa.agents.tools: gather_evidence starting for question 'How can tool-using AI agents be attacked through indirect prompt injection?'.
+2026-11-17 12:02:18,116 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1105
+2026-11-17 12:02:18,117 INFO paperqa.agents.tools: Trust check: no sources yet.
+2026-11-17 12:02:18,117 INFO paperqa.agents.tools: Source diversity: Institutions=0 | Countries=0 (from 0 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:02:19,383 INFO paperqa.agents.tools: Starting paper search for 'prompt injection web search retrieval augmented generation'.
+2026-11-17 12:02:19,383 INFO paperqa.agents.tools: Starting paper search for 'adversarial attacks language model agents tools'.
+2026-11-17 12:02:19,456 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 12:02:19,456 INFO paperqa.agents.tools: paper_search for query 'prompt injection web search retrieval augmented generation' and offset 0 returned 1 papers.
+2026-11-17 12:02:19,456 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1105
+2026-11-17 12:02:19,456 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 12:02:19,456 INFO paperqa.agents.tools: paper_search for query 'adversarial attacks language model agents tools' and offset 0 returned 1 papers.
+2026-11-17 12:02:19,456 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1105
+2026-11-17 12:02:20,037 INFO paperqa.agents.tools: gather_evidence starting for question 'indirect prompt injection attacks'.
+2026-11-17 12:02:27,017 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.1256
+2026-11-17 12:02:28,307 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 12:02:28,307 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:02:29,759 INFO paperqa.agents.tools: Starting paper search for 'prompt injection attack external data untrusted input'.
+2026-11-17 12:02:29,759 INFO paperqa.agents.tools: Starting paper search for 'indirect attacks LLM agents function calling'.
+2026-11-17 12:02:29,793 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:02:29,793 INFO paperqa.agents.tools: paper_search for query 'prompt injection attack external data untrusted input' and offset 0 returned 2 papers.
+2026-11-17 12:02:29,793 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.1256
+2026-11-17 12:02:29,793 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:02:29,793 INFO paperqa.agents.tools: paper_search for query 'indirect attacks LLM agents function calling' and offset 0 returned 2 papers.
+2026-11-17 12:02:29,793 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.1256
+2026-11-17 12:02:30,547 INFO paperqa.agents.tools: gather_evidence starting for question 'How can tool-using AI agents be attacked through indirect prompt injection?'.
+2026-11-17 12:02:35,992 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.1393
+2026-11-17 12:02:35,993 INFO paperqa.agents.tools: Trust check: no sources yet.
+2026-11-17 12:02:35,993 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:02:37,419 INFO paperqa.agents.tools: Starting paper search for 'prompt injection attack vector LLM security'.
+2026-11-17 12:02:37,419 INFO paperqa.agents.tools: Starting paper search for 'data poisoning attacks language models agents'.
+2026-11-17 12:02:37,458 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:02:37,458 INFO paperqa.agents.tools: paper_search for query 'prompt injection attack vector LLM security' and offset 0 returned 3 papers.
+2026-11-17 12:02:37,458 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.1393
+2026-11-17 12:02:37,458 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:02:37,458 INFO paperqa.agents.tools: paper_search for query 'data poisoning attacks language models agents' and offset 0 returned 3 papers.
+2026-11-17 12:02:37,458 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.1393
+2026-11-17 12:02:38,174 INFO paperqa.agents.tools: gather_evidence starting for question 'prompt injection attacks on tool-using agents'.
+2026-11-17 12:02:44,760 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.1531
+2026-11-17 12:02:45,720 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 12:02:45,720 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:02:46,972 INFO paperqa.agents.tools: Starting paper search for 'prompt injection attack web search information retrieval agents'.
+2026-11-17 12:02:46,972 INFO paperqa.agents.tools: Starting paper search for 'indirect prompt injection attack vector'.
+2026-11-17 12:02:47,020 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 12:02:47,020 INFO paperqa.agents.tools: paper_search for query 'indirect prompt injection attack vector' and offset 0 returned 1 papers.
+2026-11-17 12:02:47,020 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.1531
+2026-11-17 12:02:47,020 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 12:02:47,020 INFO paperqa.agents.tools: paper_search for query 'prompt injection attack web search information retrieval agents' and offset 0 returned 1 papers.
+2026-11-17 12:02:47,020 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.1531
+2026-11-17 12:02:47,670 INFO paperqa.agents.tools: gather_evidence starting for question 'indirect prompt injection attacks on AI agents'.
+2026-11-17 12:02:54,283 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.1669
+2026-11-17 12:02:54,284 INFO paperqa.agents.tools: Trust check: no sources yet.
+2026-11-17 12:02:54,284 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:02:55,587 INFO paperqa.agents.tools: Starting paper search for 'prompt injection attack untrusted sources'.
+2026-11-17 12:02:55,588 INFO paperqa.agents.tools: Starting paper search for 'LLM agent security vulnerabilities'.
+2026-11-17 12:02:55,625 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:02:55,625 INFO paperqa.agents.tools: paper_search for query 'prompt injection attack untrusted sources' and offset 0 returned 2 papers.
+2026-11-17 12:02:55,625 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.1669
+2026-11-17 12:02:55,625 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:02:55,625 INFO paperqa.agents.tools: paper_search for query 'LLM agent security vulnerabilities' and offset 0 returned 2 papers.
+2026-11-17 12:02:55,625 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.1669
+2026-11-17 12:02:56,319 INFO paperqa.agents.tools: gather_evidence starting for question 'How can tool-using AI agents be attacked through indirect prompt injection?'.
+2026-11-17 12:03:01,699 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.1805
+2026-11-17 12:03:01,700 INFO paperqa.agents.tools: Trust check: no sources yet.
+2026-11-17 12:03:01,700 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:03:02,298 INFO paperqa.agents.tools: Generating answer for 'How can tool-using AI agents be attacked through indirect prompt injection?'.
+2026-11-17 12:03:04,009 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.1822
+2026-11-17 12:03:04,615 INFO paperqa.agents.tools: Resetting 'How can tool-using AI agents be attacked through indirect prompt injection?'.
+2026-11-17 12:03:05,806 INFO paperqa.agents.tools: Starting paper search for 'prompt injection'.
+2026-11-17 12:03:05,806 INFO paperqa.agents.tools: Starting paper search for 'adversarial attacks LLM'.
+2026-11-17 12:03:05,851 INFO paperqa.agents.tools: Year filter 2023-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:03:05,851 INFO paperqa.agents.tools: paper_search for query 'adversarial attacks LLM' and offset 0 returned 1 papers.
+2026-11-17 12:03:05,851 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1822
+2026-11-17 12:03:05,867 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:03:05,867 INFO paperqa.agents.tools: paper_search for query 'prompt injection' and offset 0 returned 2 papers.
+2026-11-17 12:03:05,867 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1822
+2026-11-17 12:03:06,511 INFO paperqa.agents.tools: gather_evidence starting for question 'indirect prompt injection attacks'.
+2026-11-17 12:03:14,686 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.1975
+2026-11-17 12:03:16,026 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 12:03:16,026 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:03:17,295 INFO paperqa.agents.tools: Starting paper search for 'security vulnerabilities language models'.
+2026-11-17 12:03:17,295 INFO paperqa.agents.tools: Starting paper search for 'agent attacks tool use'.
+2026-11-17 12:03:17,326 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:03:17,326 INFO paperqa.agents.tools: paper_search for query 'agent attacks tool use' and offset 0 returned 2 papers.
+2026-11-17 12:03:17,326 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.1975
+2026-11-17 12:03:17,326 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:03:17,326 INFO paperqa.agents.tools: paper_search for query 'security vulnerabilities language models' and offset 0 returned 2 papers.
+2026-11-17 12:03:17,326 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.1975
+2026-11-17 12:03:18,091 INFO paperqa.agents.tools: gather_evidence starting for question 'How can tool-using AI agents be attacked through indirect prompt injection?'.
+2026-11-17 12:03:24,687 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.2114
+2026-11-17 12:03:24,703 INFO paperqa.agents.tools: Trust check: no sources yet.
+2026-11-17 12:03:24,703 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:03:26,068 INFO paperqa.agents.tools: Starting paper search for 'prompt injection attack web search'.
+2026-11-17 12:03:26,068 INFO paperqa.agents.tools: Starting paper search for 'indirect attacks retrieval augmented generation'.
+2026-11-17 12:03:26,123 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 12:03:26,123 INFO paperqa.agents.tools: paper_search for query 'prompt injection attack web search' and offset 0 returned 1 papers.
+2026-11-17 12:03:26,123 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.2114
+2026-11-17 12:03:26,125 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 12:03:26,125 INFO paperqa.agents.tools: paper_search for query 'indirect attacks retrieval augmented generation' and offset 0 returned 1 papers.
+2026-11-17 12:03:26,125 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.2114
+2026-11-17 12:03:26,898 INFO paperqa.agents.tools: gather_evidence starting for question 'indirect prompt injection attacks on tool-using agents'.
+2026-11-17 12:03:33,727 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.2255
+2026-11-17 12:03:35,142 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 12:03:35,142 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:03:36,419 INFO paperqa.agents.tools: Starting paper search for 'prompt injection attack external data sources'.
+2026-11-17 12:03:36,419 INFO paperqa.agents.tools: Starting paper search for 'LLM security threat model'.
+2026-11-17 12:03:36,531 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:03:36,531 INFO paperqa.agents.tools: paper_search for query 'prompt injection attack external data sources' and offset 0 returned 2 papers.
+2026-11-17 12:03:36,531 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.2255
+2026-11-17 12:03:36,550 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 12:03:36,550 INFO paperqa.agents.tools: paper_search for query 'LLM security threat model' and offset 0 returned 2 papers.
+2026-11-17 12:03:36,550 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.2255
+2026-11-17 12:03:37,296 INFO paperqa.agents.tools: gather_evidence starting for question 'How can tool-using AI agents be attacked through indirect prompt injection?'.
+2026-11-17 12:03:42,620 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.2391
+2026-11-17 12:03:42,620 INFO paperqa.agents.tools: Trust check: no sources yet.
+2026-11-17 12:03:42,620 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:03:43,327 INFO paperqa.agents.tools: Completing 'How can tool-using AI agents be attacked through indirect prompt injection?' as 'unsure'.
+
+
+===== STATUS: unsure =====
+Question: How can tool-using AI agents be attacked through indirect prompt injection?
+
+I cannot answer.
+
+The provided context describes PaperQA2's technical implementation for scientific knowledge synthesis, including its agentic tools, document processing parameters, and the reranking and contextual summarization (RCS) step. However, both sources explicitly note that they do not address prompt injection attacks, security vulnerabilities, or adversarial attacks on tool-using agents. The sources focus exclusively on technical implementation details and parameter configurations rather than security considerations relevant to indirect prompt injection attacks.
+
+To answer your question about indirect prompt injection vulnerabilities in tool-using AI agents, sources addressing adversarial attack mechanisms, threat models, and security analysis of agentic systems would be required.

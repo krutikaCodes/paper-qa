@@ -1,0 +1,43 @@
+2026-11-16 11:33:23,317 INFO paperqa.agents.tools: Starting paper search for 'language models external tools'.
+2026-11-16 11:33:23,587 INFO paperqa.agents.tools: Year filter 2023-: kept 4 paper(s), skipped 8 outside these years and 0 with unknown year.
+2026-11-16 11:33:23,587 INFO paperqa.agents.tools: paper_search for query 'language models external tools' and offset 0 returned 4 papers.
+2026-11-16 11:33:23,587 INFO paperqa.agents.tools: Status: Paper Count=4 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-16 11:33:24,256 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:33:32,897 INFO paperqa.agents.tools: Status: Paper Count=4 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.0153
+2026-11-16 11:33:33,959 INFO paperqa.agents.tools: Starting paper search for 'tool use language models agents 2023'.
+2026-11-16 11:33:34,138 INFO paperqa.agents.tools: Year filter 2023-: kept 4 paper(s), skipped 8 outside these years and 0 with unknown year.
+2026-11-16 11:33:34,139 INFO paperqa.agents.tools: paper_search for query 'tool use language models agents 2023' and offset 0 returned 4 papers.
+2026-11-16 11:33:34,139 INFO paperqa.agents.tools: Status: Paper Count=4 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.0153
+2026-11-16 11:33:35,180 INFO paperqa.agents.tools: Starting paper search for 'function calling API tools language models'.
+2026-11-16 11:33:35,293 INFO paperqa.agents.tools: Year filter 2023-: kept 4 paper(s), skipped 8 outside these years and 0 with unknown year.
+2026-11-16 11:33:35,293 INFO paperqa.agents.tools: paper_search for query 'function calling API tools language models' and offset 0 returned 4 papers.
+2026-11-16 11:33:35,293 INFO paperqa.agents.tools: Status: Paper Count=4 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.0153
+2026-11-16 11:33:36,240 INFO paperqa.agents.tools: Starting paper search for 'ReAct reasoning acting tool use'.
+2026-11-16 11:33:36,336 INFO paperqa.agents.tools: Year filter 2023-: kept 4 paper(s), skipped 8 outside these years and 0 with unknown year.
+2026-11-16 11:33:36,336 INFO paperqa.agents.tools: paper_search for query 'ReAct reasoning acting tool use' and offset 0 returned 4 papers.
+2026-11-16 11:33:36,336 INFO paperqa.agents.tools: Status: Paper Count=4 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.0153
+2026-11-16 11:33:37,101 INFO paperqa.agents.tools: Starting paper search for 'prompt engineering tool integration LLM'.
+2026-11-16 11:33:37,152 INFO paperqa.agents.tools: Year filter 2023-: kept 4 paper(s), skipped 5 outside these years and 0 with unknown year.
+2026-11-16 11:33:37,152 INFO paperqa.agents.tools: paper_search for query 'prompt engineering tool integration LLM' and offset 0 returned 4 papers.
+2026-11-16 11:33:37,152 INFO paperqa.agents.tools: Status: Paper Count=4 | Relevant Papers=2 | Current Evidence=2 | Current Cost=$0.0153
+2026-11-16 11:33:38,253 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:33:46,918 INFO paperqa.agents.tools: Status: Paper Count=4 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0307
+2026-11-16 11:33:47,677 INFO paperqa.agents.tools: Generating answer for 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:33:50,473 INFO paperqa.agents.tools: Status: Paper Count=4 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0334
+2026-11-16 11:33:51,186 INFO paperqa.agents.tools: Completing 'What approaches published in 2023 or later let language models use external tools?' as 'certain'.
+
+
+===== STATUS: success =====
+Question: What approaches published in 2023 or later let language models use external tools?
+
+Several approaches published in 2023 enable language models to use external tools. Toolformer is a concurrent method that allows language models to invoke external tools through API calls, specifically Wikipedia APIs (asai2023selfraglearningto pages 7-8). Self-RAG integrates retrieval as a tool during both training and inference, enabling language models to retrieve and generate content through self-reflection (asai2023selfraglearningto pages 7-8). Perplexity.ai represents a production search system that augments language models with external capabilities (asai2023selfraglearningto pages 7-8).
+
+Beyond retrieval-focused approaches, Reflexion is a language agent framework that employs verbal reinforcement learning to enable language models to interact with external environments and tools through action sequences (shinn2023reflexionlanguageagents pages 11-15). ReAct is a related approach that combines reasoning and acting capabilities (shinn2023reflexionlanguageagents pages 11-15). Reflexion has been evaluated on diverse tasks including HumanEval programming, HotPotQA question answering, AlfWorld decision-making, and WebShop e-commerce navigation, demonstrating the breadth of external tool integration (shinn2023reflexionlanguageagents pages 11-15).
+
+These 2023 approaches represent distinct paradigms: retrieval-augmented methods that integrate external knowledge sources, and agent frameworks that enable sequential interaction with complex environments through reasoning and action.
+
+References
+
+1. (asai2023selfraglearningto pages 7-8): Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi. Self-rag: learning to retrieve, generate, and critique through self-reflection. arXiv (Cornell University), Oct 2023. URL: https://doi.org/10.48550/arxiv.2310.11511, doi:10.48550/arxiv.2310.11511. This article has 1088 citations.
+
+2. (shinn2023reflexionlanguageagents pages 11-15): Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu Yao. Reflexion: language agents with verbal reinforcement learning. neural information processing systems, Jan 2023. URL: https://doi.org/10.52202/075280-0377, doi:10.52202/075280-0377. This article has 3334 citations.

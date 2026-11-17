@@ -1,0 +1,16 @@
+
+
+===== STATUS: success =====
+Question: Before 2019, what model architectures were proposed for language understanding?
+
+Before 2019, several foundational model architectures were proposed for language understanding. The Transformer architecture emerged as a key innovation enabling efficient parallel processing of sequences (devlin2019bertpretrainingof pages 10-12). ELMo introduced deep contextualized word representations that captured context-dependent semantics (devlin2019bertpretrainingof pages 10-12). GPT demonstrated the effectiveness of unsupervised learning approaches for language modeling (devlin2019bertpretrainingof pages 10-12).
+
+Bidirectional LSTMs (Long Short-Term Memory networks) were employed for generating context embeddings, providing sequential modeling capabilities (devlin2019bertpretrainingof pages 10-12). Attention mechanisms were developed specifically for NLP tasks, enabling models to selectively focus on relevant input elements (devlin2019bertpretrainingof pages 10-12). Traditional word embedding methods such as GloVe and Word2Vec provided static vector representations of vocabulary items (devlin2019bertpretrainingof pages 10-12).
+
+Semi-supervised sequence learning and universal language model fine-tuning represented important pre-2019 approaches that leveraged unlabeled data to improve downstream task performance (devlin2019bertpretrainingof pages 10-12). These architectures collectively established the foundation for subsequent developments in pre-trained language models, demonstrating that transfer learning through pre-training and fine-tuning could achieve strong performance on benchmark tasks like GLUE (Lewis2005 pages 7-9).
+
+References
+
+1. (devlin2019bertpretrainingof pages 10-12): Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: pre-training of deep bidirectional transformers for language understanding. Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), Jan 2019. URL: https://doi.org/10.18653/v1/n19-1423, doi:10.18653/v1/n19-1423.
+
+2. (Lewis2005 pages 7-9): Lewis, Patrick, et al. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." arXiv preprint arXiv:2005.11401v4, 12 Apr. 2021, arxiv.org/abs/2005.11401.

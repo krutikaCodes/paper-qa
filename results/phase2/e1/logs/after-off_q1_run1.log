@@ -1,0 +1,16 @@
+
+
+===== STATUS: unsure =====
+Question: What retrieval-augmented methods for language models were proposed in 2020 or 2021?
+
+Based on the provided context, RAG (Retrieval-Augmented Generation) was proposed by Lewis et al. in May 2020 as a retrieval-augmented method for language models (lewis2020retrievalaugmentedgenerationfor pages 7-9). RAG combines retrieval mechanisms with pre-trained generative language models such as BART and T5 to address knowledge-intensive NLP tasks (lewis2020retrievalaugmentedgenerationfor pages 7-9).
+
+The method incorporates several key innovations. First, it employs learned dense retrieval that demonstrates superior performance compared to fixed BM25 retrieval across most evaluated tasks (lewis2020retrievalaugmentedgenerationfor pages 7-9). Second, RAG utilizes non-parametric memory, enabling knowledge updates at test time without requiring model retraining (lewis2020retrievalaugmentedgenerationfor pages 7-9). Third, the architecture provides flexibility to adjust the number of retrieved documents during inference (lewis2020retrievalaugmentedgenerationfor pages 7-9). Finally, the unified architecture achieves strong performance across multiple knowledge-intensive NLP tasks, including question answering, fact checking, and generation (lewis2020retrievalaugmentedgenerationfor pages 7-9).
+
+The significance of this work is reflected in its substantial citation impact, with 6197 citations as of the context date (lewis2020retrievalaugmentedgenerationfor pages 7-9). The paper demonstrates that a single retrieval-based architecture can be effectively fine-tuned for various knowledge-intensive NLP applications (lewis2020retrievalaugmentedgenerationfor pages 7-9).
+
+However, the provided context contains information only about 2020 proposals and does not include details about retrieval-augmented methods proposed in 2021.
+
+References
+
+1. (lewis2020retrievalaugmentedgenerationfor pages 7-9): Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela. Retrieval-augmented generation for knowledge-intensive nlp tasks. arXiv (Cornell University), May 2020. URL: https://doi.org/10.48550/arxiv.2005.11401, doi:10.48550/arxiv.2005.11401. This article has 6197 citations.

@@ -1,0 +1,16 @@
+
+
+===== STATUS: success =====
+Question: How are language models evaluated on biology research tasks?
+
+Language models are evaluated on biology research tasks using LAB-Bench, a comprehensive benchmark containing over 2,400 multiple-choice questions across seven task categories (laurent2024labbenchmeasuringcapabilities pages 2-4). These categories include LitQA2 and SuppQA for literature recall and reasoning, FigQA and TableQA for figure and table interpretation, DbQA for database access, ProtocolQA for protocol writing, and SeqQA for DNA/protein sequence comprehension (laurent2024labbenchmeasuringcapabilities pages 2-4, laurent2024labbenchmeasuringcapabilities pages 22-25).
+
+Performance is measured using accuracy, precision, and coverage metrics, with results averaged over three runs per model (laurent2024labbenchmeasuringcapabilities pages 22-25). Models are evaluated without access to external tools across all benchmarks (laurent2024labbenchmeasuringcapabilities pages 2-4). The benchmark includes 41 "human-hard" Cloning Scenarios—complex multi-step questions expected to require over 10 minutes for trained molecular biologists to answer, serving as a critical measure of AI assistant utility in molecular biology (laurent2024labbenchmeasuringcapabilities pages 2-4).
+
+Evaluation employs both programmatic generation for scalable tasks and manual expert creation for complex questions (laurent2024labbenchmeasuringcapabilities pages 2-4). Model performance is compared against PhD-level biology researchers as expert baselines to assess capabilities relative to domain specialists (laurent2024labbenchmeasuringcapabilities pages 2-4). Tested models include Claude variants, GPT-4, Gemini, and Llama, with results demonstrating significant performance variation across different task types and models (laurent2024labbenchmeasuringcapabilities pages 22-25).
+
+References
+
+1. (laurent2024labbenchmeasuringcapabilities pages 2-4): Jon M. Laurent, Joseph D. Janizek, Michael Ruzo, Michaela M. Hinks, Michael J. Hammerling, Siddharth Narayanan, Manvitha Ponnapati, Andrew D. White, and Samuel G. Rodriques. Lab-bench: measuring capabilities of language models for biology research. arXiv (Cornell University), Jul 2024. URL: https://doi.org/10.48550/arxiv.2407.10362, doi:10.48550/arxiv.2407.10362. This article has 258 citations.
+
+2. (laurent2024labbenchmeasuringcapabilities pages 22-25): Jon M. Laurent, Joseph D. Janizek, Michael Ruzo, Michaela M. Hinks, Michael J. Hammerling, Siddharth Narayanan, Manvitha Ponnapati, Andrew D. White, and Samuel G. Rodriques. Lab-bench: measuring capabilities of language models for biology research. arXiv (Cornell University), Jul 2024. URL: https://doi.org/10.48550/arxiv.2407.10362, doi:10.48550/arxiv.2407.10362. This article has 258 citations.

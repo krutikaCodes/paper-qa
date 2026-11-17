@@ -1,0 +1,20 @@
+
+
+===== STATUS: success =====
+Question: What makes a language agent's answers reliable and well cited?
+
+Language agent answers achieve reliability and proper citation through retrieval-augmented generation (RAG) mechanisms combined with structured citation practices. (asai2023selfraglearningto pages 22-24)
+
+Key reliability factors include: (1) retrieving relevant source material marked as [Retrieve=Yes], (2) ensuring retrieved content is marked [ISREL=Relevant], (3) verifying that claims are fully or partially supported [ISSUP], and (4) properly citing sources using numbered references. (asai2023selfraglearningto pages 22-24)
+
+Well-cited answers follow the ASQA instruction framework, which emphasizes citing factual claims using minimum sufficient subsets of documents, with citations limited to at least one but at most three documents per sentence. (asai2023selfraglearningto pages 22-24) Effective citations include specific reference numbers and source details that directly support the generated response. (asai2023selfraglearningto pages 22-24)
+
+Beyond citation practices, language agent reliability can be enhanced through environmental grounding and feedback mechanisms. Grounding language models in environments with observational feedback mitigates flawed reasoning that may occur in isolated LLM outputs. (narayanan2024aviarytraininglanguage pages 1-2) Training methods such as expert iteration, outcome supervision, and process supervision further improve agent performance on complex tasks. (narayanan2024aviarytraininglanguage pages 1-2, narayanan2024aviarytraininglanguage pages 4-6)
+
+References
+
+1. (asai2023selfraglearningto pages 22-24): Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi. Self-rag: learning to retrieve, generate, and critique through self-reflection. arXiv (Cornell University), Oct 2023. URL: https://doi.org/10.48550/arxiv.2310.11511, doi:10.48550/arxiv.2310.11511. This article has 1088 citations.
+
+2. (narayanan2024aviarytraininglanguage pages 1-2): Siddharth Narayanan, James D. Braza, Ryan-Rhys Griffiths, Manu Ponnapati, Albert Bou, Jon Laurent, Ori Kabeli, Geemi Wellawatte, Sam Cox, Samuel G. Rodriques, and Andrew D. White. Aviary: training language agents on challenging scientific tasks. arXiv (Cornell University), Dec 2024. URL: https://doi.org/10.48550/arxiv.2412.21154, doi:10.48550/arxiv.2412.21154. This article has 64 citations.
+
+3. (narayanan2024aviarytraininglanguage pages 4-6): Siddharth Narayanan, James D. Braza, Ryan-Rhys Griffiths, Manu Ponnapati, Albert Bou, Jon Laurent, Ori Kabeli, Geemi Wellawatte, Sam Cox, Samuel G. Rodriques, and Andrew D. White. Aviary: training language agents on challenging scientific tasks. arXiv (Cornell University), Dec 2024. URL: https://doi.org/10.48550/arxiv.2412.21154, doi:10.48550/arxiv.2412.21154. This article has 64 citations.

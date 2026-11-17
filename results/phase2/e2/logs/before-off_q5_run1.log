@@ -1,0 +1,82 @@
+2026-11-15 11:14:54,294 INFO paperqa.agents.tools: Starting paper search for 'language models learning external tools'.
+2026-11-15 11:14:54,294 INFO paperqa.agents.tools: Starting paper search for 'tool use in language models'.
+2026-11-15 11:14:54,294 INFO paperqa.agents.tools: Starting paper search for 'in-context learning tool use prompting'.
+2026-11-15 11:14:54,382 INFO paperqa.agents.tools: paper_search for query 'in-context learning tool use prompting' and offset 0 returned 8 papers.
+2026-11-15 11:14:54,382 INFO paperqa.agents.tools: Status: Paper Count=8 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:14:54,384 INFO paperqa.agents.tools: paper_search for query 'language models learning external tools' and offset 0 returned 8 papers.
+2026-11-15 11:14:54,388 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:14:54,388 INFO paperqa.agents.tools: paper_search for query 'tool use in language models' and offset 0 returned 8 papers.
+2026-11-15 11:14:54,388 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:14:55,365 INFO paperqa.agents.tools: gather_evidence starting for question 'How do language models learn to use external tools?'.
+2026-11-15 11:15:02,305 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0135
+2026-11-15 11:15:02,937 INFO paperqa.agents.tools: gather_evidence starting for question 'How do language models learn to use external tools?'.
+2026-11-15 11:15:10,713 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0269
+2026-11-15 11:15:12,352 INFO paperqa.agents.tools: Starting paper search for 'chain of thought reasoning tool use agents'.
+2026-11-15 11:15:12,352 INFO paperqa.agents.tools: Starting paper search for 'function calling API integration language models'.
+2026-11-15 11:15:12,470 INFO paperqa.agents.tools: paper_search for query 'function calling API integration language models' and offset 0 returned 8 papers.
+2026-11-15 11:15:12,470 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0269
+2026-11-15 11:15:12,480 INFO paperqa.agents.tools: paper_search for query 'chain of thought reasoning tool use agents' and offset 0 returned 8 papers.
+2026-11-15 11:15:12,480 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0269
+2026-11-15 11:15:14,076 INFO paperqa.agents.tools: Starting paper search for 'ReAct reasoning acting tool use'.
+2026-11-15 11:15:14,076 INFO paperqa.agents.tools: Starting paper search for 'instruction tuning tool use fine-tuning'.
+2026-11-15 11:15:14,202 INFO paperqa.agents.tools: paper_search for query 'instruction tuning tool use fine-tuning' and offset 0 returned 8 papers.
+2026-11-15 11:15:14,202 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0269
+2026-11-15 11:15:14,218 INFO paperqa.agents.tools: paper_search for query 'ReAct reasoning acting tool use' and offset 0 returned 8 papers.
+2026-11-15 11:15:14,218 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0269
+2026-11-15 11:15:15,329 INFO paperqa.agents.tools: gather_evidence starting for question 'How do language models learn to use external tools?'.
+2026-11-15 11:15:22,258 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=1 | Current Evidence=3 | Current Cost=$0.0401
+2026-11-15 11:15:23,528 INFO paperqa.agents.tools: gather_evidence starting for question 'How do language models learn to use external tools?'.
+2026-11-15 11:15:32,854 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=1 | Current Evidence=4 | Current Cost=$0.0536
+2026-11-15 11:15:35,198 INFO paperqa.agents.tools: Starting paper search for 'prompt engineering few-shot learning tool calling'.
+2026-11-15 11:15:35,198 INFO paperqa.agents.tools: Starting paper search for 'agent learning tool selection decision making'.
+2026-11-15 11:15:35,374 INFO paperqa.agents.tools: paper_search for query 'prompt engineering few-shot learning tool calling' and offset 0 returned 8 papers.
+2026-11-15 11:15:35,374 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=1 | Current Evidence=4 | Current Cost=$0.0536
+2026-11-15 11:15:35,379 INFO paperqa.agents.tools: paper_search for query 'agent learning tool selection decision making' and offset 0 returned 8 papers.
+2026-11-15 11:15:35,379 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=1 | Current Evidence=4 | Current Cost=$0.0536
+2026-11-15 11:15:37,242 INFO paperqa.agents.tools: gather_evidence starting for question 'How do language models learn to use external tools?'.
+2026-11-15 11:15:47,909 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.0670
+2026-11-15 11:15:49,949 INFO paperqa.agents.tools: Generating answer for 'How do language models learn to use external tools?'.
+2026-11-15 11:15:53,937 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.0702
+2026-11-15 11:15:56,702 INFO paperqa.agents.tools: Starting paper search for 'in-context learning prompting language models'.
+2026-11-15 11:15:56,702 INFO paperqa.agents.tools: Starting paper search for 'API calling language models GPT function calling'.
+2026-11-15 11:15:56,822 INFO paperqa.agents.tools: paper_search for query 'in-context learning prompting language models' and offset 0 returned 8 papers.
+2026-11-15 11:15:56,822 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.0702
+2026-11-15 11:15:56,830 INFO paperqa.agents.tools: paper_search for query 'API calling language models GPT function calling' and offset 0 returned 8 papers.
+2026-11-15 11:15:56,830 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.0702
+2026-11-15 11:15:58,030 INFO paperqa.agents.tools: gather_evidence starting for question 'How do language models learn to use external tools?'.
+2026-11-15 11:16:04,817 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.0837
+2026-11-15 11:16:06,328 INFO paperqa.agents.tools: Starting paper search for 'tool augmented language models retrieval'.
+2026-11-15 11:16:06,328 INFO paperqa.agents.tools: Starting paper search for 'learning to use tools neural networks'.
+2026-11-15 11:16:06,468 INFO paperqa.agents.tools: paper_search for query 'tool augmented language models retrieval' and offset 0 returned 8 papers.
+2026-11-15 11:16:06,468 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.0837
+2026-11-15 11:16:06,471 INFO paperqa.agents.tools: paper_search for query 'learning to use tools neural networks' and offset 0 returned 8 papers.
+2026-11-15 11:16:06,471 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.0837
+2026-11-15 11:16:07,054 INFO paperqa.agents.tools: gather_evidence starting for question 'How do language models learn to use external tools?'.
+2026-11-15 11:16:13,945 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=1 | Current Evidence=6 | Current Cost=$0.0972
+2026-11-15 11:16:15,129 INFO paperqa.agents.tools: gather_evidence starting for question 'How do language models learn to use external tools?'.
+2026-11-15 11:16:22,952 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=1 | Current Evidence=7 | Current Cost=$0.1105
+2026-11-15 11:16:24,965 INFO paperqa.agents.tools: Starting paper search for 'multi-step reasoning planning language models'.
+2026-11-15 11:16:24,965 INFO paperqa.agents.tools: Starting paper search for 'knowledge retrieval augmented generation'.
+2026-11-15 11:16:25,122 INFO paperqa.agents.tools: paper_search for query 'multi-step reasoning planning language models' and offset 0 returned 8 papers.
+2026-11-15 11:16:25,122 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=1 | Current Evidence=7 | Current Cost=$0.1105
+2026-11-15 11:16:25,122 INFO paperqa.agents.tools: paper_search for query 'knowledge retrieval augmented generation' and offset 0 returned 8 papers.
+2026-11-15 11:16:25,122 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=1 | Current Evidence=7 | Current Cost=$0.1105
+2026-11-15 11:16:26,706 INFO paperqa.agents.tools: gather_evidence starting for question 'How do language models learn to use external tools?'.
+2026-11-15 11:16:34,359 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=1 | Current Evidence=7 | Current Cost=$0.1240
+2026-11-15 11:16:35,710 INFO paperqa.agents.tools: Generating answer for 'How do language models learn to use external tools?'.
+2026-11-15 11:16:38,797 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=1 | Current Evidence=7 | Current Cost=$0.1275
+2026-11-15 11:16:39,878 INFO paperqa.agents.tools: Completing 'How do language models learn to use external tools?' as 'certain'.
+
+
+===== STATUS: success =====
+Question: How do language models learn to use external tools?
+
+Language models learn to use external tools through a self-supervised approach requiring minimal human annotation (schick2023toolformerlanguagemodels pages 1-2). The method operates via three sequential steps.
+
+First, potential API calls are sampled at various positions in text using in-context learning from few human-written examples (schick2023toolformerlanguagemodels pages 1-2). These sampled calls are then executed to obtain results (schick2023toolformerlanguagemodels pages 1-2). Third, API calls are filtered based on whether they reduce the loss for predicting future tokens, with only useful calls retained and interleaved with original text (schick2023toolformerlanguagemodels pages 1-2).
+
+Following this annotation process, the model undergoes finetuning on the annotated dataset, learning to autonomously decide which tools to call, when to invoke them, what arguments to pass, and how to incorporate results (schick2023toolformerlanguagemodels pages 1-2). This approach preserves the model's generality while enabling it to leverage diverse tools including calculators, search engines, and translation systems (schick2023toolformerlanguagemodels pages 1-2).
+
+References
+
+1. (schick2023toolformerlanguagemodels pages 1-2): Timo Schick, Jane Dwivedi-Yu, Roberto Dessi, Roberta Raileanu, Maria Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom. Toolformer: language models can teach themselves to use tools. neural information processing systems, Jan 2023. URL: https://doi.org/10.52202/075280-2997, doi:10.52202/075280-2997. This article has 3280 citations and is from a highest quality peer-reviewed journal.

@@ -1,0 +1,99 @@
+2026-11-15 11:19:59,066 INFO paperqa.agents.tools: Starting paper search for 'retrieval-augmented generation methods improvements'.
+2026-11-15 11:19:59,066 INFO paperqa.agents.tools: Starting paper search for 'retrieval-augmented generation test time optimization'.
+2026-11-15 11:19:59,240 INFO paperqa.agents.tools: paper_search for query 'retrieval-augmented generation methods improvements' and offset 0 returned 8 papers.
+2026-11-15 11:19:59,240 INFO paperqa.agents.tools: Status: Paper Count=8 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:19:59,242 INFO paperqa.agents.tools: paper_search for query 'retrieval-augmented generation test time optimization' and offset 0 returned 8 papers.
+2026-11-15 11:19:59,244 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:20:01,238 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:20:12,513 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0159
+2026-11-15 11:20:17,265 INFO paperqa.agents.tools: Trust check: 1 of your top 2 source(s) are low-trust (trust score below 0.60): yin2025efficienttesttimeretrieval (0.41). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:20:19,984 INFO paperqa.agents.tools: Starting paper search for 'RAG retrieval augmented generation improvements techniques'.
+2026-11-15 11:20:19,984 INFO paperqa.agents.tools: Starting paper search for 'test-time retrieval augmentation decoding strategies'.
+2026-11-15 11:20:20,085 INFO paperqa.agents.tools: paper_search for query 'test-time retrieval augmentation decoding strategies' and offset 0 returned 8 papers.
+2026-11-15 11:20:20,085 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0159
+2026-11-15 11:20:20,085 INFO paperqa.agents.tools: paper_search for query 'RAG retrieval augmented generation improvements techniques' and offset 0 returned 8 papers.
+2026-11-15 11:20:20,085 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0159
+2026-11-15 11:20:21,068 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:20:30,372 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=3 | Current Evidence=8 | Current Cost=$0.0320
+2026-11-15 11:20:34,093 INFO paperqa.agents.tools: Trust check: 2 of your top 3 source(s) are low-trust (trust score below 0.60): yin2025efficienttesttimeretrieval (0.41), chen2025hierarchicalcorpusencoder (0.41). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:20:36,328 INFO paperqa.agents.tools: Starting paper search for 'adaptive retrieval language models in-context learning'.
+2026-11-15 11:20:36,328 INFO paperqa.agents.tools: Starting paper search for 'dense passage retrieval ranking reranking'.
+2026-11-15 11:20:36,413 INFO paperqa.agents.tools: paper_search for query 'dense passage retrieval ranking reranking' and offset 0 returned 8 papers.
+2026-11-15 11:20:36,413 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=3 | Current Evidence=8 | Current Cost=$0.0320
+2026-11-15 11:20:36,413 INFO paperqa.agents.tools: paper_search for query 'adaptive retrieval language models in-context learning' and offset 0 returned 8 papers.
+2026-11-15 11:20:36,413 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=3 | Current Evidence=8 | Current Cost=$0.0320
+2026-11-15 11:20:38,222 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:20:48,048 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=3 | Current Evidence=12 | Current Cost=$0.0480
+2026-11-15 11:20:51,836 INFO paperqa.agents.tools: Trust check: 2 of your top 3 source(s) are low-trust (trust score below 0.60): yin2025efficienttesttimeretrieval (0.41), chen2025hierarchicalcorpusencoder (0.41). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:20:53,443 INFO paperqa.agents.tools: Starting paper search for 'iterative retrieval refinement question answering'.
+2026-11-15 11:20:53,443 INFO paperqa.agents.tools: Starting paper search for 'knowledge-augmented generation fusion methods'.
+2026-11-15 11:20:53,507 INFO paperqa.agents.tools: paper_search for query 'knowledge-augmented generation fusion methods' and offset 0 returned 8 papers.
+2026-11-15 11:20:53,507 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=3 | Current Evidence=12 | Current Cost=$0.0480
+2026-11-15 11:20:53,509 INFO paperqa.agents.tools: paper_search for query 'iterative retrieval refinement question answering' and offset 0 returned 8 papers.
+2026-11-15 11:20:53,509 INFO paperqa.agents.tools: Status: Paper Count=14 | Relevant Papers=3 | Current Evidence=12 | Current Cost=$0.0480
+2026-11-15 11:20:55,412 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:21:05,192 INFO paperqa.agents.tools: Status: Paper Count=14 | Relevant Papers=3 | Current Evidence=16 | Current Cost=$0.0639
+2026-11-15 11:21:08,938 INFO paperqa.agents.tools: Trust check: 2 of your top 3 source(s) are low-trust (trust score below 0.60): yin2025efficienttesttimeretrieval (0.41), chen2025hierarchicalcorpusencoder (0.41). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:21:10,893 INFO paperqa.agents.tools: Generating answer for 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:21:14,714 INFO paperqa.agents.tools: Status: Paper Count=14 | Relevant Papers=3 | Current Evidence=16 | Current Cost=$0.0668
+2026-11-15 11:21:17,457 INFO paperqa.agents.tools: Starting paper search for 'prompt-based retrieval in-context examples few-shot'.
+2026-11-15 11:21:17,457 INFO paperqa.agents.tools: Starting paper search for 'retrieval augmented generation training fine-tuning'.
+2026-11-15 11:21:17,508 INFO paperqa.agents.tools: paper_search for query 'retrieval augmented generation training fine-tuning' and offset 0 returned 8 papers.
+2026-11-15 11:21:17,508 INFO paperqa.agents.tools: Status: Paper Count=14 | Relevant Papers=3 | Current Evidence=16 | Current Cost=$0.0668
+2026-11-15 11:21:17,508 INFO paperqa.agents.tools: paper_search for query 'prompt-based retrieval in-context examples few-shot' and offset 0 returned 8 papers.
+2026-11-15 11:21:17,508 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=16 | Current Cost=$0.0668
+2026-11-15 11:21:19,540 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:21:29,405 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=19 | Current Cost=$0.0826
+2026-11-15 11:21:32,411 INFO paperqa.agents.tools: Trust check: 2 of your top 3 source(s) are low-trust (trust score below 0.60): yin2025efficienttesttimeretrieval (0.41), chen2025hierarchicalcorpusencoder (0.41). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:21:34,844 INFO paperqa.agents.tools: Starting paper search for 'contrastive learning retriever training dense retrieval'.
+2026-11-15 11:21:34,845 INFO paperqa.agents.tools: Starting paper search for 'multi-hop reasoning retrieval chain-of-thought'.
+2026-11-15 11:21:34,904 INFO paperqa.agents.tools: paper_search for query 'contrastive learning retriever training dense retrieval' and offset 0 returned 8 papers.
+2026-11-15 11:21:34,904 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=19 | Current Cost=$0.0826
+2026-11-15 11:21:34,906 INFO paperqa.agents.tools: paper_search for query 'multi-hop reasoning retrieval chain-of-thought' and offset 0 returned 8 papers.
+2026-11-15 11:21:34,906 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=19 | Current Cost=$0.0826
+2026-11-15 11:21:36,617 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:21:46,378 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=22 | Current Cost=$0.0985
+2026-11-15 11:21:49,293 INFO paperqa.agents.tools: Trust check: 2 of your top 3 source(s) are low-trust (trust score below 0.60): yin2025efficienttesttimeretrieval (0.41), chen2025hierarchicalcorpusencoder (0.41). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:21:51,073 INFO paperqa.agents.tools: Generating answer for 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:21:53,986 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=22 | Current Cost=$0.1017
+2026-11-15 11:21:56,744 INFO paperqa.agents.tools: Starting paper search for 'REALM retrieval-augmented language model pretraining'.
+2026-11-15 11:21:56,744 INFO paperqa.agents.tools: Starting paper search for 'FiD fusion-in-decoder retrieval passage ranking'.
+2026-11-15 11:21:56,802 INFO paperqa.agents.tools: paper_search for query 'FiD fusion-in-decoder retrieval passage ranking' and offset 0 returned 8 papers.
+2026-11-15 11:21:56,802 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=22 | Current Cost=$0.1017
+2026-11-15 11:21:56,805 INFO paperqa.agents.tools: paper_search for query 'REALM retrieval-augmented language model pretraining' and offset 0 returned 8 papers.
+2026-11-15 11:21:56,805 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=22 | Current Cost=$0.1017
+2026-11-15 11:21:58,876 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:22:09,824 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=25 | Current Cost=$0.1177
+2026-11-15 11:22:12,740 INFO paperqa.agents.tools: Trust check: 2 of your top 3 source(s) are low-trust (trust score below 0.60): yin2025efficienttesttimeretrieval (0.41), chen2025hierarchicalcorpusencoder (0.41). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:22:15,294 INFO paperqa.agents.tools: Starting paper search for 'retrieval augmented generation survey review'.
+2026-11-15 11:22:15,294 INFO paperqa.agents.tools: Starting paper search for 'decoding strategies beam search sampling retrieval'.
+2026-11-15 11:22:15,365 INFO paperqa.agents.tools: paper_search for query 'retrieval augmented generation survey review' and offset 0 returned 8 papers.
+2026-11-15 11:22:15,365 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=25 | Current Cost=$0.1177
+2026-11-15 11:22:15,365 INFO paperqa.agents.tools: paper_search for query 'decoding strategies beam search sampling retrieval' and offset 0 returned 8 papers.
+2026-11-15 11:22:15,365 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=25 | Current Cost=$0.1177
+2026-11-15 11:22:16,965 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:22:26,008 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=28 | Current Cost=$0.1338
+2026-11-15 11:22:28,802 INFO paperqa.agents.tools: Trust check: 2 of your top 3 source(s) are low-trust (trust score below 0.60): yin2025efficienttesttimeretrieval (0.41), chen2025hierarchicalcorpusencoder (0.41). Prefer higher-trust evidence, or search for better-supported papers before answering.
+2026-11-15 11:22:29,555 INFO paperqa.agents.tools: Generating answer for 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:22:31,455 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=28 | Current Cost=$0.1370
+2026-11-15 11:22:32,418 INFO paperqa.agents.tools: Completing 'What methods improve retrieval-augmented generation, including at test time?' as 'certain'.
+
+
+===== STATUS: success =====
+Question: What methods improve retrieval-augmented generation, including at test time?
+
+Self-RAG improves retrieval-augmented generation through adaptive on-demand retrieval and self-reflection mechanisms (asai2023selfraglearningto pages 1-2). Unlike conventional RAG systems that indiscriminately retrieve a fixed number of passages, Self-RAG trains a language model to generate special reflection tokens that dynamically indicate when retrieval is necessary and evaluate generation quality (asai2023selfraglearningto pages 1-2).
+
+The framework operates through three key token types. Retrieval tokens enable the model to call a retriever on-demand rather than applying fixed retrieval strategies (asai2023selfraglearningto pages 1-2). The model then processes multiple retrieved passages in parallel and generates critique tokens to evaluate and select the best outputs (asai2023selfraglearningto pages 1-2).
+
+At test time, reflection tokens render the model controllable, allowing it to tailor behavior to diverse task requirements (asai2023selfraglearningto pages 1-2). This runtime controllability distinguishes Self-RAG from static retrieval approaches. Additionally, the framework provides citations for each generated segment with self-assessment of whether outputs are supported by retrieved passages, thereby improving fact verification and factuality (asai2023selfraglearningto pages 1-2). This combination of adaptive retrieval, parallel passage processing, quality critique, and runtime controllability collectively enhances RAG performance across varied applications.
+
+Papers cited, ranked by trust score
+
+| Rank | Paper | Trust score |
+| ---: | --- | ---: |
+| 1 | Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection | 0.82 |
+
+References
+
+1. (asai2023selfraglearningto pages 1-2): Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi. Self-rag: learning to retrieve, generate, and critique through self-reflection. arXiv (Cornell University), Oct 2023. URL: https://doi.org/10.48550/arxiv.2310.11511, doi:10.48550/arxiv.2310.11511. This article has 1091 citations. Trust score: 0.82/1.00. THE 2027 top-100 affiliation: University of Washington.

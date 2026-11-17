@@ -1,0 +1,18 @@
+
+
+===== STATUS: success =====
+Question: Before 2019, what model architectures were proposed for language understanding?
+
+Before 2019, several influential model architectures were proposed for language understanding. The Transformer architecture emerged as a foundational model for this domain (devlin2018bertpretrainingof pages 10-12). ELMo introduced deep contextualized word representations, advancing beyond static embeddings (devlin2018bertpretrainingof pages 10-12). GPT demonstrated the effectiveness of unsupervised learning for language understanding through a left-to-right pre-trained language model approach (devlin2018bertpretrainingof pages 10-12, lewis2020retrievalaugmentedgenerationfor pages 7-9).
+
+Earlier embedding-based approaches included GloVe word embeddings and Skip-thought vectors, which provided distributed word representations (devlin2018bertpretrainingof pages 10-12). Bidirectional LSTM models were also developed during this period (devlin2018bertpretrainingof pages 10-12). Additionally, attention mechanisms and semi-supervised sequence learning approaches contributed to the development of modern language understanding systems (devlin2018bertpretrainingof pages 10-12).
+
+BERT, introduced in October 2018, generalized previous findings by employing deep bidirectional Transformers, representing a significant advancement over unidirectional architectures (devlin2018bertpretrainingof pages 9-10). These pre-trained models could be applied to downstream tasks through either fine-tuning or feature-based approaches, with fine-tuning becoming the dominant paradigm (devlin2018bertpretrainingof pages 9-10). For certain tasks like Named Entity Recognition, task-specific architectures such as BiLSTM classifiers were layered on top of contextual embeddings (devlin2018bertpretrainingof pages 9-10).
+
+References
+
+1. (devlin2018bertpretrainingof pages 10-12): Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: pre-training of deep bidirectional transformers for language understanding. arXiv (Cornell University), Oct 2018. URL: https://doi.org/10.48550/arxiv.1810.04805, doi:10.48550/arxiv.1810.04805. This article has 76993 citations.
+
+2. (lewis2020retrievalaugmentedgenerationfor pages 7-9): Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela. Retrieval-augmented generation for knowledge-intensive nlp tasks. arXiv (Cornell University), May 2020. URL: https://doi.org/10.48550/arxiv.2005.11401, doi:10.48550/arxiv.2005.11401. This article has 6197 citations.
+
+3. (devlin2018bertpretrainingof pages 9-10): Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: pre-training of deep bidirectional transformers for language understanding. arXiv (Cornell University), Oct 2018. URL: https://doi.org/10.48550/arxiv.1810.04805, doi:10.48550/arxiv.1810.04805. This article has 76993 citations.

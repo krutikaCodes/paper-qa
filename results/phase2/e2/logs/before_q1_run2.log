@@ -1,0 +1,16 @@
+
+
+===== STATUS: success =====
+Question: What methods improve retrieval-augmented generation for knowledge-intensive tasks?
+
+Self-RAG improves retrieval-augmented generation for knowledge-intensive tasks through adaptive on-demand retrieval and self-reflection (Asai2310 pages 1-2).
+
+The framework trains language models to generate special reflection tokens that enable two critical functions. Retrieval tokens determine when retrieval is necessary, allowing adaptive rather than indiscriminate passage retrieval (Asai2310 pages 1-2). This contrasts with conventional RAG systems, which retrieve a fixed number of passages regardless of task requirements (Asai2310 pages 1-2).
+
+Critique tokens assess generation quality by evaluating factuality and citation accuracy (Asai2310 pages 1-2). The model processes multiple retrieved passages in parallel, assesses their relevance, and uses critique tokens to select optimal responses (Asai2310 pages 1-2). This selective approach reduces unnecessary passage incorporation while maintaining language model versatility (Asai2310 pages 1-2).
+
+Self-RAG demonstrates superior empirical performance. The framework outperforms ChatGPT and retrieval-augmented baselines on open-domain question answering, reasoning, and fact verification tasks (Asai2310 pages 1-2). By combining adaptive retrieval with self-reflection mechanisms, Self-RAG enhances factual accuracy and citation accuracy while preserving the versatility of the underlying language model (Asai2310 pages 1-2).
+
+References
+
+1. (Asai2310 pages 1-2): Asai, Akari, et al. "Self-RAG: Learning to Retrieve, Generate, and Critique Through Self-Reflection." *arXiv preprint arXiv:2310.11511v1*, Oct. 2023, https://arxiv.org/abs/2310.11511.

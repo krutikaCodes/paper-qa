@@ -1,0 +1,337 @@
+2026-11-17 11:52:15,157 INFO paperqa.agents.tools: Starting paper search for 'ReAct language models tools'.
+2026-11-17 11:52:15,157 INFO paperqa.agents.tools: Starting paper search for 'Toolformer language models tool use'.
+2026-11-17 11:52:15,157 INFO paperqa.agents.tools: Starting paper search for 'PaperQA2 agent'.
+2026-11-17 11:52:15,203 INFO paperqa.agents.tools: Year filter 2020-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:52:15,203 INFO paperqa.agents.tools: paper_search for query 'Toolformer language models tool use' and offset 0 returned 3 papers.
+2026-11-17 11:52:15,203 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-17 11:52:15,214 INFO paperqa.agents.tools: Year filter 2020-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:52:15,214 INFO paperqa.agents.tools: paper_search for query 'ReAct language models tools' and offset 0 returned 3 papers.
+2026-11-17 11:52:15,214 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-17 11:52:15,217 INFO paperqa.agents.tools: Year filter 2020-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:52:15,217 INFO paperqa.agents.tools: paper_search for query 'PaperQA2 agent' and offset 0 returned 3 papers.
+2026-11-17 11:52:15,217 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-17 11:52:15,952 INFO paperqa.agents.tools: gather_evidence starting for question 'How do ReAct and Toolformer let language models use tools, and how does PaperQA2 use an agent?'.
+2026-11-17 11:52:25,119 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.0162
+2026-11-17 11:52:29,988 INFO paperqa.agents.tools: Trust check: all top 2 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:52:29,988 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:52:30,949 INFO paperqa.agents.tools: gather_evidence starting for question 'How does Toolformer enable language models to use tools and APIs?'.
+2026-11-17 11:52:37,636 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=6 | Current Cost=$0.0297
+2026-11-17 11:52:38,559 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:52:38,559 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:52:38,559 INFO paperqa.agents.tools: gather_evidence starting for question 'What is PaperQA2 and how does it use agents?'.
+2026-11-17 11:52:45,597 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=9 | Current Cost=$0.0450
+2026-11-17 11:52:48,604 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:52:48,604 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:52:49,154 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:52:53,122 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=9 | Current Cost=$0.0482
+2026-11-17 11:52:54,043 INFO paperqa.agents.tools: Starting paper search for 'ReAct reasoning acting agents'.
+2026-11-17 11:52:54,107 INFO paperqa.agents.tools: Year filter 2020-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:52:54,107 INFO paperqa.agents.tools: paper_search for query 'ReAct reasoning acting agents' and offset 0 returned 3 papers.
+2026-11-17 11:52:54,107 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=9 | Current Cost=$0.0482
+2026-11-17 11:52:54,818 INFO paperqa.agents.tools: gather_evidence starting for question 'ReAct paradigm reasoning traces actions language models'.
+2026-11-17 11:53:02,265 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=14 | Current Cost=$0.0639
+2026-11-17 11:53:07,701 INFO paperqa.agents.tools: Trust check: all top 2 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:53:07,701 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:53:08,268 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:53:11,674 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=14 | Current Cost=$0.0675
+2026-11-17 11:53:12,618 INFO paperqa.agents.tools: Starting paper search for 'PaperQA agent scientific papers'.
+2026-11-17 11:53:12,674 INFO paperqa.agents.tools: Year filter 2020-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:53:12,675 INFO paperqa.agents.tools: paper_search for query 'PaperQA agent scientific papers' and offset 0 returned 3 papers.
+2026-11-17 11:53:12,675 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=14 | Current Cost=$0.0675
+2026-11-17 11:53:13,393 INFO paperqa.agents.tools: gather_evidence starting for question 'PaperQA2 RAG agent tools retrieval'.
+2026-11-17 11:53:21,567 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=19 | Current Cost=$0.0836
+2026-11-17 11:53:26,395 INFO paperqa.agents.tools: Trust check: all top 2 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:53:26,395 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:53:26,954 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:53:29,345 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=19 | Current Cost=$0.0872
+2026-11-17 11:53:29,906 INFO paperqa.agents.tools: Resetting 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:53:31,065 INFO paperqa.agents.tools: Starting paper search for 'ReAct Toolformer PaperQA agent tool use'.
+2026-11-17 11:53:31,102 INFO paperqa.agents.tools: Year filter 2020-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:53:31,102 INFO paperqa.agents.tools: paper_search for query 'ReAct Toolformer PaperQA agent tool use' and offset 0 returned 3 papers.
+2026-11-17 11:53:31,102 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0872
+2026-11-17 11:53:31,983 INFO paperqa.agents.tools: gather_evidence starting for question 'ReAct Toolformer PaperQA2 comparison tool use agents'.
+2026-11-17 11:53:39,293 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.1023
+2026-11-17 11:53:43,460 INFO paperqa.agents.tools: Trust check: all top 2 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:53:43,460 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:53:45,200 INFO paperqa.agents.tools: Starting paper search for '"ReAct" reasoning acting'.
+2026-11-17 11:53:45,216 INFO paperqa.agents.tools: Starting paper search for '"Toolformer" API tools'.
+2026-11-17 11:53:45,216 INFO paperqa.agents.tools: Starting paper search for '"PaperQA" retrieval augmented generation'.
+2026-11-17 11:53:45,248 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 11:53:45,248 INFO paperqa.agents.tools: paper_search for query '"Toolformer" API tools' and offset 0 returned 2 papers.
+2026-11-17 11:53:45,248 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.1023
+2026-11-17 11:53:45,254 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 11:53:45,254 INFO paperqa.agents.tools: paper_search for query '"PaperQA" retrieval augmented generation' and offset 0 returned 2 papers.
+2026-11-17 11:53:45,254 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.1023
+2026-11-17 11:53:45,258 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:53:45,258 INFO paperqa.agents.tools: paper_search for query '"ReAct" reasoning acting' and offset 0 returned 3 papers.
+2026-11-17 11:53:45,259 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.1023
+2026-11-17 11:53:46,773 INFO paperqa.agents.tools: gather_evidence starting for question 'How does ReAct enable language models to use tools through reasoning and acting?'.
+2026-11-17 11:53:55,443 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=9 | Current Cost=$0.1178
+2026-11-17 11:54:00,383 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:54:00,383 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:54:00,383 INFO paperqa.agents.tools: gather_evidence starting for question 'How does Toolformer teach language models to use tools and APIs?'.
+2026-11-17 11:54:06,505 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=10 | Current Cost=$0.1308
+2026-11-17 11:54:07,497 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:54:07,497 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:54:07,497 INFO paperqa.agents.tools: gather_evidence starting for question 'How does PaperQA2 use an agent architecture for scientific paper retrieval?'.
+2026-11-17 11:54:13,760 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=13 | Current Cost=$0.1455
+2026-11-17 11:54:16,708 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:54:16,708 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:54:17,276 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:54:20,551 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=13 | Current Cost=$0.1491
+2026-11-17 11:54:21,135 INFO paperqa.agents.tools: Resetting 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:54:22,121 INFO paperqa.agents.tools: Starting paper search for 'language agents achieve superhuman synthesis scientific knowledge'.
+2026-11-17 11:54:22,180 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 11:54:22,180 INFO paperqa.agents.tools: paper_search for query 'language agents achieve superhuman synthesis scientific knowledge' and offset 0 returned 2 papers.
+2026-11-17 11:54:22,180 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1491
+2026-11-17 11:54:23,153 INFO paperqa.agents.tools: gather_evidence starting for question 'ReAct Toolformer PaperQA2 tool use agents language models'.
+2026-11-17 11:54:30,120 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.1643
+2026-11-17 11:54:34,948 INFO paperqa.agents.tools: Trust check: all top 2 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:54:34,948 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:54:36,248 INFO paperqa.agents.tools: Starting paper search for 'ReAct synergizing reasoning acting'.
+2026-11-17 11:54:36,248 INFO paperqa.agents.tools: Starting paper search for 'Toolformer language models teach themselves tools'.
+2026-11-17 11:54:36,284 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:54:36,284 INFO paperqa.agents.tools: paper_search for query 'ReAct synergizing reasoning acting' and offset 0 returned 3 papers.
+2026-11-17 11:54:36,284 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.1643
+2026-11-17 11:54:36,291 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 11:54:36,291 INFO paperqa.agents.tools: paper_search for query 'Toolformer language models teach themselves tools' and offset 0 returned 2 papers.
+2026-11-17 11:54:36,291 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.1643
+2026-11-17 11:54:37,280 INFO paperqa.agents.tools: gather_evidence starting for question 'ReAct reasoning traces actions interleaved'.
+2026-11-17 11:54:45,312 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=10 | Current Cost=$0.1797
+2026-11-17 11:54:50,349 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:54:50,349 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:54:50,349 INFO paperqa.agents.tools: gather_evidence starting for question 'Toolformer self-supervised API calls filtering'.
+2026-11-17 11:54:57,006 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=13 | Current Cost=$0.1940
+2026-11-17 11:54:59,875 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:54:59,875 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:55:00,442 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:55:03,433 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=13 | Current Cost=$0.1974
+2026-11-17 11:55:04,017 INFO paperqa.agents.tools: Resetting 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:55:05,037 INFO paperqa.agents.tools: Starting paper search for 'PaperQA2 scientific literature agent'.
+2026-11-17 11:55:05,096 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 11:55:05,097 INFO paperqa.agents.tools: paper_search for query 'PaperQA2 scientific literature agent' and offset 0 returned 1 papers.
+2026-11-17 11:55:05,097 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1974
+2026-11-17 11:55:05,842 INFO paperqa.agents.tools: gather_evidence starting for question 'PaperQA2 agent tools paper search gather evidence'.
+2026-11-17 11:55:14,277 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.2132
+2026-11-17 11:55:19,057 INFO paperqa.agents.tools: Trust check: all top 2 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:55:19,057 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:55:20,530 INFO paperqa.agents.tools: Starting paper search for 'ReAct Yao reasoning acting language models'.
+2026-11-17 11:55:20,530 INFO paperqa.agents.tools: Starting paper search for 'Toolformer Schick API calls'.
+2026-11-17 11:55:20,602 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 11:55:20,602 INFO paperqa.agents.tools: paper_search for query 'Toolformer Schick API calls' and offset 0 returned 2 papers.
+2026-11-17 11:55:20,602 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.2132
+2026-11-17 11:55:20,610 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:55:20,611 INFO paperqa.agents.tools: paper_search for query 'ReAct Yao reasoning acting language models' and offset 0 returned 3 papers.
+2026-11-17 11:55:20,611 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.2132
+2026-11-17 11:55:21,886 INFO paperqa.agents.tools: gather_evidence starting for question 'ReAct thought action observation loop'.
+2026-11-17 11:55:29,250 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=9 | Current Cost=$0.2290
+2026-11-17 11:55:34,985 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:55:34,985 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:55:34,985 INFO paperqa.agents.tools: gather_evidence starting for question 'Toolformer in-context learning API sampling'.
+2026-11-17 11:55:42,260 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=11 | Current Cost=$0.2440
+2026-11-17 11:55:46,084 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:55:46,084 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:55:46,084 INFO paperqa.agents.tools: gather_evidence starting for question 'PaperQA2 citation traversal tool hierarchical indexing'.
+2026-11-17 11:55:54,989 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=14 | Current Cost=$0.2585
+2026-11-17 11:56:03,265 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:56:03,265 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:56:03,889 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:56:07,339 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=14 | Current Cost=$0.2621
+2026-11-17 11:56:07,951 INFO paperqa.agents.tools: Resetting 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:56:09,236 INFO paperqa.agents.tools: Starting paper search for 'language agents superhuman synthesis scientific knowledge PaperQA'.
+2026-11-17 11:56:09,297 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 11:56:09,297 INFO paperqa.agents.tools: paper_search for query 'language agents superhuman synthesis scientific knowledge PaperQA' and offset 0 returned 1 papers.
+2026-11-17 11:56:09,297 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.2621
+2026-11-17 11:56:10,212 INFO paperqa.agents.tools: gather_evidence starting for question 'PaperQA2 multi-step agent tasks paper search gather evidence generate answer'.
+2026-11-17 11:56:21,881 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.2779
+2026-11-17 11:56:34,070 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:56:34,070 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:56:35,019 INFO paperqa.agents.tools: Starting paper search for 'ReAct Toolformer comparison'.
+2026-11-17 11:56:35,082 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:56:35,082 INFO paperqa.agents.tools: paper_search for query 'ReAct Toolformer comparison' and offset 0 returned 3 papers.
+2026-11-17 11:56:35,084 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.2779
+2026-11-17 11:56:35,747 INFO paperqa.agents.tools: gather_evidence starting for question 'ReAct Toolformer tool use mechanisms differences'.
+2026-11-17 11:56:42,182 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.2914
+2026-11-17 11:56:42,182 INFO paperqa.agents.tools: Trust check: no sources yet.
+2026-11-17 11:56:42,182 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 1 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:56:43,547 INFO paperqa.agents.tools: Starting paper search for 'ReAct reasoning acting agents Wikipedia'.
+2026-11-17 11:56:43,547 INFO paperqa.agents.tools: Starting paper search for 'Toolformer self-supervised tool learning'.
+2026-11-17 11:56:43,615 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:56:43,615 INFO paperqa.agents.tools: paper_search for query 'ReAct reasoning acting agents Wikipedia' and offset 0 returned 3 papers.
+2026-11-17 11:56:43,615 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.2914
+2026-11-17 11:56:43,615 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 11:56:43,615 INFO paperqa.agents.tools: paper_search for query 'Toolformer self-supervised tool learning' and offset 0 returned 2 papers.
+2026-11-17 11:56:43,615 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.2914
+2026-11-17 11:56:44,666 INFO paperqa.agents.tools: gather_evidence starting for question 'ReAct interleaved reasoning actions external tools'.
+2026-11-17 11:56:54,329 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=10 | Current Cost=$0.3068
+2026-11-17 11:57:01,338 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:57:01,338 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:57:01,338 INFO paperqa.agents.tools: gather_evidence starting for question 'Toolformer API call sampling execution filtering'.
+2026-11-17 11:57:07,655 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=12 | Current Cost=$0.3205
+2026-11-17 11:57:10,192 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:57:10,192 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:57:10,793 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:57:13,978 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=12 | Current Cost=$0.3239
+2026-11-17 11:57:14,575 INFO paperqa.agents.tools: Resetting 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:57:15,593 INFO paperqa.agents.tools: Starting paper search for 'Skarlinski PaperQA2 language agents'.
+2026-11-17 11:57:15,638 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 11:57:15,638 INFO paperqa.agents.tools: paper_search for query 'Skarlinski PaperQA2 language agents' and offset 0 returned 1 papers.
+2026-11-17 11:57:15,638 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.3239
+2026-11-17 11:57:16,615 INFO paperqa.agents.tools: gather_evidence starting for question 'PaperQA2 agent architecture tools iterative search'.
+2026-11-17 11:57:25,074 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.3396
+2026-11-17 11:57:31,373 INFO paperqa.agents.tools: Trust check: all top 2 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:57:31,373 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:57:32,715 INFO paperqa.agents.tools: Starting paper search for 'ReAct Yao 2022'.
+2026-11-17 11:57:32,715 INFO paperqa.agents.tools: Starting paper search for 'Toolformer Schick 2023'.
+2026-11-17 11:57:32,756 INFO paperqa.agents.tools: Year filter 2022-2023: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 11:57:32,756 INFO paperqa.agents.tools: paper_search for query 'ReAct Yao 2022' and offset 0 returned 2 papers.
+2026-11-17 11:57:32,756 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.3396
+2026-11-17 11:57:32,756 INFO paperqa.agents.tools: Year filter 2023-2024: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 11:57:32,756 INFO paperqa.agents.tools: paper_search for query 'Toolformer Schick 2023' and offset 0 returned 2 papers.
+2026-11-17 11:57:32,756 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.3396
+2026-11-17 11:57:33,778 INFO paperqa.agents.tools: gather_evidence starting for question 'ReAct thought action observation loop question answering'.
+2026-11-17 11:57:42,755 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=10 | Current Cost=$0.3558
+2026-11-17 11:57:49,248 INFO paperqa.agents.tools: Trust check: all top 2 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:57:49,248 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:57:49,248 INFO paperqa.agents.tools: gather_evidence starting for question 'Toolformer in-context learning API calls loss filtering'.
+2026-11-17 11:57:56,094 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=12 | Current Cost=$0.3705
+2026-11-17 11:57:58,586 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:57:58,586 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:57:59,248 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:58:02,504 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=12 | Current Cost=$0.3740
+2026-11-17 11:58:03,083 INFO paperqa.agents.tools: Resetting 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:58:04,210 INFO paperqa.agents.tools: Starting paper search for 'PaperQA2 Skarlinski 2024'.
+2026-11-17 11:58:04,226 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:58:04,226 INFO paperqa.agents.tools: paper_search for query 'PaperQA2 Skarlinski 2024' and offset 0 returned 1 papers.
+2026-11-17 11:58:04,226 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.3740
+2026-11-17 11:58:05,244 INFO paperqa.agents.tools: gather_evidence starting for question 'PaperQA2 agent tools paper search gather evidence citation traversal'.
+2026-11-17 11:58:14,354 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.3901
+2026-11-17 11:58:20,083 INFO paperqa.agents.tools: Trust check: all top 2 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:58:20,083 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:58:20,997 INFO paperqa.agents.tools: Starting paper search for 'ReAct Toolformer agent tool use'.
+2026-11-17 11:58:21,041 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:58:21,041 INFO paperqa.agents.tools: paper_search for query 'ReAct Toolformer agent tool use' and offset 0 returned 3 papers.
+2026-11-17 11:58:21,041 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.3901
+2026-11-17 11:58:22,393 INFO paperqa.agents.tools: gather_evidence starting for question 'ReAct prompting few-shot examples thought action observation'.
+2026-11-17 11:58:28,091 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=6 | Current Cost=$0.4059
+2026-11-17 11:58:29,330 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:58:29,330 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:58:29,331 INFO paperqa.agents.tools: gather_evidence starting for question 'Toolformer self-supervised API call annotation finetuning'.
+2026-11-17 11:58:35,944 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=9 | Current Cost=$0.4212
+2026-11-17 11:58:39,183 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:58:39,183 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:58:40,032 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:58:42,899 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=9 | Current Cost=$0.4244
+2026-11-17 11:58:43,512 INFO paperqa.agents.tools: Resetting 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:58:45,675 INFO paperqa.agents.tools: Starting paper search for 'ReAct synergizing reasoning acting language models Yao'.
+2026-11-17 11:58:45,675 INFO paperqa.agents.tools: Starting paper search for 'Toolformer language models teach themselves tools Schick'.
+2026-11-17 11:58:45,675 INFO paperqa.agents.tools: Starting paper search for 'language agents superhuman synthesis scientific knowledge Skarlinski'.
+2026-11-17 11:58:45,725 INFO paperqa.agents.tools: Year filter 2022-2023: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 11:58:45,725 INFO paperqa.agents.tools: paper_search for query 'ReAct synergizing reasoning acting language models Yao' and offset 0 returned 2 papers.
+2026-11-17 11:58:45,725 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.4244
+2026-11-17 11:58:45,731 INFO paperqa.agents.tools: Year filter 2023-2024: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 11:58:45,733 INFO paperqa.agents.tools: paper_search for query 'Toolformer language models teach themselves tools Schick' and offset 0 returned 2 papers.
+2026-11-17 11:58:45,733 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.4244
+2026-11-17 11:58:45,733 INFO paperqa.agents.tools: Year filter 2024-2025: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 11:58:45,733 INFO paperqa.agents.tools: paper_search for query 'language agents superhuman synthesis scientific knowledge Skarlinski' and offset 0 returned 1 papers.
+2026-11-17 11:58:45,733 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.4244
+2026-11-17 11:58:46,628 INFO paperqa.agents.tools: gather_evidence starting for question 'ReAct Toolformer PaperQA2 agent tool use comparison'.
+2026-11-17 11:58:54,181 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.4401
+2026-11-17 11:58:58,093 INFO paperqa.agents.tools: Trust check: all top 2 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:58:58,093 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:59:00,035 INFO paperqa.agents.tools: Starting paper search for 'ReAct thought action observation Wikipedia search'.
+2026-11-17 11:59:00,035 INFO paperqa.agents.tools: Starting paper search for 'Toolformer API calls calculator search engine'.
+2026-11-17 11:59:00,037 INFO paperqa.agents.tools: Starting paper search for 'PaperQA2 paper search gather evidence generate answer'.
+2026-11-17 11:59:00,090 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:59:00,090 INFO paperqa.agents.tools: paper_search for query 'ReAct thought action observation Wikipedia search' and offset 0 returned 3 papers.
+2026-11-17 11:59:00,090 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.4401
+2026-11-17 11:59:00,092 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 11:59:00,092 INFO paperqa.agents.tools: paper_search for query 'Toolformer API calls calculator search engine' and offset 0 returned 2 papers.
+2026-11-17 11:59:00,092 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.4401
+2026-11-17 11:59:00,092 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 11:59:00,092 INFO paperqa.agents.tools: paper_search for query 'PaperQA2 paper search gather evidence generate answer' and offset 0 returned 1 papers.
+2026-11-17 11:59:00,092 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.4401
+2026-11-17 11:59:01,966 INFO paperqa.agents.tools: gather_evidence starting for question 'ReAct Wikipedia API search lookup finish actions'.
+2026-11-17 11:59:10,002 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=8 | Current Cost=$0.4554
+2026-11-17 11:59:14,075 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:59:14,075 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 11:59:14,075 INFO paperqa.agents.tools: gather_evidence starting for question 'Toolformer calculator search engine translation API tools'.
+2026-11-17 11:59:21,911 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=12 | Current Cost=$0.4694
+2026-11-17 11:59:25,914 INFO paperqa.agents.tools: Trust check: all top 2 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:59:25,914 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:59:25,914 INFO paperqa.agents.tools: gather_evidence starting for question 'PaperQA2 paper search tool gather evidence tool generate answer tool'.
+2026-11-17 11:59:35,546 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=17 | Current Cost=$0.4854
+2026-11-17 11:59:40,697 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:59:40,697 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:59:41,430 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:59:43,756 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=17 | Current Cost=$0.4884
+2026-11-17 11:59:44,391 INFO paperqa.agents.tools: Resetting 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 11:59:46,224 INFO paperqa.agents.tools: Starting paper search for 'ReAct reasoning acting agents'.
+2026-11-17 11:59:46,224 INFO paperqa.agents.tools: Starting paper search for 'Toolformer API tools language models'.
+2026-11-17 11:59:46,226 INFO paperqa.agents.tools: Starting paper search for 'PaperQA agent retrieval augmented generation'.
+2026-11-17 11:59:46,272 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 11:59:46,272 INFO paperqa.agents.tools: paper_search for query 'ReAct reasoning acting agents' and offset 0 returned 3 papers.
+2026-11-17 11:59:46,272 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.4884
+2026-11-17 11:59:46,272 INFO paperqa.agents.tools: Year filter 2024-2026: kept 1 paper(s) from these years and 0 with unknown year, skipped 2 outside these years.
+2026-11-17 11:59:46,272 INFO paperqa.agents.tools: paper_search for query 'PaperQA agent retrieval augmented generation' and offset 0 returned 1 papers.
+2026-11-17 11:59:46,272 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.4884
+2026-11-17 11:59:46,272 INFO paperqa.agents.tools: Year filter 2023-2026: kept 2 paper(s) from these years and 0 with unknown year, skipped 1 outside these years.
+2026-11-17 11:59:46,272 INFO paperqa.agents.tools: paper_search for query 'Toolformer API tools language models' and offset 0 returned 2 papers.
+2026-11-17 11:59:46,272 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.4884
+2026-11-17 11:59:47,614 INFO paperqa.agents.tools: gather_evidence starting for question 'How do ReAct and Toolformer differ in enabling language models to use tools?'.
+2026-11-17 11:59:54,772 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.5025
+2026-11-17 11:59:55,772 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 11:59:55,772 INFO paperqa.agents.tools: Source diversity: Institutions=0 | Countries=0 (from 1 relevant paper(s), 1 without affiliation data).
+2026-11-17 11:59:55,772 INFO paperqa.agents.tools: gather_evidence starting for question 'What is PaperQA2 and how does it use an agent architecture?'.
+2026-11-17 12:00:03,200 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.5180
+2026-11-17 12:00:06,047 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 12:00:06,047 INFO paperqa.agents.tools: Source diversity: Institutions=2 | Countries=1 (from 2 relevant paper(s), 1 without affiliation data).
+2026-11-17 12:00:07,217 INFO paperqa.agents.tools: Starting paper search for 'ReAct interleaved reasoning actions'.
+2026-11-17 12:00:07,247 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:00:07,247 INFO paperqa.agents.tools: paper_search for query 'ReAct interleaved reasoning actions' and offset 0 returned 3 papers.
+2026-11-17 12:00:07,247 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.5180
+2026-11-17 12:00:07,988 INFO paperqa.agents.tools: gather_evidence starting for question 'ReAct prompting verbal reasoning traces actions'.
+2026-11-17 12:00:15,769 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=9 | Current Cost=$0.5334
+2026-11-17 12:00:20,666 INFO paperqa.agents.tools: Trust check: all top 2 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 12:00:20,666 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 12:00:21,549 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 12:00:24,198 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=9 | Current Cost=$0.5365
+2026-11-17 12:00:24,856 INFO paperqa.agents.tools: Resetting 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 12:00:25,929 INFO paperqa.agents.tools: Starting paper search for 'ReAct Toolformer PaperQA'.
+2026-11-17 12:00:25,970 INFO paperqa.agents.tools: Year filter 2022-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:00:25,970 INFO paperqa.agents.tools: paper_search for query 'ReAct Toolformer PaperQA' and offset 0 returned 3 papers.
+2026-11-17 12:00:25,971 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.5365
+2026-11-17 12:00:26,964 INFO paperqa.agents.tools: gather_evidence starting for question 'ReAct Toolformer PaperQA2 tool use agents comparison'.
+2026-11-17 12:00:33,516 WARNING paperqa.agents.main: Agent timeout after 500.0-sec, just answering.
+2026-11-17 12:00:33,645 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 12:00:56,338 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.5562
+
+
+===== STATUS: truncated =====
+Question: Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.
+
+I cannot answer this question completely based on the provided context.
+
+The context contains detailed information about ReAct and PaperQA2, but lacks any information about Toolformer.
+
+**ReAct's approach to tool use:** ReAct augments language models' action space to include both environment actions and language-based reasoning traces, interleaving verbal reasoning with actions in a dynamic manner (yao2022reactsynergizingreasoning pages 2-3). This allows the model to reason to act and act to reason, incorporating external information from sources like Wikipedia while maintaining interpretability through visible reasoning traces (yao2022reactsynergizingreasoning pages 2-3, yao2022reactsynergizingreasoning pages 5-7).
+
+**PaperQA2's agent approach:** PaperQA2 treats retrieval-augmented generation (RAG) as a multi-step agent task rather than a fixed procedure (skarlinski2024languageagentsachieve pages 3-5). It decomposes RAG into discrete tools—Paper Search, Gather Evidence, Generate Answer, and Citation Traversal—enabling the agent to iteratively revise search parameters and examine candidate answers (skarlinski2024languageagentsachieve pages 3-5). This flexibility allows multiple tool calls per question, with the agent dynamically adjusting its strategy based on observations, demonstrating superior performance compared to non-agentic versions with hard-coded action sequences (skarlinski2024languageagentsachieve pages 3-5).
+
+**Missing information:** The context provides no information about Toolformer's mechanisms for enabling tool use, preventing a direct comparison between ReAct and Toolformer approaches.
+
+Papers cited, ranked by trust score
+
+| Rank | Paper | Trust score |
+| ---: | --- | ---: |
+| 1 | ReAct: Synergizing Reasoning and Acting in Language Models | 0.82 |
+| 2 | ReAct: Synergizing Reasoning and Acting in Language Models | 0.82 |
+| 3 | Language agents achieve superhuman synthesis of scientific knowledge | 0.72 |
+
+References
+
+1. (yao2022reactsynergizingreasoning pages 2-3): Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao. React: synergizing reasoning and acting in language models. arXiv (Cornell University), Oct 2022. URL: https://doi.org/10.48550/arxiv.2210.03629, doi:10.48550/arxiv.2210.03629. This article has 9617 citations. Trust score: 0.82/1.00. THE 2027 top-100 affiliation: Princeton University.
+
+2. (yao2022reactsynergizingreasoning pages 5-7): Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao. React: synergizing reasoning and acting in language models. arXiv (Cornell University), Oct 2022. URL: https://doi.org/10.48550/arxiv.2210.03629, doi:10.48550/arxiv.2210.03629. This article has 9617 citations. Trust score: 0.82/1.00. THE 2027 top-100 affiliation: Princeton University.
+
+3. (skarlinski2024languageagentsachieve pages 3-5): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 304 citations. Trust score: 0.72/1.00.

@@ -1,0 +1,61 @@
+2026-11-17 12:04:00,138 INFO paperqa.agents.tools: Starting paper search for 'ReAct language models tools'.
+2026-11-17 12:04:00,138 INFO paperqa.agents.tools: Starting paper search for 'Toolformer language models tool use'.
+2026-11-17 12:04:00,138 INFO paperqa.agents.tools: Starting paper search for 'PaperQA2 agent'.
+2026-11-17 12:04:00,235 INFO paperqa.agents.tools: Year filter 2020-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:04:00,235 INFO paperqa.agents.tools: paper_search for query 'Toolformer language models tool use' and offset 0 returned 3 papers.
+2026-11-17 12:04:00,235 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-17 12:04:00,250 INFO paperqa.agents.tools: Year filter 2020-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:04:00,250 INFO paperqa.agents.tools: paper_search for query 'ReAct language models tools' and offset 0 returned 3 papers.
+2026-11-17 12:04:00,250 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-17 12:04:00,250 INFO paperqa.agents.tools: Year filter 2020-2026: kept 3 paper(s) from these years and 0 with unknown year, skipped 0 outside these years.
+2026-11-17 12:04:00,250 INFO paperqa.agents.tools: paper_search for query 'PaperQA2 agent' and offset 0 returned 3 papers.
+2026-11-17 12:04:00,250 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-17 12:04:01,125 INFO paperqa.agents.tools: gather_evidence starting for question 'How do ReAct and Toolformer let language models use tools, and how does PaperQA2 use an agent?'.
+2026-11-17 12:04:10,829 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.0158
+2026-11-17 12:04:16,721 INFO paperqa.agents.tools: Trust check: all top 2 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 12:04:16,721 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-17 12:04:17,641 INFO paperqa.agents.tools: gather_evidence starting for question 'How does Toolformer enable language models to use tools and APIs?'.
+2026-11-17 12:04:23,732 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=6 | Current Cost=$0.0293
+2026-11-17 12:04:25,069 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 12:04:25,069 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 12:04:25,070 INFO paperqa.agents.tools: gather_evidence starting for question 'What is PaperQA2 and how does it use agents?'.
+2026-11-17 12:04:32,172 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=9 | Current Cost=$0.0444
+2026-11-17 12:04:35,130 INFO paperqa.agents.tools: Trust check: all top 1 source(s) are trusted (trust score 0.60 or higher).
+2026-11-17 12:04:35,130 INFO paperqa.agents.tools: Source diversity: Institutions=4 | Countries=1 (from 3 relevant paper(s), 1 without affiliation data).
+2026-11-17 12:04:35,130 WARNING paperqa.agents.main: Agent didn't finish within 3 timesteps, just answering.
+2026-11-17 12:04:35,130 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 12:04:39,126 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=9 | Current Cost=$0.0477
+
+
+===== STATUS: truncated =====
+Question: Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.
+
+I cannot answer the full question as posed. The provided context contains no information about ReAct or how it enables language models to use tools. Therefore, I cannot perform the requested comparison between ReAct and Toolformer.
+
+However, I can address the portions of your question that the context supports:
+
+**Toolformer's Approach to Tool Use**
+
+Toolformer enables tool use through a self-supervised, minimally annotated method operating in three steps: sampling potential API calls at various text positions using in-context learning, executing these calls, and filtering calls that reduce prediction loss on future tokens (schick2023toolformerlanguagemodels pages 1-2). The model autonomously learns when to invoke tools, what arguments to provide, and how to integrate results, while maintaining generality across the pretraining dataset (schick2023toolformerlanguagemodels pages 1-2).
+
+**PaperQA2's Agentic Approach**
+
+PaperQA2 employs a RAG agent that decomposes scientific tasks into multi-step agent operations (skarlinski2024languageagentsachieve pages 3-5, skarlinski2024languageagentsachieve pages 1-3). Its toolset includes Paper Search, Gather Evidence, Generate Answer, and Citation Traversal functions (skarlinski2024languageagentsachieve pages 3-5). Critically, PaperQA2 iteratively revises search parameters and examines candidate answers, improving recall by modifying keyword searches based on retrieved results (skarlinski2024languageagentsachieve pages 3-5). This agentic design achieves superhuman performance on scientific synthesis tasks (skarlinski2024languageagentsachieve pages 1-3).
+
+To complete your comparison, ReAct documentation would be required.
+
+Papers cited, ranked by trust score
+
+| Rank | Paper | Trust score |
+| ---: | --- | ---: |
+| 1 | Toolformer: Language Models Can Teach Themselves to Use Tools | 0.90 |
+| 2 | Language agents achieve superhuman synthesis of scientific knowledge | 0.72 |
+| 3 | Language agents achieve superhuman synthesis of scientific knowledge | 0.72 |
+
+References
+
+1. (schick2023toolformerlanguagemodels pages 1-2): Timo Schick, Jane Dwivedi-Yu, Roberto Dessi, Roberta Raileanu, Maria Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom. Toolformer: language models can teach themselves to use tools. neural information processing systems, Jan 2023. URL: https://doi.org/10.52202/075280-2997, doi:10.52202/075280-2997. This article has 7661 citations and is from a highest quality peer-reviewed journal. Trust score: 0.90/1.00.
+
+2. (skarlinski2024languageagentsachieve pages 3-5): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 304 citations. Trust score: 0.72/1.00.
+
+3. (skarlinski2024languageagentsachieve pages 1-3): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 304 citations. Trust score: 0.72/1.00.

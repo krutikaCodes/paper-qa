@@ -1,0 +1,114 @@
+2026-11-16 11:30:19,202 INFO paperqa.agents.tools: Starting paper search for 'language models external tools'.
+2026-11-16 11:30:19,684 INFO paperqa.agents.tools: paper_search for query 'language models external tools' and offset 0 returned 8 papers.
+2026-11-16 11:30:19,684 INFO paperqa.agents.tools: Status: Paper Count=8 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-16 11:30:20,333 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:30:29,407 INFO paperqa.agents.tools: Status: Paper Count=8 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0155
+2026-11-16 11:30:30,242 INFO paperqa.agents.tools: Starting paper search for 'tool use language models function calling'.
+2026-11-16 11:30:30,336 INFO paperqa.agents.tools: paper_search for query 'tool use language models function calling' and offset 0 returned 8 papers.
+2026-11-16 11:30:30,336 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0155
+2026-11-16 11:30:31,199 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:30:39,677 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0310
+2026-11-16 11:30:40,696 INFO paperqa.agents.tools: Starting paper search for 'LLM tool integration API calling'.
+2026-11-16 11:30:40,816 INFO paperqa.agents.tools: paper_search for query 'LLM tool integration API calling' and offset 0 returned 8 papers.
+2026-11-16 11:30:40,816 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0310
+2026-11-16 11:30:41,694 INFO paperqa.agents.tools: Starting paper search for 'agents tools reasoning language models'.
+2026-11-16 11:30:41,761 INFO paperqa.agents.tools: paper_search for query 'agents tools reasoning language models' and offset 0 returned 8 papers.
+2026-11-16 11:30:41,761 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0310
+2026-11-16 11:30:42,540 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:30:50,683 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0464
+2026-11-16 11:30:51,441 INFO paperqa.agents.tools: Resetting 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:30:52,362 INFO paperqa.agents.tools: Starting paper search for 'tool use in language models'.
+2026-11-16 11:30:52,473 INFO paperqa.agents.tools: paper_search for query 'tool use in language models' and offset 0 returned 8 papers.
+2026-11-16 11:30:52,473 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0464
+2026-11-16 11:30:53,184 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:31:01,892 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0622
+2026-11-16 11:31:02,805 INFO paperqa.agents.tools: Starting paper search for 'ReAct prompting chain of thought reasoning'.
+2026-11-16 11:31:02,882 INFO paperqa.agents.tools: paper_search for query 'ReAct prompting chain of thought reasoning' and offset 0 returned 8 papers.
+2026-11-16 11:31:02,882 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0622
+2026-11-16 11:31:03,742 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:31:12,327 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0779
+2026-11-16 11:31:13,096 INFO paperqa.agents.tools: Starting paper search for 'Toolformer tool learning'.
+2026-11-16 11:31:13,190 INFO paperqa.agents.tools: paper_search for query 'Toolformer tool learning' and offset 0 returned 8 papers.
+2026-11-16 11:31:13,190 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0779
+2026-11-16 11:31:13,819 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:31:22,386 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0935
+2026-11-16 11:31:23,394 INFO paperqa.agents.tools: Starting paper search for 'API calling language models 2023 2024'.
+2026-11-16 11:31:23,443 INFO paperqa.agents.tools: paper_search for query 'API calling language models 2023 2024' and offset 0 returned 8 papers.
+2026-11-16 11:31:23,443 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0935
+2026-11-16 11:31:24,312 INFO paperqa.agents.tools: Starting paper search for 'function calling models GPT'.
+2026-11-16 11:31:24,438 INFO paperqa.agents.tools: paper_search for query 'function calling models GPT' and offset 0 returned 8 papers.
+2026-11-16 11:31:24,438 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0935
+2026-11-16 11:31:25,151 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:31:33,340 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1093
+2026-11-16 11:31:34,178 INFO paperqa.agents.tools: Starting paper search for 'in-context learning tool use prompting'.
+2026-11-16 11:31:34,270 INFO paperqa.agents.tools: paper_search for query 'in-context learning tool use prompting' and offset 0 returned 8 papers.
+2026-11-16 11:31:34,270 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1093
+2026-11-16 11:31:35,179 INFO paperqa.agents.tools: Starting paper search for 'instruction tuning tool use fine-tuning'.
+2026-11-16 11:31:35,307 INFO paperqa.agents.tools: paper_search for query 'instruction tuning tool use fine-tuning' and offset 0 returned 8 papers.
+2026-11-16 11:31:35,307 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1093
+2026-11-16 11:31:36,093 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:31:43,797 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1248
+2026-11-16 11:31:44,547 INFO paperqa.agents.tools: Generating answer for 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:31:52,526 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1403
+2026-11-16 11:31:53,072 INFO paperqa.agents.tools: Resetting 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:31:54,693 INFO paperqa.agents.tools: Starting paper search for 'language model tool use external resources'.
+2026-11-16 11:31:54,693 INFO paperqa.agents.tools: Starting paper search for 'LLM agent framework tool integration'.
+2026-11-16 11:31:54,693 INFO paperqa.agents.tools: Starting paper search for 'prompt engineering tool calling'.
+2026-11-16 11:31:54,806 INFO paperqa.agents.tools: paper_search for query 'language model tool use external resources' and offset 0 returned 8 papers.
+2026-11-16 11:31:54,806 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1403
+2026-11-16 11:31:54,810 INFO paperqa.agents.tools: paper_search for query 'LLM agent framework tool integration' and offset 0 returned 8 papers.
+2026-11-16 11:31:54,810 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1403
+2026-11-16 11:31:54,815 INFO paperqa.agents.tools: paper_search for query 'prompt engineering tool calling' and offset 0 returned 8 papers.
+2026-11-16 11:31:54,815 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1403
+2026-11-16 11:31:55,546 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:32:03,498 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1558
+2026-11-16 11:32:05,170 INFO paperqa.agents.tools: Starting paper search for 'retrieval augmented generation RAG'.
+2026-11-16 11:32:05,170 INFO paperqa.agents.tools: Starting paper search for 'semantic parsing executable code generation'.
+2026-11-16 11:32:05,170 INFO paperqa.agents.tools: Starting paper search for 'multi-step reasoning planning language models'.
+2026-11-16 11:32:05,326 INFO paperqa.agents.tools: paper_search for query 'semantic parsing executable code generation' and offset 0 returned 8 papers.
+2026-11-16 11:32:05,326 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1558
+2026-11-16 11:32:05,329 INFO paperqa.agents.tools: paper_search for query 'retrieval augmented generation RAG' and offset 0 returned 8 papers.
+2026-11-16 11:32:05,329 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1558
+2026-11-16 11:32:05,329 INFO paperqa.agents.tools: paper_search for query 'multi-step reasoning planning language models' and offset 0 returned 8 papers.
+2026-11-16 11:32:05,329 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1558
+2026-11-16 11:32:05,953 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:32:14,581 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1716
+2026-11-16 11:32:16,139 INFO paperqa.agents.tools: Starting paper search for 'tool learning framework 2023 2024 2025'.
+2026-11-16 11:32:16,139 INFO paperqa.agents.tools: Starting paper search for 'API grounding language models'.
+2026-11-16 11:32:16,237 INFO paperqa.agents.tools: paper_search for query 'tool learning framework 2023 2024 2025' and offset 0 returned 8 papers.
+2026-11-16 11:32:16,237 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1716
+2026-11-16 11:32:16,251 INFO paperqa.agents.tools: paper_search for query 'API grounding language models' and offset 0 returned 8 papers.
+2026-11-16 11:32:16,251 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1716
+2026-11-16 11:32:17,050 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:32:25,461 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.1871
+2026-11-16 11:32:26,218 INFO paperqa.agents.tools: Generating answer for 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:32:34,485 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.2028
+2026-11-16 11:32:35,276 INFO paperqa.agents.tools: Resetting 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:32:37,124 INFO paperqa.agents.tools: Starting paper search for 'tool use agents'.
+2026-11-16 11:32:37,124 INFO paperqa.agents.tools: Starting paper search for 'LLM tools'.
+2026-11-16 11:32:37,124 INFO paperqa.agents.tools: Starting paper search for 'language model external knowledge'.
+2026-11-16 11:32:37,311 INFO paperqa.agents.tools: paper_search for query 'LLM tools' and offset 0 returned 7 papers.
+2026-11-16 11:32:37,311 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.2028
+2026-11-16 11:32:37,316 INFO paperqa.agents.tools: paper_search for query 'tool use agents' and offset 0 returned 8 papers.
+2026-11-16 11:32:37,316 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.2028
+2026-11-16 11:32:37,327 INFO paperqa.agents.tools: paper_search for query 'language model external knowledge' and offset 0 returned 8 papers.
+2026-11-16 11:32:37,327 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.2028
+2026-11-16 11:32:38,048 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:32:46,662 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.2185
+2026-11-16 11:32:48,178 INFO paperqa.agents.tools: Starting paper search for 'augmented language models'.
+2026-11-16 11:32:48,178 INFO paperqa.agents.tools: Starting paper search for 'grounding language models'.
+2026-11-16 11:32:48,332 INFO paperqa.agents.tools: paper_search for query 'augmented language models' and offset 0 returned 8 papers.
+2026-11-16 11:32:48,332 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.2185
+2026-11-16 11:32:48,332 INFO paperqa.agents.tools: paper_search for query 'grounding language models' and offset 0 returned 8 papers.
+2026-11-16 11:32:48,332 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.2185
+2026-11-16 11:32:49,072 INFO paperqa.agents.tools: gather_evidence starting for question 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:32:57,514 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.2342
+2026-11-16 11:32:58,322 INFO paperqa.agents.tools: Generating answer for 'What approaches published in 2023 or later let language models use external tools?'.
+2026-11-16 11:33:06,830 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.2499
+2026-11-16 11:33:07,539 INFO paperqa.agents.tools: Completing 'What approaches published in 2023 or later let language models use external tools?' as 'unsure'.
+
+
+===== STATUS: unsure =====
+Question: What approaches published in 2023 or later let language models use external tools?
+
+I cannot answer this question due to insufficient information..

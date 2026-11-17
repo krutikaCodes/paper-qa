@@ -1,0 +1,16 @@
+
+
+===== STATUS: success =====
+Question: How can language model agents improve themselves through reflection or feedback?
+
+Language model agents improve through Reflexion, a framework that enables verbal reinforcement learning without weight updates (shinn2023reflexionlanguageagents pages 1-2). Rather than modifying model parameters, agents verbally reflect on task feedback signals and maintain reflective text in episodic memory to enhance future decision-making (shinn2023reflexionlanguageagents pages 1-2).
+
+The framework converts binary or scalar feedback into natural language summaries that function as semantic gradient signals, providing concrete directions for improvement (shinn2023reflexionlanguageagents pages 1-2). Reflexion employs three feedback methods: binary environment feedback, pre-defined heuristics for failure cases, and self-evaluation via language models or unit tests (shinn2023reflexionlanguageagents pages 1-2).
+
+This approach mimics human learning through iterative trial-and-error reflection on failures (shinn2023reflexionlanguageagents pages 1-2). Key advantages include elimination of fine-tuning requirements, nuanced feedback capabilities, explicit interpretable episodic memory, and explicit action hints for future episodes (shinn2023reflexionlanguageagents pages 1-2). The framework achieves significant improvements across decision-making, coding, and reasoning tasks without requiring model fine-tuning (shinn2023reflexionlanguageagents pages 1-2).
+
+The mechanism's effectiveness derives from converting low-level feedback signals into high-level semantic representations that agents can reason about and incorporate into subsequent decision-making processes, creating a cycle of continuous improvement through reflection rather than gradient-based optimization.
+
+References
+
+1. (shinn2023reflexionlanguageagents pages 1-2): Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu Yao. Reflexion: language agents with verbal reinforcement learning. Advances in Neural Information Processing Systems 36, Jan 2023. URL: https://doi.org/10.52202/075280-0377, doi:10.52202/075280-0377.

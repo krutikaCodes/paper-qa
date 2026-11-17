@@ -1,0 +1,20 @@
+
+
+===== STATUS: success =====
+Question: How are language agents trained or improved on scientific tasks?
+
+Language agents on scientific tasks are trained through several complementary optimization approaches:
+
+**Expert Iteration and Supervised Fine-tuning**: Expert iteration (EI) is a primary training method that achieves learning through successive rounds of supervised fine-tuning on trajectories from progressively stronger language agents (narayanan2024aviarytraininglanguage pages 1-2). This approach enables behavior cloning to train smaller models like Llama-3.1-8B, allowing them to overcome poor zero-shot performance and achieve comparable results to frontier models (narayanan2024aviarytraininglanguage pages 11-13).
+
+**Alternative Supervision Methods**: Outcome supervision, similar to rejection-sampled expert iteration, and process supervision represent complementary approaches (narayanan2024aviarytraininglanguage pages 1-2). Process supervision selects high-reward trajectories while focusing on individual steps (narayanan2024aviarytraininglanguage pages 1-2). Online training with scaling inference-time compute also contributes to performance improvement (narayanan2024aviarytraininglanguage pages 1-2).
+
+**Inference-Time Optimization**: Majority vote sampling provides substantial performance gains by sampling multiple rollouts and selecting the most common answer (narayanan2024aviarytraininglanguage pages 11-13). This technique benefits all agents tested, with greater benefit to agentic systems than non-agentic LLMs, likely due to elevated stochasticity in environment trajectories (narayanan2024aviarytraininglanguage pages 11-13).
+
+**Empirical Results**: These training methods enable open-source Llama-3.1-8B models to match or exceed frontier LLM and human expert performance on scientific tasks including DNA construct design, literature question answering, and protein design, while achieving up to 100x lower inference cost (narayanan2024aviarytraininglanguage pages 1-2, narayanan2024aviarytraininglanguage pages 11-13).
+
+References
+
+1. (narayanan2024aviarytraininglanguage pages 1-2): Siddharth Narayanan, James D. Braza, Ryan-Rhys Griffiths, Manu Ponnapati, Albert Bou, Jon Laurent, Ori Kabeli, Geemi Wellawatte, Sam Cox, Samuel G. Rodriques, and Andrew D. White. Aviary: training language agents on challenging scientific tasks. arXiv (Cornell University), Dec 2024. URL: https://doi.org/10.48550/arxiv.2412.21154, doi:10.48550/arxiv.2412.21154. This article has 64 citations.
+
+2. (narayanan2024aviarytraininglanguage pages 11-13): Siddharth Narayanan, James D. Braza, Ryan-Rhys Griffiths, Manu Ponnapati, Albert Bou, Jon Laurent, Ori Kabeli, Geemi Wellawatte, Sam Cox, Samuel G. Rodriques, and Andrew D. White. Aviary: training language agents on challenging scientific tasks. arXiv (Cornell University), Dec 2024. URL: https://doi.org/10.48550/arxiv.2412.21154, doi:10.48550/arxiv.2412.21154. This article has 64 citations.

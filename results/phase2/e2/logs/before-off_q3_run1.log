@@ -1,0 +1,58 @@
+2026-11-15 11:12:50,627 INFO paperqa.agents.tools: Starting paper search for 'large language models structured multi-step reasoning'.
+2026-11-15 11:12:50,627 INFO paperqa.agents.tools: Starting paper search for 'chain of thought reasoning language models'.
+2026-11-15 11:12:50,627 INFO paperqa.agents.tools: Starting paper search for 'step-by-step reasoning LLM prompting'.
+2026-11-15 11:12:50,853 INFO paperqa.agents.tools: paper_search for query 'large language models structured multi-step reasoning' and offset 0 returned 8 papers.
+2026-11-15 11:12:50,854 INFO paperqa.agents.tools: Status: Paper Count=8 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:12:50,862 INFO paperqa.agents.tools: paper_search for query 'step-by-step reasoning LLM prompting' and offset 0 returned 8 papers.
+2026-11-15 11:12:50,862 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:12:50,864 INFO paperqa.agents.tools: paper_search for query 'chain of thought reasoning language models' and offset 0 returned 8 papers.
+2026-11-15 11:12:50,864 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:12:51,480 INFO paperqa.agents.tools: gather_evidence starting for question 'How do large language models perform structured multi-step reasoning?'.
+2026-11-15 11:12:58,649 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0134
+2026-11-15 11:12:59,436 INFO paperqa.agents.tools: gather_evidence starting for question 'How do large language models perform structured multi-step reasoning?'.
+2026-11-15 11:13:06,560 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0268
+2026-11-15 11:13:08,241 INFO paperqa.agents.tools: Starting paper search for 'reasoning decomposition planning language models'.
+2026-11-15 11:13:08,241 INFO paperqa.agents.tools: Starting paper search for 'tree of thought reasoning LLM'.
+2026-11-15 11:13:08,305 INFO paperqa.agents.tools: paper_search for query 'reasoning decomposition planning language models' and offset 0 returned 8 papers.
+2026-11-15 11:13:08,305 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0268
+2026-11-15 11:13:08,305 INFO paperqa.agents.tools: paper_search for query 'tree of thought reasoning LLM' and offset 0 returned 8 papers.
+2026-11-15 11:13:08,305 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0268
+2026-11-15 11:13:09,381 INFO paperqa.agents.tools: gather_evidence starting for question 'How do large language models perform structured multi-step reasoning?'.
+2026-11-15 11:13:17,480 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=1 | Current Evidence=3 | Current Cost=$0.0403
+2026-11-15 11:13:19,613 INFO paperqa.agents.tools: Starting paper search for 'intermediate steps reasoning prompting techniques'.
+2026-11-15 11:13:19,613 INFO paperqa.agents.tools: Starting paper search for 'complex reasoning tasks language models performance'.
+2026-11-15 11:13:19,687 INFO paperqa.agents.tools: paper_search for query 'complex reasoning tasks language models performance' and offset 0 returned 8 papers.
+2026-11-15 11:13:19,687 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=1 | Current Evidence=3 | Current Cost=$0.0403
+2026-11-15 11:13:19,687 INFO paperqa.agents.tools: paper_search for query 'intermediate steps reasoning prompting techniques' and offset 0 returned 8 papers.
+2026-11-15 11:13:19,687 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=1 | Current Evidence=3 | Current Cost=$0.0403
+2026-11-15 11:13:20,842 INFO paperqa.agents.tools: gather_evidence starting for question 'How do large language models perform structured multi-step reasoning?'.
+2026-11-15 11:13:29,505 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=1 | Current Evidence=3 | Current Cost=$0.0538
+2026-11-15 11:13:31,394 INFO paperqa.agents.tools: Starting paper search for 'reasoning mechanisms neural networks interpretability'.
+2026-11-15 11:13:31,394 INFO paperqa.agents.tools: Starting paper search for 'multi-hop reasoning question answering'.
+2026-11-15 11:13:31,507 INFO paperqa.agents.tools: paper_search for query 'reasoning mechanisms neural networks interpretability' and offset 0 returned 8 papers.
+2026-11-15 11:13:31,507 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=1 | Current Evidence=3 | Current Cost=$0.0538
+2026-11-15 11:13:31,514 INFO paperqa.agents.tools: paper_search for query 'multi-hop reasoning question answering' and offset 0 returned 8 papers.
+2026-11-15 11:13:31,514 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=1 | Current Evidence=3 | Current Cost=$0.0538
+2026-11-15 11:13:32,212 INFO paperqa.agents.tools: gather_evidence starting for question 'How do large language models perform structured multi-step reasoning?'.
+2026-11-15 11:13:39,142 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=1 | Current Evidence=4 | Current Cost=$0.0671
+2026-11-15 11:13:39,806 INFO paperqa.agents.tools: gather_evidence starting for question 'How do large language models perform structured multi-step reasoning?'.
+2026-11-15 11:13:45,707 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.0805
+2026-11-15 11:13:46,445 INFO paperqa.agents.tools: Generating answer for 'How do large language models perform structured multi-step reasoning?'.
+2026-11-15 11:13:49,413 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=1 | Current Evidence=5 | Current Cost=$0.0837
+2026-11-15 11:13:50,233 INFO paperqa.agents.tools: Completing 'How do large language models perform structured multi-step reasoning?' as 'certain'.
+
+
+===== STATUS: success =====
+Question: How do large language models perform structured multi-step reasoning?
+
+Large language models perform structured multi-step reasoning through chain-of-thought prompting, a technique that prompts models to explicitly generate intermediate reasoning steps before arriving at final answers (wei2022chainofthoughtpromptingelicits pages 7-9).
+
+The methodology involves manually composing chains of thought in few-shot exemplars, which models then follow when solving new problems (wei2022chainofthoughtpromptingelicits pages 7-9). This approach requires no model fine-tuning and works with off-the-shelf language models such as PaLM, LaMDA, and GPT-3 (wei2022chainofthoughtpromptingelicits pages 7-9).
+
+Chain-of-thought prompting demonstrates substantial performance improvements across three reasoning domains: arithmetic reasoning, commonsense reasoning, and symbolic reasoning (wei2022chainofthoughtpromptingelicits pages 7-9). The technique produces dramatically increasing scaling curves compared to standard prompting, with reasoning abilities emerging primarily at larger model scales around 100 billion parameters (wei2022chainofthoughtpromptingelicits pages 7-9).
+
+A notable capability of this approach is its facilitation of out-of-domain generalization, enabling models to handle longer sequences than those encountered in training examples (wei2022chainofthoughtpromptingelicits pages 7-9). These findings indicate that explicit intermediate reasoning steps are a critical mechanism for eliciting complex reasoning in large language models.
+
+References
+
+1. (wei2022chainofthoughtpromptingelicits pages 7-9): Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc V Le, and Denny Zhou. Chain-of-thought prompting elicits reasoning in large language models. neural information processing systems, Jan 2022. URL: https://doi.org/10.52202/068431-1800, doi:10.52202/068431-1800. This article has 14100 citations and is from a highest quality peer-reviewed journal.

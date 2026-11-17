@@ -1,0 +1,20 @@
+
+
+===== STATUS: success =====
+Question: What makes a language agent's answers reliable and well cited?
+
+Language agent reliability and citation quality depend on several interconnected mechanisms. First, retrieval quality is fundamental: agents must employ diverse search strategies and filter retrieved content for relevance before generation (lala2023paperqaretrievalaugmentedgenerative pages 5-6). Relevance filtering can be implemented through scoring systems that evaluate chunk pertinence, rejecting irrelevant context (lala2023paperqaretrievalaugmentedgenerative pages 5-6).
+
+Second, explicit source attribution is essential. Well-cited answers require numbered reference markers for each claim, with guidance to cite between one and three documents per sentence using minimum sufficient subsets (asai2023selfraglearningto pages 22-24). This practice ensures traceability and prevents over-citation while maintaining evidentiary support.
+
+Third, contradiction detection and epistemic humility strengthen reliability. When parametric knowledge conflicts with retrieved context, agents should recognize this conflict and refrain from answering rather than providing potentially misleading information (lala2023paperqaretrievalaugmentedgenerative pages 19-20). Similarly, agents must decline to answer when context is insufficient (lala2023paperqaretrievalaugmentedgenerative pages 19-20).
+
+Fourth, specialized model instances with calibrated temperature settings can improve consistency across retrieval, summarization, and answer generation phases (lala2023paperqaretrievalaugmentedgenerative pages 5-6). Finally, evidence quality assessment—ensuring retrieved evidence is marked as relevant and claims are supported by sources—provides systematic verification of answer grounding (asai2023selfraglearningto pages 22-24, lala2023paperqaretrievalaugmentedgenerative pages 19-20).
+
+References
+
+1. (lala2023paperqaretrievalaugmentedgenerative pages 5-6): Jakub L'ala, Odhran O'Donoghue, Aleksandar Shtedritski, Sam Cox, Samuel G. Rodriques, and Andrew D. White. Paperqa: retrieval-augmented generative agent for scientific research. arXiv (Cornell University), Dec 2023. URL: https://doi.org/10.48550/arxiv.2312.07559, doi:10.48550/arxiv.2312.07559. This article has 318 citations.
+
+2. (asai2023selfraglearningto pages 22-24): Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi. Self-rag: learning to retrieve, generate, and critique through self-reflection. arXiv (Cornell University), Oct 2023. URL: https://doi.org/10.48550/arxiv.2310.11511, doi:10.48550/arxiv.2310.11511. This article has 1088 citations.
+
+3. (lala2023paperqaretrievalaugmentedgenerative pages 19-20): Jakub L'ala, Odhran O'Donoghue, Aleksandar Shtedritski, Sam Cox, Samuel G. Rodriques, and Andrew D. White. Paperqa: retrieval-augmented generative agent for scientific research. arXiv (Cornell University), Dec 2023. URL: https://doi.org/10.48550/arxiv.2312.07559, doi:10.48550/arxiv.2312.07559. This article has 318 citations.

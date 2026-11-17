@@ -1,0 +1,22 @@
+
+
+===== STATUS: success =====
+Question: How are language agents trained or improved on scientific tasks?
+
+Language agents on scientific tasks are trained through multiple complementary approaches:
+
+**Iterative Optimization Methods**: Expert iteration (EI) is a primary approach that achieves learning through successive rounds of supervised fine-tuning on trajectories from progressively stronger language agents, guided by environmental feedback (narayanan2024aviarytraininglanguage pages 1-2). Outcome supervision and process supervision represent alternative methods, with the latter selecting high-reward trajectories while emphasizing individual step quality (narayanan2024aviarytraininglanguage pages 1-2).
+
+**Prompt and Tool Optimization**: Training involves white-box and black-box prompt optimization techniques, as well as tool learning via in-context demonstrations or fine-tuning LLM weights using expert iteration (narayanan2024aviarytraininglanguage pages 2-4). Frameworks like TextGrad and Trace backpropagate textual feedback from LLMs to improve performance (narayanan2024aviarytraininglanguage pages 2-4). DSPy automatically generates and selects useful demonstrations for in-context learning (narayanan2024aviarytraininglanguage pages 2-4).
+
+**Inference-Time Enhancement**: Inference-time optimization and majority vote sampling enable non-frontier LLMs to match frontier model performance on scientific tasks with modest compute budgets (narayanan2024aviarytraininglanguage pages 1-2, narayanan2024aviarytraininglanguage pages 2-4).
+
+**Benchmark-Driven Development**: Rigorous benchmarks guide iterative development and evaluation against human experts on specific tasks such as literature retrieval, summarization, and contradiction detection (skarlinski2024languageagentsachieve pages 1-3). Retrieval-augmented generation (RAG) treats retrieval and response generation as multi-step agent tasks rather than direct procedures (skarlinski2024languageagentsachieve pages 1-3).
+
+References
+
+1. (narayanan2024aviarytraininglanguage pages 1-2): Siddharth Narayanan, James D. Braza, Ryan-Rhys Griffiths, Manu Ponnapati, Albert Bou, Jon Laurent, Ori Kabeli, Geemi Wellawatte, Sam Cox, Samuel G. Rodriques, and Andrew D. White. Aviary: training language agents on challenging scientific tasks. arXiv (Cornell University), Dec 2024. URL: https://doi.org/10.48550/arxiv.2412.21154, doi:10.48550/arxiv.2412.21154. This article has 64 citations.
+
+2. (narayanan2024aviarytraininglanguage pages 2-4): Siddharth Narayanan, James D. Braza, Ryan-Rhys Griffiths, Manu Ponnapati, Albert Bou, Jon Laurent, Ori Kabeli, Geemi Wellawatte, Sam Cox, Samuel G. Rodriques, and Andrew D. White. Aviary: training language agents on challenging scientific tasks. arXiv (Cornell University), Dec 2024. URL: https://doi.org/10.48550/arxiv.2412.21154, doi:10.48550/arxiv.2412.21154. This article has 64 citations.
+
+3. (skarlinski2024languageagentsachieve pages 1-3): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 273 citations.

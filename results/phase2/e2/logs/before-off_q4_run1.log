@@ -1,0 +1,59 @@
+2026-11-15 11:13:57,500 INFO paperqa.agents.tools: Starting paper search for 'dense retrieval generative retrieval combined documents'.
+2026-11-15 11:13:57,500 INFO paperqa.agents.tools: Starting paper search for 'hybrid retrieval dense and generative methods'.
+2026-11-15 11:13:57,684 INFO paperqa.agents.tools: paper_search for query 'dense retrieval generative retrieval combined documents' and offset 0 returned 8 papers.
+2026-11-15 11:13:57,684 INFO paperqa.agents.tools: Status: Paper Count=8 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:13:57,684 INFO paperqa.agents.tools: paper_search for query 'hybrid retrieval dense and generative methods' and offset 0 returned 8 papers.
+2026-11-15 11:13:57,684 INFO paperqa.agents.tools: Status: Paper Count=8 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:13:58,424 INFO paperqa.agents.tools: gather_evidence starting for question 'How are dense retrieval and generative retrieval combined for finding relevant documents?'.
+2026-11-15 11:14:04,670 INFO paperqa.agents.tools: Status: Paper Count=8 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0136
+2026-11-15 11:14:05,805 INFO paperqa.agents.tools: gather_evidence starting for question 'How are dense retrieval and generative retrieval combined for finding relevant documents?'.
+2026-11-15 11:14:12,236 INFO paperqa.agents.tools: Status: Paper Count=8 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0273
+2026-11-15 11:14:13,881 INFO paperqa.agents.tools: Starting paper search for 'retrieval augmented generation dense retrieval'.
+2026-11-15 11:14:13,881 INFO paperqa.agents.tools: Starting paper search for 'fusion dense retrieval sparse retrieval hybrid'.
+2026-11-15 11:14:14,003 INFO paperqa.agents.tools: paper_search for query 'fusion dense retrieval sparse retrieval hybrid' and offset 0 returned 8 papers.
+2026-11-15 11:14:14,003 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0273
+2026-11-15 11:14:14,003 INFO paperqa.agents.tools: paper_search for query 'retrieval augmented generation dense retrieval' and offset 0 returned 8 papers.
+2026-11-15 11:14:14,003 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0273
+2026-11-15 11:14:14,812 INFO paperqa.agents.tools: gather_evidence starting for question 'How are dense retrieval and generative retrieval combined for finding relevant documents?'.
+2026-11-15 11:14:20,580 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0409
+2026-11-15 11:14:21,972 INFO paperqa.agents.tools: Starting paper search for 'autoregressive retrieval document generation'.
+2026-11-15 11:14:21,972 INFO paperqa.agents.tools: Starting paper search for 'semantic search neural retrieval ranking'.
+2026-11-15 11:14:22,052 INFO paperqa.agents.tools: paper_search for query 'semantic search neural retrieval ranking' and offset 0 returned 8 papers.
+2026-11-15 11:14:22,052 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0409
+2026-11-15 11:14:22,052 INFO paperqa.agents.tools: paper_search for query 'autoregressive retrieval document generation' and offset 0 returned 8 papers.
+2026-11-15 11:14:22,052 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=1 | Current Evidence=1 | Current Cost=$0.0409
+2026-11-15 11:14:22,695 INFO paperqa.agents.tools: gather_evidence starting for question 'How are dense retrieval and generative retrieval combined for finding relevant documents?'.
+2026-11-15 11:14:28,259 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0546
+2026-11-15 11:14:29,460 INFO paperqa.agents.tools: Starting paper search for 'two-stage retrieval ranking reranking'.
+2026-11-15 11:14:29,460 INFO paperqa.agents.tools: Starting paper search for 'end-to-end retrieval generation pipeline'.
+2026-11-15 11:14:29,543 INFO paperqa.agents.tools: paper_search for query 'end-to-end retrieval generation pipeline' and offset 0 returned 8 papers.
+2026-11-15 11:14:29,543 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0546
+2026-11-15 11:14:29,546 INFO paperqa.agents.tools: paper_search for query 'two-stage retrieval ranking reranking' and offset 0 returned 8 papers.
+2026-11-15 11:14:29,546 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0546
+2026-11-15 11:14:30,228 INFO paperqa.agents.tools: gather_evidence starting for question 'How are dense retrieval and generative retrieval combined for finding relevant documents?'.
+2026-11-15 11:14:36,198 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0682
+2026-11-15 11:14:37,644 INFO paperqa.agents.tools: Starting paper search for 'ColBERT dense passage retrieval'.
+2026-11-15 11:14:37,652 INFO paperqa.agents.tools: Starting paper search for 'RETRO retrieval in-context learning'.
+2026-11-15 11:14:37,799 INFO paperqa.agents.tools: paper_search for query 'RETRO retrieval in-context learning' and offset 0 returned 8 papers.
+2026-11-15 11:14:37,799 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0682
+2026-11-15 11:14:37,807 INFO paperqa.agents.tools: paper_search for query 'ColBERT dense passage retrieval' and offset 0 returned 8 papers.
+2026-11-15 11:14:37,807 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0682
+2026-11-15 11:14:38,670 INFO paperqa.agents.tools: gather_evidence starting for question 'How are dense retrieval and generative retrieval combined for finding relevant documents?'.
+2026-11-15 11:14:44,274 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0819
+2026-11-15 11:14:45,105 INFO paperqa.agents.tools: Generating answer for 'How are dense retrieval and generative retrieval combined for finding relevant documents?'.
+2026-11-15 11:14:48,092 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0842
+2026-11-15 11:14:49,406 INFO paperqa.agents.tools: Completing 'How are dense retrieval and generative retrieval combined for finding relevant documents?' as 'certain'.
+
+
+===== STATUS: success =====
+Question: How are dense retrieval and generative retrieval combined for finding relevant documents?
+
+The Hierarchical Corpus Encoder (HCE) combines dense retrieval and generative retrieval through a hybrid architecture that leverages the strengths of both approaches. During training, HCE employs contrastive learning with hierarchical negative samples derived from sibling nodes in a document hierarchy, which mimics the loss function used in generative retrieval methods (chen2025hierarchicalcorpusencoder pages 1-2). This training strategy enables the model to learn discriminative representations that capture hierarchical document relationships.
+
+At inference time, HCE performs retrieval using Maximum Inner Product Search (MIPS) with an external index, following the operational paradigm of traditional dense encoders (chen2025hierarchicalcorpusencoder pages 1-2). This design choice decouples the training objective—which incorporates generative retrieval principles—from the retrieval mechanism, which remains efficient and scalable like dense methods.
+
+This hybrid approach achieves superior performance compared to either dense or generative retrieval methods in isolation (chen2025hierarchicalcorpusencoder pages 1-2). Additionally, the architecture provides practical advantages: it enables efficient document addition and removal without requiring model fine-tuning, and it supports zero-shot adaptation to new domains (chen2025hierarchicalcorpusencoder pages 1-2). By combining generative retrieval's training methodology with dense retrieval's inference efficiency, HCE addresses limitations inherent to each approach independently.
+
+References
+
+1. (chen2025hierarchicalcorpusencoder pages 1-2): Tongfei Chen, Ankita Sharma, Adam Pauls, and Benjamin Van Durme. Hierarchical corpus encoder: fusing generative retrieval and dense indices. arXiv (Cornell University), Feb 2025. URL: https://doi.org/10.48550/arxiv.2502.18877, doi:10.48550/arxiv.2502.18877. This article has 0 citations.

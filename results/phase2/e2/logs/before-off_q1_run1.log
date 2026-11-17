@@ -1,0 +1,102 @@
+2026-11-15 11:09:43,949 INFO paperqa.agents.tools: Starting paper search for 'retrieval-augmented generation methods improvements'.
+2026-11-15 11:09:43,949 INFO paperqa.agents.tools: Starting paper search for 'retrieval-augmented generation test time optimization'.
+2026-11-15 11:09:44,092 INFO paperqa.agents.tools: paper_search for query 'retrieval-augmented generation methods improvements' and offset 0 returned 8 papers.
+2026-11-15 11:09:44,092 INFO paperqa.agents.tools: Status: Paper Count=8 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:09:44,096 INFO paperqa.agents.tools: paper_search for query 'retrieval-augmented generation test time optimization' and offset 0 returned 8 papers.
+2026-11-15 11:09:44,096 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-15 11:09:45,156 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:09:53,504 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0158
+2026-11-15 11:09:54,203 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:10:01,799 INFO paperqa.agents.tools: Status: Paper Count=9 | Relevant Papers=2 | Current Evidence=6 | Current Cost=$0.0318
+2026-11-15 11:10:03,419 INFO paperqa.agents.tools: Starting paper search for 'RAG retrieval augmented generation training methods'.
+2026-11-15 11:10:03,421 INFO paperqa.agents.tools: Starting paper search for 'dense passage retrieval document ranking RAG'.
+2026-11-15 11:10:03,506 INFO paperqa.agents.tools: paper_search for query 'RAG retrieval augmented generation training methods' and offset 0 returned 8 papers.
+2026-11-15 11:10:03,506 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=2 | Current Evidence=6 | Current Cost=$0.0318
+2026-11-15 11:10:03,510 INFO paperqa.agents.tools: paper_search for query 'dense passage retrieval document ranking RAG' and offset 0 returned 8 papers.
+2026-11-15 11:10:03,510 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=2 | Current Evidence=6 | Current Cost=$0.0318
+2026-11-15 11:10:04,136 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:10:11,725 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=3 | Current Evidence=9 | Current Cost=$0.0476
+2026-11-15 11:10:12,909 INFO paperqa.agents.tools: Starting paper search for 'iterative retrieval augmented generation adaptive'.
+2026-11-15 11:10:12,909 INFO paperqa.agents.tools: Starting paper search for 'prompt optimization retrieval augmented generation'.
+2026-11-15 11:10:13,020 INFO paperqa.agents.tools: paper_search for query 'prompt optimization retrieval augmented generation' and offset 0 returned 8 papers.
+2026-11-15 11:10:13,020 INFO paperqa.agents.tools: Status: Paper Count=10 | Relevant Papers=3 | Current Evidence=9 | Current Cost=$0.0476
+2026-11-15 11:10:13,020 INFO paperqa.agents.tools: paper_search for query 'iterative retrieval augmented generation adaptive' and offset 0 returned 8 papers.
+2026-11-15 11:10:13,020 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=3 | Current Evidence=9 | Current Cost=$0.0476
+2026-11-15 11:10:13,860 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:10:21,215 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=3 | Current Evidence=11 | Current Cost=$0.0634
+2026-11-15 11:10:21,849 INFO paperqa.agents.tools: Generating answer for 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:10:24,323 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=3 | Current Evidence=11 | Current Cost=$0.0662
+2026-11-15 11:10:25,743 INFO paperqa.agents.tools: Starting paper search for 'in-context learning few-shot retrieval augmented generation'.
+2026-11-15 11:10:25,743 INFO paperqa.agents.tools: Starting paper search for 'query expansion reranking retrieval augmented generation'.
+2026-11-15 11:10:25,831 INFO paperqa.agents.tools: paper_search for query 'query expansion reranking retrieval augmented generation' and offset 0 returned 8 papers.
+2026-11-15 11:10:25,831 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=3 | Current Evidence=11 | Current Cost=$0.0662
+2026-11-15 11:10:25,833 INFO paperqa.agents.tools: paper_search for query 'in-context learning few-shot retrieval augmented generation' and offset 0 returned 8 papers.
+2026-11-15 11:10:25,833 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=3 | Current Evidence=11 | Current Cost=$0.0662
+2026-11-15 11:10:26,767 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:10:34,833 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=3 | Current Evidence=13 | Current Cost=$0.0819
+2026-11-15 11:10:35,564 INFO paperqa.agents.tools: Generating answer for 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:10:38,136 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=3 | Current Evidence=13 | Current Cost=$0.0852
+2026-11-15 11:10:39,511 INFO paperqa.agents.tools: Starting paper search for 'knowledge distillation retrieval augmented generation'.
+2026-11-15 11:10:39,511 INFO paperqa.agents.tools: Starting paper search for 'contrastive learning retrieval augmented generation'.
+2026-11-15 11:10:39,573 INFO paperqa.agents.tools: paper_search for query 'knowledge distillation retrieval augmented generation' and offset 0 returned 8 papers.
+2026-11-15 11:10:39,573 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=3 | Current Evidence=13 | Current Cost=$0.0852
+2026-11-15 11:10:39,573 INFO paperqa.agents.tools: paper_search for query 'contrastive learning retrieval augmented generation' and offset 0 returned 8 papers.
+2026-11-15 11:10:39,573 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=3 | Current Evidence=13 | Current Cost=$0.0852
+2026-11-15 11:10:40,536 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:10:48,340 INFO paperqa.agents.tools: Status: Paper Count=11 | Relevant Papers=3 | Current Evidence=14 | Current Cost=$0.1011
+2026-11-15 11:10:49,681 INFO paperqa.agents.tools: Starting paper search for 'chain-of-thought reasoning retrieval augmented generation'.
+2026-11-15 11:10:49,681 INFO paperqa.agents.tools: Starting paper search for 'multi-hop retrieval question answering'.
+2026-11-15 11:10:49,749 INFO paperqa.agents.tools: paper_search for query 'multi-hop retrieval question answering' and offset 0 returned 8 papers.
+2026-11-15 11:10:49,749 INFO paperqa.agents.tools: Status: Paper Count=12 | Relevant Papers=3 | Current Evidence=14 | Current Cost=$0.1011
+2026-11-15 11:10:49,749 INFO paperqa.agents.tools: paper_search for query 'chain-of-thought reasoning retrieval augmented generation' and offset 0 returned 8 papers.
+2026-11-15 11:10:49,749 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=3 | Current Evidence=14 | Current Cost=$0.1011
+2026-11-15 11:10:50,424 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:10:59,292 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=3 | Current Evidence=15 | Current Cost=$0.1171
+2026-11-15 11:10:59,865 INFO paperqa.agents.tools: Generating answer for 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:11:01,789 INFO paperqa.agents.tools: Status: Paper Count=13 | Relevant Papers=3 | Current Evidence=15 | Current Cost=$0.1205
+2026-11-15 11:11:03,218 INFO paperqa.agents.tools: Starting paper search for 'FLARE active retrieval augmented generation'.
+2026-11-15 11:11:03,218 INFO paperqa.agents.tools: Starting paper search for 'hypothetical document embeddings HyDE retrieval'.
+2026-11-15 11:11:03,359 INFO paperqa.agents.tools: paper_search for query 'hypothetical document embeddings HyDE retrieval' and offset 0 returned 8 papers.
+2026-11-15 11:11:03,359 INFO paperqa.agents.tools: Status: Paper Count=14 | Relevant Papers=3 | Current Evidence=15 | Current Cost=$0.1205
+2026-11-15 11:11:03,359 INFO paperqa.agents.tools: paper_search for query 'FLARE active retrieval augmented generation' and offset 0 returned 8 papers.
+2026-11-15 11:11:03,359 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=15 | Current Cost=$0.1205
+2026-11-15 11:11:04,212 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:11:11,454 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=17 | Current Cost=$0.1364
+2026-11-15 11:11:12,434 INFO paperqa.agents.tools: Generating answer for 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:11:15,080 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=17 | Current Cost=$0.1398
+2026-11-15 11:11:17,135 INFO paperqa.agents.tools: Starting paper search for 'fusion-in-decoder retrieval augmented generation'.
+2026-11-15 11:11:17,135 INFO paperqa.agents.tools: Starting paper search for 'end-to-end training retriever generator'.
+2026-11-15 11:11:17,293 INFO paperqa.agents.tools: paper_search for query 'end-to-end training retriever generator' and offset 0 returned 8 papers.
+2026-11-15 11:11:17,293 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=17 | Current Cost=$0.1398
+2026-11-15 11:11:17,301 INFO paperqa.agents.tools: paper_search for query 'fusion-in-decoder retrieval augmented generation' and offset 0 returned 8 papers.
+2026-11-15 11:11:17,301 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=17 | Current Cost=$0.1398
+2026-11-15 11:11:18,685 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:11:28,544 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=19 | Current Cost=$0.1557
+2026-11-15 11:11:29,126 INFO paperqa.agents.tools: Generating answer for 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:11:31,219 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=19 | Current Cost=$0.1591
+2026-11-15 11:11:32,198 INFO paperqa.agents.tools: Starting paper search for 'retrieval augmented generation survey review'.
+2026-11-15 11:11:32,278 INFO paperqa.agents.tools: paper_search for query 'retrieval augmented generation survey review' and offset 0 returned 8 papers.
+2026-11-15 11:11:32,278 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=19 | Current Cost=$0.1591
+2026-11-15 11:11:33,122 INFO paperqa.agents.tools: gather_evidence starting for question 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:11:41,744 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=20 | Current Cost=$0.1750
+2026-11-15 11:11:42,334 INFO paperqa.agents.tools: Generating answer for 'What methods improve retrieval-augmented generation, including at test time?'.
+2026-11-15 11:11:44,141 INFO paperqa.agents.tools: Status: Paper Count=15 | Relevant Papers=3 | Current Evidence=20 | Current Cost=$0.1784
+2026-11-15 11:11:44,992 INFO paperqa.agents.tools: Completing 'What methods improve retrieval-augmented generation, including at test time?' as 'certain'.
+
+
+===== STATUS: success =====
+Question: What methods improve retrieval-augmented generation, including at test time?
+
+Self-RAG is a framework that improves retrieval-augmented generation through adaptive on-demand retrieval and self-reflection (asai2023selfraglearningto pages 1-2). Unlike conventional RAG systems that indiscriminately retrieve a fixed number of passages, Self-RAG trains a language model to generate special reflection tokens that dynamically indicate when retrieval is necessary and evaluate generation quality (asai2023selfraglearningto pages 1-2).
+
+The framework employs two primary token mechanisms. Retrieval tokens enable the model to call a retriever on-demand, while the system processes multiple retrieved passages in parallel (asai2023selfraglearningto pages 1-2). Critique tokens allow the model to evaluate and select the best outputs (asai2023selfraglearningto pages 1-2).
+
+At test time, reflection tokens provide controllability, enabling the model to tailor its behavior to diverse task requirements (asai2023selfraglearningto pages 1-2). This runtime controllability represents a key advancement, as it allows the system to adapt to varying task specifications without retraining.
+
+Additionally, Self-RAG provides citations for each generated segment with self-assessment of whether outputs are supported by retrieved passages, thereby improving fact verification and factuality (asai2023selfraglearningto pages 1-2). This citation mechanism enhances verifiability by explicitly linking generated content to source material.
+
+The combination of adaptive retrieval, parallel passage processing, and self-critique mechanisms represents a significant advancement over fixed-retrieval RAG approaches, particularly in enhancing both the verifiability and factual accuracy of generated outputs.
+
+References
+
+1. (asai2023selfraglearningto pages 1-2): Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi. Self-rag: learning to retrieve, generate, and critique through self-reflection. arXiv (Cornell University), Oct 2023. URL: https://doi.org/10.48550/arxiv.2310.11511, doi:10.48550/arxiv.2310.11511. This article has 1091 citations.

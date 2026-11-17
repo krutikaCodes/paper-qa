@@ -1,0 +1,18 @@
+
+
+===== STATUS: success =====
+Question: What techniques improve multi-step reasoning in large language models?
+
+Two primary techniques improve multi-step reasoning in large language models:
+
+**Chain-of-Thought Prompting** involves eliciting intermediate reasoning steps through few-shot exemplars that demonstrate explicit chains of thought. This technique significantly enhances performance on arithmetic reasoning, commonsense reasoning, and symbolic reasoning tasks compared to standard prompting (wei2022chainofthoughtpromptingelicits pages 7-9). Critically, chain-of-thought reasoning exhibits emergent scaling properties—tasks showing flat scaling curves with standard prompting demonstrate dramatically increasing performance curves when chain-of-thought prompting is applied. The method requires no finetuning and generalizes across off-the-shelf language models (wei2022chainofthoughtpromptingelicits pages 7-9).
+
+**Self-Reflection and Retrieval-Augmented Generation (Self-RAG)** represents a complementary approach that enables models to critically assess their own outputs and selectively retrieve supporting information. Self-RAG incorporates self-reflection mechanisms for determining when retrieval is necessary, verifying generated outputs against evidence, and evaluating the relevance of retrieved passages (Asai2310 pages 25-29). This framework improves reasoning quality by enabling language models to verify output sentences against external documents and assess whether retrieved information adequately supports query responses (Asai2310 pages 25-29).
+
+Both techniques address distinct aspects of multi-step reasoning: chain-of-thought prompting enhances the model's inherent reasoning capacity through structured intermediate steps, while Self-RAG augments reasoning through evidence verification and selective information retrieval.
+
+References
+
+1. (wei2022chainofthoughtpromptingelicits pages 7-9): Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc V Le, and Denny Zhou. Chain-of-thought prompting elicits reasoning in large language models. Advances in Neural Information Processing Systems 35, Jan 2022. URL: https://doi.org/10.52202/068431-1800, doi:10.52202/068431-1800.
+
+2. (Asai2310 pages 25-29): Asai, Akari, et al. "Self-RAG: Learning to Retrieve, Generate, and Critique Through Self-Reflection." *arXiv preprint arXiv:2310.11511v1*, Oct. 2023, https://arxiv.org/abs/2310.11511.

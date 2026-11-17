@@ -1,0 +1,18 @@
+
+
+===== STATUS: success =====
+Question: Before 2019, what model architectures were proposed for language understanding?
+
+Before 2019, several influential model architectures were proposed for language understanding. Early foundational work included word embedding methods such as Word2Vec and GloVe, as well as sentence and paragraph embedding approaches like Skip-thought vectors (devlin2018bertpretrainingof pages 1-2, devlin2018bertpretrainingof pages 10-12).
+
+ELMo introduced a feature-based approach that extracted context-sensitive representations from bidirectional language models, combining left-to-right and right-to-left encodings (devlin2018bertpretrainingof pages 1-2). In contrast, OpenAI's GPT employed a fine-tuning approach with a unidirectional left-to-right Transformer architecture (devlin2018bertpretrainingof pages 1-2).
+
+The Transformer architecture itself served as a foundational component for subsequent models (devlin2018bertpretrainingof pages 10-12). Additionally, bidirectional LSTM models were developed for language understanding tasks (devlin2018bertpretrainingof pages 10-12). Research on attention mechanisms and distributed word representations also contributed to the development of these architectures (devlin2018bertpretrainingof pages 10-12).
+
+BERT, introduced in October 2018, represented a significant advancement by proposing deep bidirectional Transformers using masked language modeling and next sentence prediction as pre-training objectives (devlin2018bertpretrainingof pages 1-2). This approach generalized previous findings from unidirectional architectures and achieved state-of-the-art results across eleven NLP tasks, including question answering and natural language inference (devlin2018bertpretrainingof pages 1-2).
+
+References
+
+1. (devlin2018bertpretrainingof pages 1-2): Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: pre-training of deep bidirectional transformers for language understanding. arXiv (Cornell University), Oct 2018. URL: https://doi.org/10.48550/arxiv.1810.04805, doi:10.48550/arxiv.1810.04805. This article has 76993 citations.
+
+2. (devlin2018bertpretrainingof pages 10-12): Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: pre-training of deep bidirectional transformers for language understanding. arXiv (Cornell University), Oct 2018. URL: https://doi.org/10.48550/arxiv.1810.04805, doi:10.48550/arxiv.1810.04805. This article has 76993 citations.

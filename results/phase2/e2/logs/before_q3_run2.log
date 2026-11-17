@@ -1,0 +1,16 @@
+
+
+===== STATUS: success =====
+Question: How can language model agents improve themselves through reflection or feedback?
+
+Language model agents can improve through verbal reinforcement learning via the Reflexion framework, which operates without weight updates (shinn2023reflexionlanguageagents pages 1-2). Rather than modifying model parameters, agents verbally reflect on task feedback signals and maintain reflective text in episodic memory to enhance future decision-making (shinn2023reflexionlanguageagents pages 1-2).
+
+The framework converts binary or scalar feedback into natural language summaries that function as semantic gradient signals, providing concrete directions for improvement (shinn2023reflexionlanguageagents pages 1-2). This mechanism enables agents to extract actionable insights from feedback in a human-interpretable format.
+
+Reflexion employs three distinct feedback methods: binary environment feedback, pre-defined heuristics for failure cases, and self-evaluation conducted through language models or unit tests (shinn2023reflexionlanguageagents pages 1-2). This multi-faceted approach accommodates diverse task contexts and feedback availability.
+
+The learning process mirrors human cognition through iterative trial-and-error reflection cycles (shinn2023reflexionlanguageagents pages 1-2). By maintaining a record of past reflections and failures in episodic memory, agents can avoid repeating mistakes and progressively refine their strategies. This approach has demonstrated significant performance improvements across decision-making, coding, and reasoning tasks without requiring model fine-tuning (shinn2023reflexionlanguageagents pages 1-2), making it a parameter-efficient alternative to traditional supervised learning methods.
+
+References
+
+1. (shinn2023reflexionlanguageagents pages 1-2): Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu Yao. Reflexion: language agents with verbal reinforcement learning. Advances in Neural Information Processing Systems 36, Jan 2023. URL: https://doi.org/10.52202/075280-0377, doi:10.52202/075280-0377.

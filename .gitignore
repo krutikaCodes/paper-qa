@@ -317,3 +317,9 @@ src/paperqa/clients/client_data/retractions.csv
 my_papers/
 papers_later/
 test_papers/**/*.pdf
+
+# Phase 2 evidence: keep the evaluation logs (the *.log rule above ignores all logs)
+!results/phase2/e1/logs/*.log
+!results/phase2/e2/logs/*.log
+!results/phase2/e3/logs/*.log
+!results/phase2/regression/logs/*.log

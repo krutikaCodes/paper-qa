@@ -1,0 +1,20 @@
+
+
+===== STATUS: success =====
+Question: What systems published in 2024 answer scientific questions using language agents?
+
+PaperQA2 is a language agent system published in 2024 that answers scientific questions by synthesizing knowledge from scientific literature (skarlinski2024languageagentsachieve pages 13-14, skarlinski2024languageagentsachieve pages 17-19). The system employs multiple agentic tools including paper search, evidence gathering, answer generation, and citation traversal to identify and synthesize relevant information from scientific papers (skarlinski2024languageagentsachieve pages 13-14).
+
+PaperQA2 integrates retrieval-augmented generation (RAG) with large language models including Claude-3-Opus, Gemini-1.5-Pro, and GPT-4-Turbo to process queries against scientific literature (skarlinski2024languageagentsachieve pages 17-19). The system uses a reranking and contextual summarization (RCS) approach to rank relevant document passages and generate answers in Wikipedia style with proper citations (skarlinski2024languageagentsachieve pages 14-16).
+
+Performance metrics demonstrate superhuman capabilities in scientific knowledge synthesis. PaperQA2 achieved 59-64% accuracy on the LitQA2 benchmark, representing substantial improvement over the prior PaperQA system's 36.7% accuracy (skarlinski2024languageagentsachieve pages 17-19). The system has been applied to generate WikiCrow statements about human genes by querying scientific literature (skarlinski2024languageagentsachieve pages 17-19).
+
+The work was published by Skarlinski et al. in September 2024 on arXiv and has accumulated 273 citations, indicating significant impact in the field of scientific knowledge synthesis using language agents (skarlinski2024languageagentsachieve pages 13-14, skarlinski2024languageagentsachieve pages 14-16, skarlinski2024languageagentsachieve pages 17-19).
+
+References
+
+1. (skarlinski2024languageagentsachieve pages 13-14): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 273 citations.
+
+2. (skarlinski2024languageagentsachieve pages 17-19): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 273 citations.
+
+3. (skarlinski2024languageagentsachieve pages 14-16): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 273 citations.

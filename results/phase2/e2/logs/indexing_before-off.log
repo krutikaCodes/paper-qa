@@ -1,0 +1,165 @@
+2026-11-15 10:07:03,997 ERROR paperqa.agents.search: Error parsing 1706.03762.pdf, skipping index for this file.
+Traceback (most recent call last):
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\agents\search.py", line 522, in process_file
+    await tmp_docs.aadd(
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\docs.py", line 245, in aadd
+    result = await llm_model.call_single(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\llms.py", line 501, in call_single
+    results = await self.call(
+              ^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\llms.py", line 448, in call
+    results = await self.acompletion(messages, **chat_kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\llms.py", line 613, in wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\llms.py", line 568, in wrapper
+    result = await func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\llms.py", line 949, in acompletion
+    completions = await track_costs(router.acompletion)(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\cost_tracker.py", line 133, in wrapped_func
+    response = await func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 2029, in acompletion
+    raise e
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 2005, in acompletion
+    response = await self.async_function_with_fallbacks(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 5935, in async_function_with_fallbacks
+    return await self.async_function_with_fallbacks_common_utils(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 5892, in async_function_with_fallbacks_common_utils
+    raise original_exception
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 5926, in async_function_with_fallbacks
+    response = await self.async_function_with_retries(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 6081, in async_function_with_retries
+    self.should_retry_this_error(
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 6306, in should_retry_this_error
+    raise error  # then raise error
+    ^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 6032, in async_function_with_retries
+    response = await self.make_call(original_function, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 6200, in make_call
+    response = await response
+               ^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 2529, in _acompletion
+    raise e
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 2475, in _acompletion
+    response = await _response
+               ^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\utils.py", line 2097, in wrapper_async
+    raise e
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\utils.py", line 1896, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\main.py", line 641, in acompletion
+    raise exception_type(
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\main.py", line 614, in acompletion
+    init_response = await loop.run_in_executor(None, func_with_context)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\utils.py", line 1443, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\main.py", line 4420, in completion
+    raise exception_type(
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\main.py", line 2878, in completion
+    response = anthropic_chat_completions.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\llms\anthropic\chat\handler.py", line 351, in completion
+    headers = AnthropicConfig().validate_environment(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\llms\anthropic\common_utils.py", line 528, in validate_environment
+    raise litellm.AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: Missing Anthropic API Key - A call is being made to anthropic but no key is set either in the environment variables or via params. Please set `ANTHROPIC_API_KEY` or `ANTHROPIC_AUTH_TOKEN` in your environment vars. Received Model Group=anthropic/claude-haiku-4-5
+Available Model Group Fallbacks=None
+2026-11-15 10:51:16,432 ERROR paperqa.agents.search: Error parsing 1810.04805.pdf, skipping index for this file.
+Traceback (most recent call last):
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\agents\search.py", line 522, in process_file
+    await tmp_docs.aadd(
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\docs.py", line 245, in aadd
+    result = await llm_model.call_single(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\llms.py", line 501, in call_single
+    results = await self.call(
+              ^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\llms.py", line 448, in call
+    results = await self.acompletion(messages, **chat_kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\llms.py", line 613, in wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\llms.py", line 568, in wrapper
+    result = await func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\llms.py", line 949, in acompletion
+    completions = await track_costs(router.acompletion)(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\cost_tracker.py", line 133, in wrapped_func
+    response = await func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 2029, in acompletion
+    raise e
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 2005, in acompletion
+    response = await self.async_function_with_fallbacks(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 5935, in async_function_with_fallbacks
+    return await self.async_function_with_fallbacks_common_utils(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 5892, in async_function_with_fallbacks_common_utils
+    raise original_exception
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 5926, in async_function_with_fallbacks
+    response = await self.async_function_with_retries(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 6081, in async_function_with_retries
+    self.should_retry_this_error(
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 6306, in should_retry_this_error
+    raise error  # then raise error
+    ^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 6032, in async_function_with_retries
+    response = await self.make_call(original_function, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 6200, in make_call
+    response = await response
+               ^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 2529, in _acompletion
+    raise e
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\router.py", line 2475, in _acompletion
+    response = await _response
+               ^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\utils.py", line 2097, in wrapper_async
+    raise e
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\utils.py", line 1896, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\main.py", line 641, in acompletion
+    raise exception_type(
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\main.py", line 614, in acompletion
+    init_response = await loop.run_in_executor(None, func_with_context)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\utils.py", line 1443, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\main.py", line 4420, in completion
+    raise exception_type(
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\main.py", line 2878, in completion
+    response = anthropic_chat_completions.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\llms\anthropic\chat\handler.py", line 351, in completion
+    headers = AnthropicConfig().validate_environment(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\litellm\llms\anthropic\common_utils.py", line 528, in validate_environment
+    raise litellm.AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: Missing Anthropic API Key - A call is being made to anthropic but no key is set either in the environment variables or via params. Please set `ANTHROPIC_API_KEY` or `ANTHROPIC_AUTH_TOKEN` in your environment vars. Received Model Group=anthropic/claude-haiku-4-5
+Available Model Group Fallbacks=None
+2026-11-15 11:06:20,028 WARNING paperqa.clients.client_models: HTTP 429 error for Language Agents Achieve Superhuman Synthesis of Scientific Knowledge in OpenAlexProvider, skipping this provider.

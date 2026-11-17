@@ -1,0 +1,14 @@
+
+
+===== STATUS: success =====
+Question: How do language models learn to use external tools?
+
+Language models learn to use external tools through a self-supervised approach requiring minimal human annotation (schick2023toolformerlanguagemodels pages 1-2). The learning process consists of three sequential steps: (1) sampling potential API calls at different positions in text using in-context learning derived from a few human-written examples, (2) executing these sampled API calls, and (3) filtering calls based on whether they reduce the loss for predicting future tokens (schick2023toolformerlanguagemodels pages 1-2).
+
+Following identification of useful API calls through this filtering mechanism, the model undergoes finetuning on these beneficial calls (schick2023toolformerlanguagemodels pages 1-2). This approach enables language models to autonomously determine which tools to use, when to invoke them, what arguments to provide, and how to integrate results into token prediction (schick2023toolformerlanguagemodels pages 1-2). Critically, this self-teaching mechanism preserves the model's generality and language modeling capabilities (schick2023toolformerlanguagemodels pages 1-2).
+
+The key innovation of this approach is that it leverages the model's existing in-context learning abilities to bootstrap tool use without requiring extensive manual annotation. By grounding tool selection in the objective of reducing prediction loss, the model learns to use tools instrumentally—only when they genuinely improve performance on the language modeling task.
+
+References
+
+1. (schick2023toolformerlanguagemodels pages 1-2): Timo Schick, Jane Dwivedi-Yu, Roberto Dessi, Roberta Raileanu, Maria Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom. Toolformer: language models can teach themselves to use tools. Advances in Neural Information Processing Systems 36, Jan 2023. URL: https://doi.org/10.52202/075280-2997, doi:10.52202/075280-2997.

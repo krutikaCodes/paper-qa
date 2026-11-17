@@ -1,0 +1,86 @@
+2026-11-13 15:47:42,015 WARNING paperqa.clients.crossref: CROSSREF_MAILTO environment variable not set. Crossref API rate limits may apply.
+2026-11-13 15:47:42,015 WARNING paperqa.clients.crossref: CROSSREF_API_KEY environment variable not set. Crossref API rate limits may apply.
+2026-11-13 15:47:42,015 WARNING paperqa.clients.semantic_scholar: SEMANTIC_SCHOLAR_API_KEY environment variable not set. Semantic Scholar API rate limits may apply.
+2026-11-13 15:47:42,196 WARNING paperqa.clients.client_models: Metadata not found for ReAct: Synergizing Reasoning and Acting in Language Models in CrossrefProvider.
+2026-11-13 15:47:42,463 ERROR paperqa.agents.search: Error parsing 2210.03629.pdf, skipping index for this file.
+Traceback (most recent call last):
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\agents\search.py", line 522, in process_file
+    await tmp_docs.aadd(
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\docs.py", line 293, in aadd
+    doc = await metadata_client.upgrade_doc_to_doc_details(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\clients\__init__.py", line 236, in upgrade_doc_to_doc_details
+    if doc_details := await self.query(**kwargs):
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\clients\__init__.py", line 178, in query
+    for p in await gather_with_concurrency(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\utils.py", line 100, in gather_with_concurrency
+    return await asyncio.gather(*(sem_coro(c) for c in coros))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\lmi\utils.py", line 87, in sem_coro
+    return await coro
+           ^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\clients\client_models.py", line 114, in query
+    return await self._query(client_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\clients\semantic_scholar.py", line 377, in _query
+    return await get_s2_doc_details_from_title(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\clients\semantic_scholar.py", line 362, in get_s2_doc_details_from_title
+    return await s2_title_search(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\clients\semantic_scholar.py", line 252, in s2_title_search
+    data = await _s2_get_with_retrying(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 232, in async_wrapped
+    return await copy(fn, *args, **kwargs)  # type: ignore[type-var]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 126, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 130, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\clients\semantic_scholar.py", line 124, in _s2_get_with_retrying
+    return await _get_with_retrying(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\utils.py", line 499, in _get_with_retrying
+    async for attempt in AsyncRetrying(
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 199, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\SENG Fall-2026\paper-qa\src\paperqa\utils.py", line 508, in _get_with_retrying
+    response.raise_for_status()
+  File "C:\SENG Fall-2026\paper-qa\.venv\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.semanticscholar.org/graph/v1/paper/search/match?query=ReAct%3A+Synergizing+Reasoning+and+Acting+in+Language+Models&fields=authors%2CexternalIds%2Cjournal%2Ctitle%2Cyear'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429

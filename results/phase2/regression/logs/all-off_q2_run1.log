@@ -1,0 +1,49 @@
+2026-11-17 12:10:30,056 INFO paperqa.agents.tools: Starting paper search for 'ReAct language models tools'.
+2026-11-17 12:10:30,056 INFO paperqa.agents.tools: Starting paper search for 'Toolformer language models tool use'.
+2026-11-17 12:10:30,056 INFO paperqa.agents.tools: Starting paper search for 'PaperQA2 agent'.
+2026-11-17 12:10:30,099 INFO paperqa.agents.tools: paper_search for query 'ReAct language models tools' and offset 0 returned 3 papers.
+2026-11-17 12:10:30,100 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-17 12:10:30,102 INFO paperqa.agents.tools: paper_search for query 'Toolformer language models tool use' and offset 0 returned 3 papers.
+2026-11-17 12:10:30,102 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-17 12:10:30,107 INFO paperqa.agents.tools: paper_search for query 'PaperQA2 agent' and offset 0 returned 3 papers.
+2026-11-17 12:10:30,107 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-17 12:10:30,990 INFO paperqa.agents.tools: gather_evidence starting for question 'How do ReAct and Toolformer let language models use tools?'.
+2026-11-17 12:10:37,445 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=1 | Current Evidence=2 | Current Cost=$0.0144
+2026-11-17 12:10:37,445 INFO paperqa.agents.tools: gather_evidence starting for question 'How does PaperQA2 use an agent?'.
+2026-11-17 12:10:43,878 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.0290
+2026-11-17 12:10:44,612 INFO paperqa.agents.tools: gather_evidence starting for question 'What is the difference between ReAct and Toolformer approaches to tool use?'.
+2026-11-17 12:10:50,409 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.0426
+2026-11-17 12:10:51,329 INFO paperqa.agents.tools: Starting paper search for 'Toolformer tool use training language models'.
+2026-11-17 12:10:51,345 INFO paperqa.agents.tools: paper_search for query 'Toolformer tool use training language models' and offset 0 returned 3 papers.
+2026-11-17 12:10:51,345 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.0426
+2026-11-17 12:10:51,928 INFO paperqa.agents.tools: gather_evidence starting for question 'How does Toolformer train language models to use tools?'.
+2026-11-17 12:10:58,176 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=7 | Current Cost=$0.0560
+2026-11-17 12:10:58,958 INFO paperqa.agents.tools: gather_evidence starting for question 'How does ReAct enable reasoning and acting with tools?'.
+2026-11-17 12:11:05,902 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=11 | Current Cost=$0.0714
+2026-11-17 12:11:06,463 INFO paperqa.agents.tools: Generating answer for 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.'.
+2026-11-17 12:11:10,053 INFO paperqa.agents.tools: Status: Paper Count=3 | Relevant Papers=3 | Current Evidence=11 | Current Cost=$0.0745
+2026-11-17 12:11:10,715 INFO paperqa.agents.tools: Completing 'Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.' as 'certain'.
+
+
+===== STATUS: success =====
+Question: Compare how ReAct and Toolformer let language models use tools, and how PaperQA2 uses an agent.
+
+# Tool Use in ReAct, Toolformer, and PaperQA2
+
+## ReAct and Toolformer: Contrasting Approaches to Tool Integration
+
+ReAct and Toolformer employ fundamentally different mechanisms for tool utilization. ReAct operates through a reasoning-acting paradigm that interleaves verbal reasoning traces with external tool interactions (yao2022reactsynergizingreasoning pages 2-3). The model alternates between internal reasoning to adjust plans and external actions to gather information, creating a synergistic loop where reasoning informs action and action informs subsequent reasoning (yao2022reactsynergizingreasoning pages 2-3).
+
+Toolformer uses a self-supervised, loss-based filtering approach (schick2023toolformerlanguagemodels pages 1-2). The method samples potential API calls at various text positions, executes them, and retains only those calls that reduce prediction loss for future tokens (schick2023toolformerlanguagemodels pages 1-2). This enables the model to autonomously determine which tools to use, when to use them, and how to incorporate results without sacrificing language modeling capabilities (schick2023toolformerlanguagemodels pages 1-2).
+
+## PaperQA2's Agent-Based Architecture
+
+PaperQA2 extends tool use through an explicit agent framework with specialized tools: Paper Search, Gather Evidence, Generate Answer, and Citation Traversal (skarlinski2024languageagentsachieve pages 3-5). The agent iteratively revises search parameters and examines candidate answers, demonstrating strategic tool selection based on retrieved results (skarlinski2024languageagentsachieve pages 3-5). This multi-step agentic approach significantly outperforms non-agentic baselines (skarlinski2024languageagentsachieve pages 3-5).
+
+References
+
+1. (yao2022reactsynergizingreasoning pages 2-3): Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao. React: synergizing reasoning and acting in language models. arXiv (Cornell University), Oct 2022. URL: https://doi.org/10.48550/arxiv.2210.03629, doi:10.48550/arxiv.2210.03629. This article has 9617 citations.
+
+2. (schick2023toolformerlanguagemodels pages 1-2): Timo Schick, Jane Dwivedi-Yu, Roberto Dessi, Roberta Raileanu, Maria Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom. Toolformer: language models can teach themselves to use tools. neural information processing systems, Jan 2023. URL: https://doi.org/10.52202/075280-2997, doi:10.52202/075280-2997. This article has 7661 citations and is from a highest quality peer-reviewed journal.
+
+3. (skarlinski2024languageagentsachieve pages 3-5): Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. Language agents achieve superhuman synthesis of scientific knowledge. arXiv (Cornell University), Sep 2024. URL: https://doi.org/10.48550/arxiv.2409.13740, doi:10.48550/arxiv.2409.13740. This article has 304 citations.

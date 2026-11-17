@@ -1,0 +1,14 @@
+
+
+===== STATUS: success =====
+Question: Before 2019, what model architectures were proposed for language understanding?
+
+Before 2019, several foundational model architectures were proposed for language understanding. The Transformer architecture emerged as a key innovation for NLP tasks (devlin2019bertpretrainingof pages 10-12). ELMo introduced deep contextualized word representations, providing context-dependent embeddings rather than static word vectors (devlin2019bertpretrainingof pages 10-12). Bidirectional LSTMs were employed to generate context embeddings for improved language understanding (devlin2019bertpretrainingof pages 10-12).
+
+Word embedding methods such as Word2Vec and GloVe were developed to represent words as dense vectors (devlin2019bertpretrainingof pages 10-12). Attention mechanisms were integrated into NLP architectures to improve model performance (devlin2019bertpretrainingof pages 10-12). GPT demonstrated the effectiveness of unsupervised learning approaches for language modeling (devlin2019bertpretrainingof pages 10-12).
+
+Semi-supervised sequence learning and universal language model fine-tuning were established as important pre-training methodologies (devlin2019bertpretrainingof pages 10-12). These approaches collectively established the foundation for subsequent developments in pre-trained language models. By 2019, these architectures had demonstrated strong capabilities in capturing linguistic patterns and enabling transfer learning across diverse NLP tasks, setting the stage for more advanced models like BERT that would leverage bidirectional context and fine-tuning strategies.
+
+References
+
+1. (devlin2019bertpretrainingof pages 10-12): Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: pre-training of deep bidirectional transformers for language understanding. Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), Jan 2019. URL: https://doi.org/10.18653/v1/n19-1423, doi:10.18653/v1/n19-1423.

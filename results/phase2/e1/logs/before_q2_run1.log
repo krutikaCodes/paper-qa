@@ -1,0 +1,18 @@
+
+
+===== STATUS: unsure =====
+Question: What approaches published in 2023 or later let language models use external tools?
+
+ReAct is a framework published at ICLR 2023 that enables language models to use external tools through a structured approach combining reasoning and acting (Yao2023 pages 17-20, Yao2023 pages 25-28).
+
+The ReAct framework operates through an interleaved cycle where language models generate thoughts to reason about problems, then take actions to interact with external information sources (Yao2023 pages 17-20). The specific actions available include Search, Lookup, and Finish operations that allow models to access external tools and retrieve information (Yao2023 pages 17-20). After receiving observations from these tool interactions, the model iterates this cycle, using the retrieved information to refine its reasoning before providing final answers (Yao2023 pages 17-20).
+
+ReAct demonstrates effectiveness on complex tasks requiring multi-step reasoning and tool integration. The framework enables language models to decompose complex questions into multiple reasoning steps while systematically consulting external information sources (Yao2023 pages 17-20). Beyond information retrieval, ReAct also enables interaction with simulated environments, such as ALFWorld tasks involving object manipulation and environmental interaction (Yao2023 pages 25-28). By interleaving thought processes with actions, ReAct allows models to overcome limitations in knowledge and reasoning by leveraging external tools and environments throughout the problem-solving process (Yao2023 pages 25-28).
+
+This synergistic approach between reasoning and acting represents a key innovation for enabling language models to effectively utilize external tools and information sources to solve complex reasoning and decision-making problems (Yao2023 pages 17-20, Yao2023 pages 25-28).
+
+References
+
+1. (Yao2023 pages 17-20): Yao, Shunyu, et al. "ReAct: Synergizing Reasoning and Acting in Language Models." *Proceedings of the International Conference on Learning Representations*, 2023.
+
+2. (Yao2023 pages 25-28): Yao, Shunyu, et al. "ReAct: Synergizing Reasoning and Acting in Language Models." *Proceedings of the International Conference on Learning Representations*, 2023.

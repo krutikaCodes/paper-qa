@@ -1,0 +1,18 @@
+
+
+===== STATUS: success =====
+Question: What retrieval-augmented methods for language models were proposed in 2020 or 2021?
+
+Two major retrieval-augmented methods for language models were proposed in 2020:
+
+**Retrieval-Augmented Generation (RAG)** was introduced by Lewis et al. in May 2020 as a framework combining a retriever component with a generator for knowledge-intensive NLP tasks (lewis2020retrievalaugmentedgenerationfor pages 6-7, lewis2020retrievalaugmentedgenerationfor pages 7-9). RAG integrates both parametric knowledge stored in model parameters and non-parametric knowledge retrieved from documents to improve generation quality (lewis2020retrievalaugmentedgenerationfor pages 6-7). The method employs learned dense retrieval that outperforms fixed BM25 retrieval on most tasks and enables non-parametric memory, allowing knowledge updates at test time without model retraining (lewis2020retrievalaugmentedgenerationfor pages 7-9). RAG augments pre-trained generative language models such as BART and T5 and demonstrates strong performance across multiple knowledge-intensive tasks including abstractive question answering, fact verification, and Jeopardy question generation (lewis2020retrievalaugmentedgenerationfor pages 6-7, lewis2020retrievalaugmentedgenerationfor pages 7-9).
+
+**Dense Passage Retrieval (DPR)** was published in EMNLP 2020 by Karpukhin et al. as a retrieval method for open-domain question answering (karpukhin2020densepassageretrieval pages 4-5). DPR uses dual encoders with in-batch negatives to learn dense representations for both questions and passages, significantly outperforming traditional BM25 retrieval with 78.4% top-20 accuracy on Natural Questions compared to 59.1% for BM25 (karpukhin2020densepassageretrieval pages 4-5).
+
+References
+
+1. (lewis2020retrievalaugmentedgenerationfor pages 6-7): Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela. Retrieval-augmented generation for knowledge-intensive nlp tasks. arXiv (Cornell University), May 2020. URL: https://doi.org/10.48550/arxiv.2005.11401, doi:10.48550/arxiv.2005.11401. This article has 6197 citations.
+
+2. (lewis2020retrievalaugmentedgenerationfor pages 7-9): Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela. Retrieval-augmented generation for knowledge-intensive nlp tasks. arXiv (Cornell University), May 2020. URL: https://doi.org/10.48550/arxiv.2005.11401, doi:10.48550/arxiv.2005.11401. This article has 6197 citations.
+
+3. (karpukhin2020densepassageretrieval pages 4-5): Vladimir Karpukhin, Barlas Oguz, Sewon Min, Patrick Lewis, Ledell Wu, Sergey Edunov, Danqi Chen, and Wen-tau Yih. Dense passage retrieval for open-domain question answering. Conference on Empirical Methods in Natural Language Processing (EMNLP), Jan 2020. URL: https://doi.org/10.18653/v1/2020.emnlp-main.550, doi:10.18653/v1/2020.emnlp-main.550. This article has 5429 citations.

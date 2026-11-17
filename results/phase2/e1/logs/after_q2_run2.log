@@ -1,0 +1,22 @@
+
+
+===== STATUS: success =====
+Question: What approaches published in 2023 or later let language models use external tools?
+
+Several approaches published in 2023 enable language models to use external tools:
+
+**Toolformer** learns to use external tools including calculators, search engines, and question-answering systems through API calls (schick2023toolformerlanguagemodels pages 9-10). The method enables language models to teach themselves tool use without requiring human supervision (schick2023toolformerlanguagemodels pages 9-10).
+
+**Self-RAG** integrates retrieval as a tool during both training and inference phases (asai2023selfraglearningto pages 7-8). This approach improves factuality and performance on knowledge-intensive tasks by leveraging Wikipedia APIs and other retrieval mechanisms (asai2023selfraglearningto pages 7-8).
+
+**Reflexion** is a language agent framework that combines verbal reinforcement learning with tool interaction (shinn2023reflexionlanguageagents pages 11-15). It builds upon the ReAct approach, which combines reasoning and acting capabilities (shinn2023reflexionlanguageagents pages 11-15). Reflexion has been evaluated on diverse tasks including HumanEval programming, HotPotQA question answering, AlfWorld decision-making, and WebShop e-commerce navigation, demonstrating the ability of language models to interact with external environments through action sequences (shinn2023reflexionlanguageagents pages 11-15).
+
+Additionally, **Perplexity.ai** represents a production search system implementing external tool integration (asai2023selfraglearningto pages 7-8). These concurrent 2023 approaches collectively demonstrate multiple strategies for augmenting language models with external tool capabilities to enhance reasoning, factuality, and task performance.
+
+References
+
+1. (schick2023toolformerlanguagemodels pages 9-10): Timo Schick, Jane Dwivedi-Yu, Roberto Dessi, Roberta Raileanu, Maria Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom. Toolformer: language models can teach themselves to use tools. neural information processing systems, Jan 2023. URL: https://doi.org/10.52202/075280-2997, doi:10.52202/075280-2997. This article has 3257 citations.
+
+2. (asai2023selfraglearningto pages 7-8): Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi. Self-rag: learning to retrieve, generate, and critique through self-reflection. arXiv (Cornell University), Oct 2023. URL: https://doi.org/10.48550/arxiv.2310.11511, doi:10.48550/arxiv.2310.11511. This article has 1088 citations.
+
+3. (shinn2023reflexionlanguageagents pages 11-15): Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu Yao. Reflexion: language agents with verbal reinforcement learning. neural information processing systems, Jan 2023. URL: https://doi.org/10.52202/075280-0377, doi:10.52202/075280-0377. This article has 3334 citations.

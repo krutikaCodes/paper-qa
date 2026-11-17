@@ -1,0 +1,24 @@
+
+
+===== STATUS: unsure =====
+Question: How do language agents decide when to retrieve information or use tools?
+
+I cannot answer.
+
+The provided context does not contain information about the specific decision-making mechanisms or criteria that language agents use to determine when to retrieve information or use tools. 
+
+While the context describes language agents as AI systems that integrate LLMs as core components and can interact with tools via natural language or code, with components including internal reasoning, planning, and tool usage, it explicitly states that "the excerpt does not provide specific details about the decision-making mechanisms or criteria that language agents use to determine when to retrieve information or use tools" (narayanan2024aviarytraininglanguage pages 1-2). Similarly, another source notes that "the specific decision-making mechanisms or criteria agents use to determine when to retrieve or use tools are not explained in this excerpt" (narayanan2024aviarytraininglanguage pages 2-4).
+
+The context does mention that tool learning can occur through in-context demonstrations or fine-tuning on example demonstrations, and that frameworks like DSPy and GPTSwarm perform optimization over prompts and demonstrations (narayanan2024aviarytraininglanguage pages 2-4). However, these describe how agents learn to use tools rather than the decision criteria for when to invoke them.
+
+Additionally, while LAB-Bench evaluated LLM performance on tasks requiring information retrieval and database access, it measured model accuracy and willingness to answer rather than the underlying decision mechanisms for tool invocation (laurent2024labbenchmeasuringcapabilities pages 4-6).
+
+To answer this question comprehensively, additional sources addressing tool invocation policies or triggering mechanisms would be required.
+
+References
+
+1. (narayanan2024aviarytraininglanguage pages 1-2): Siddharth Narayanan, James D. Braza, Ryan-Rhys Griffiths, Manu Ponnapati, Albert Bou, Jon Laurent, Ori Kabeli, Geemi Wellawatte, Sam Cox, Samuel G. Rodriques, and Andrew D. White. Aviary: training language agents on challenging scientific tasks. arXiv (Cornell University), Dec 2024. URL: https://doi.org/10.48550/arxiv.2412.21154, doi:10.48550/arxiv.2412.21154. This article has 64 citations.
+
+2. (narayanan2024aviarytraininglanguage pages 2-4): Siddharth Narayanan, James D. Braza, Ryan-Rhys Griffiths, Manu Ponnapati, Albert Bou, Jon Laurent, Ori Kabeli, Geemi Wellawatte, Sam Cox, Samuel G. Rodriques, and Andrew D. White. Aviary: training language agents on challenging scientific tasks. arXiv (Cornell University), Dec 2024. URL: https://doi.org/10.48550/arxiv.2412.21154, doi:10.48550/arxiv.2412.21154. This article has 64 citations.
+
+3. (laurent2024labbenchmeasuringcapabilities pages 4-6): Jon M. Laurent, Joseph D. Janizek, Michael Ruzo, Michaela M. Hinks, Michael J. Hammerling, Siddharth Narayanan, Manvitha Ponnapati, Andrew D. White, and Samuel G. Rodriques. Lab-bench: measuring capabilities of language models for biology research. arXiv (Cornell University), Jul 2024. URL: https://doi.org/10.48550/arxiv.2407.10362, doi:10.48550/arxiv.2407.10362. This article has 258 citations.

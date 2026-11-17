@@ -1,0 +1,67 @@
+2026-11-16 11:59:06,386 INFO paperqa.agents.tools: Starting paper search for 'language agent reliability citations'.
+2026-11-16 11:59:06,386 INFO paperqa.agents.tools: Starting paper search for 'language model answer quality citation generation'.
+2026-11-16 11:59:06,386 INFO paperqa.agents.tools: Starting paper search for 'retrieval augmented generation RAG factuality'.
+2026-11-16 11:59:06,819 INFO paperqa.agents.tools: paper_search for query 'retrieval augmented generation RAG factuality' and offset 0 returned 7 papers.
+2026-11-16 11:59:06,819 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-16 11:59:06,820 INFO paperqa.agents.tools: paper_search for query 'language model answer quality citation generation' and offset 0 returned 7 papers.
+2026-11-16 11:59:06,820 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-16 11:59:06,823 INFO paperqa.agents.tools: paper_search for query 'language agent reliability citations' and offset 0 returned 7 papers.
+2026-11-16 11:59:06,823 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=0 | Current Evidence=0 | Current Cost=$0.0000
+2026-11-16 11:59:07,694 INFO paperqa.agents.tools: gather_evidence starting for question "What makes a language agent's answers reliable and well cited?".
+2026-11-16 11:59:16,686 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0145
+2026-11-16 11:59:16,688 INFO paperqa.agents.tools: Source diversity: Institutions=3 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-16 11:59:18,143 INFO paperqa.agents.tools: Starting paper search for 'hallucination mitigation language models grounding'.
+2026-11-16 11:59:18,143 INFO paperqa.agents.tools: Starting paper search for 'fact verification knowledge grounding neural networks'.
+2026-11-16 11:59:18,255 INFO paperqa.agents.tools: paper_search for query 'hallucination mitigation language models grounding' and offset 0 returned 7 papers.
+2026-11-16 11:59:18,255 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0145
+2026-11-16 11:59:18,257 INFO paperqa.agents.tools: paper_search for query 'fact verification knowledge grounding neural networks' and offset 0 returned 7 papers.
+2026-11-16 11:59:18,257 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=4 | Current Cost=$0.0145
+2026-11-16 11:59:18,896 INFO paperqa.agents.tools: gather_evidence starting for question "What makes a language agent's answers reliable and well cited?".
+2026-11-16 11:59:27,687 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.0290
+2026-11-16 11:59:27,703 INFO paperqa.agents.tools: Source diversity: Institutions=3 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-16 11:59:29,101 INFO paperqa.agents.tools: Starting paper search for 'source attribution question answering systems'.
+2026-11-16 11:59:29,101 INFO paperqa.agents.tools: Starting paper search for 'trustworthy AI language models evidence-based reasoning'.
+2026-11-16 11:59:29,240 INFO paperqa.agents.tools: paper_search for query 'trustworthy AI language models evidence-based reasoning' and offset 0 returned 7 papers.
+2026-11-16 11:59:29,240 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.0290
+2026-11-16 11:59:29,246 INFO paperqa.agents.tools: paper_search for query 'source attribution question answering systems' and offset 0 returned 7 papers.
+2026-11-16 11:59:29,246 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.0290
+2026-11-16 11:59:30,635 INFO paperqa.agents.tools: Starting paper search for 'LLM evaluation metrics answer quality factuality'.
+2026-11-16 11:59:30,635 INFO paperqa.agents.tools: Starting paper search for 'information retrieval document ranking relevance'.
+2026-11-16 11:59:30,733 INFO paperqa.agents.tools: paper_search for query 'information retrieval document ranking relevance' and offset 0 returned 7 papers.
+2026-11-16 11:59:30,733 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.0290
+2026-11-16 11:59:30,733 INFO paperqa.agents.tools: paper_search for query 'LLM evaluation metrics answer quality factuality' and offset 0 returned 7 papers.
+2026-11-16 11:59:30,733 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.0290
+2026-11-16 11:59:31,358 INFO paperqa.agents.tools: Generating answer for 'What makes a language agent's answers reliable and well cited?'.
+2026-11-16 11:59:34,433 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.0318
+2026-11-16 11:59:35,962 INFO paperqa.agents.tools: Starting paper search for 'chain of thought reasoning verification language models'.
+2026-11-16 11:59:35,962 INFO paperqa.agents.tools: Starting paper search for 'knowledge base integration semantic understanding'.
+2026-11-16 11:59:36,022 INFO paperqa.agents.tools: paper_search for query 'chain of thought reasoning verification language models' and offset 0 returned 7 papers.
+2026-11-16 11:59:36,022 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.0318
+2026-11-16 11:59:36,024 INFO paperqa.agents.tools: paper_search for query 'knowledge base integration semantic understanding' and offset 0 returned 7 papers.
+2026-11-16 11:59:36,024 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=5 | Current Cost=$0.0318
+2026-11-16 11:59:36,883 INFO paperqa.agents.tools: gather_evidence starting for question "What makes a language agent's answers reliable and well cited?".
+2026-11-16 11:59:45,252 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=7 | Current Cost=$0.0462
+2026-11-16 11:59:45,268 INFO paperqa.agents.tools: Source diversity: Institutions=3 | Countries=1 (from 2 relevant paper(s), 0 without affiliation data).
+2026-11-16 11:59:46,713 INFO paperqa.agents.tools: Starting paper search for 'self-RAG retrieval augmented generation adaptive'.
+2026-11-16 11:59:46,713 INFO paperqa.agents.tools: Starting paper search for 'answer generation evaluation metrics BLEU ROUGE'.
+2026-11-16 11:59:46,779 INFO paperqa.agents.tools: paper_search for query 'answer generation evaluation metrics BLEU ROUGE' and offset 0 returned 7 papers.
+2026-11-16 11:59:46,779 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=7 | Current Cost=$0.0462
+2026-11-16 11:59:46,786 INFO paperqa.agents.tools: paper_search for query 'self-RAG retrieval augmented generation adaptive' and offset 0 returned 7 papers.
+2026-11-16 11:59:46,786 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=7 | Current Cost=$0.0462
+2026-11-16 11:59:47,630 INFO paperqa.agents.tools: Generating answer for 'What makes a language agent's answers reliable and well cited?'.
+2026-11-16 11:59:49,887 INFO paperqa.agents.tools: Status: Paper Count=7 | Relevant Papers=2 | Current Evidence=7 | Current Cost=$0.0495
+2026-11-16 11:59:50,605 INFO paperqa.agents.tools: Completing 'What makes a language agent's answers reliable and well cited?' as 'certain'.
+
+
+===== STATUS: success =====
+Question: What makes a language agent's answers reliable and well cited?
+
+Reliable and well-cited language agent answers require four critical components in retrieval-augmented generation. First, relevant source material must be retrieved and marked as [Retrieve=Yes], with retrieved content verified as [ISREL=Relevant] (asai2023selfraglearningto pages 22-24). Second, the support level of claims must be confirmed through [ISSUP] annotations, distinguishing between fully and partially supported statements (asai2023selfraglearningto pages 22-24).
+
+Third, proper citation practices are essential. Sources should be cited using numbered references (e.g., [1][2][3]) that directly support factual claims (asai2023selfraglearningto pages 22-24). The ASQA task framework specifies that answers should employ a minimum sufficient subset of documents, with each sentence supported by at least one but at most three document citations (asai2023selfraglearningto pages 22-24). This constraint ensures citations are both comprehensive and parsimonious.
+
+Finally, well-cited answers demonstrate high quality when properly supported by retrieved references. Answers marked [ISUSE=5] indicate optimal citation practices, whereas answers lacking adequate retrieval or citation receive lower scores (asai2023selfraglearningto pages 22-24). The integration of these elements—systematic retrieval, relevance verification, support confirmation, and disciplined citation practices—collectively ensures that language agent outputs are both reliable and demonstrably grounded in source material.
+
+References
+
+1. (asai2023selfraglearningto pages 22-24): Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi. Self-rag: learning to retrieve, generate, and critique through self-reflection. arXiv (Cornell University), Oct 2023. URL: https://doi.org/10.48550/arxiv.2310.11511, doi:10.48550/arxiv.2310.11511. This article has 1088 citations.

@@ -166,6 +166,22 @@ This does two things for you:
 
 **You should see:** three sections (`== e1_years ==`, `== e2_trust ==`,
 `== e3_diversity ==`), then `Done. Downloaded N new paper(s).`
+`e2_trust` gets 4 extra "planted" papers for testing E2: three new preprints with
+no citations and one **retracted** paper. They're listed in `test_papers\e2_trust_PLANTED.txt`.
+
+4. **Phase 2 only:** create two more profiles, so you can ask questions like in
+   Phase 1 with all enhancements on or all off:
+
+```powershell
+python scripts/make_phase2_profiles.py
+```
+
+**You should see:** `written ...phase2_all.json` and `written ...phase2_off.json`.
+
+| Profile | Enhancements | Papers |
+|---|---|---|
+| `phase2_all` | E1, E2 and E3 all **on** | `test_papers\e2_trust` (16 papers) |
+| `phase2_off` | all **off** (original behavior) | the same 16 papers |
 
 ---
 
@@ -241,11 +257,16 @@ python -m pytest tests/test_configs.py tests/test_utils.py --record-mode=none -p
 ### Check 1b (Phase 2): the enhancements' own tests pass
 
 ```powershell
-python -m pytest tests/test_phase2_metadata.py tests/test_year_filter.py tests/test_diversity.py -p no:cacheprovider -q
+$env:CROSSREF_MAILTO = $null; $env:OPENALEX_MAILTO = $null
+python -m pytest tests/test_phase2_metadata.py tests/test_year_filter.py tests/test_trust.py tests/test_diversity.py --record-mode=none -p no:cacheprovider -q --basetemp C:\pqa_test_tmp
 ```
 
-**You should see:** `35 passed` (more once the trust-score tests are added).
-These tests use fake papers, so they need no API key and cost nothing.
+**You should see:** `82 passed`.
+These tests use fake papers, so they need no API key and cost nothing. They also
+check that each agent tool is unchanged when its enhancement is off.
+The first line clears your email **in this window only**: the tests replay
+recorded web answers and fail if an email is set. Open a new window afterwards
+to use the enhancements again.
 
 ### Check 2: paper-qa can read a PDF
 
@@ -351,34 +372,68 @@ original.
 | # | Enhancement | Setting | What the agent does differently |
 |---|---|---|---|
 | E1 | **Year filter** | `agent.apply_year_filter` | When a question asks for certain years, the search keeps only papers from those years and tells the agent how many it skipped |
-| E2 | **Trust score** | `answer.use_trust_score` | Ranks evidence by relevance × paper trust (citations, venue, retractions) and warns about low-trust sources |
+| E2 | **Trust score** | `answer.use_trust_score` | Gives every paper a trust score from 0 to 1 and ranks evidence by relevance × trust. Warns the agent about sources below 0.60, and marks retracted papers "do not cite". The answer ends with a trust-score table |
 | E3 | **Source diversity** | `agent.show_source_diversity` | Tells the agent how many institutions and countries its evidence comes from, and to search wider if one group dominates |
+
+**How the E2 trust score is made** (`src/paperqa/trust.py`):
+
+| Part | Weight | Comes from |
+|---|---:|---|
+| Venue quality | 36% | OpenAlex: core venue, DOAJ journal, or other journal/conference |
+| Citations per year | 31.5% | OpenAlex citation count and year (log scale, capped at 20 per year) |
+| Not retracted | 13.5% | OpenAlex `is_retracted` |
+| Details complete | 9% | venue, citations, year and retraction status all known |
+| Top-100 university | 10% | an author's institution is in the THE 2027 top 100 |
+
+Missing information counts as **0.5 (neutral)**, not as bad. A retracted paper
+always scores **0**.
 
 The enhancements need **correct paper details** (years, citations,
 institutions). These come from OpenAlex, so they need
 `parsing.use_doc_details=true` and the OpenAlex source.
 
+### Ask a question with all enhancements on (like Phase 1)
+
+After making the profiles (Step 5, part 4):
+
+```powershell
+pqa -s phase2_off ask "Since 2023, can large language models solve university mathematics and computer science course questions?"
+pqa -s phase2_all ask "Since 2023, can large language models solve university mathematics and computer science course questions?"
+```
+
+The first time, the 16 papers are loaded (about 3 minutes, a few cents).
+With `phase2_all` you should see lines starting with `Year filter` (E1),
+`Trust check` (E2) and `Source diversity` (E3). The answer should **not** cite
+`zhang2023exploringthemit`, which is a retracted paper. With `phase2_off` it usually does.
+
 ### Try one enhancement on one question (about 5-15 cents)
 
-The script `scripts/run_eval.py` asks questions from a file, records time,
-cost and which papers were read and cited, and saves logs. `--feature demo`
-keeps your practice runs separate from the official results.
+The script `scripts/run_eval.py` asks questions, records time, cost and which
+papers were read and cited, and saves logs. `--feature demo` keeps your
+practice runs separate from the official results. Type the question in the
+command with `--question`, and see the answer on screen with `--show-answer`:
 
-**E1, year filter on**, question 1 ("...proposed in 2020 or 2021?"):
-
-```powershell
-python scripts/run_eval.py --feature demo --label e1_on --questions test_questions/e1_questions.txt --papers test_papers/e1_years --set parsing.use_doc_details=true --clients openalex,journal_quality --set agent.apply_year_filter=true --only 1 --runs 1
-```
-
-**E3, source diversity on**, question 5:
+**E1, year filter on** (`[2023-]` is the year range the question asks for; it's only used for scoring):
 
 ```powershell
-python scripts/run_eval.py --feature demo --label e3_on --questions test_questions/e3_questions.txt --papers test_papers/e3_diversity --set parsing.use_doc_details=true --clients openalex,journal_quality --set agent.show_source_diversity=true --only 5 --runs 1
+python scripts/run_eval.py --feature demo --label e1_on --papers test_papers/e1_years --set parsing.use_doc_details=true --clients openalex,journal_quality --set agent.apply_year_filter=true --runs 1 --show-answer --question "[2023-] What approaches published in 2023 or later let language models use external tools?"
 ```
 
-**You should see:** first `Indexing ...` (only the first time, 1-3 minutes),
-then one line per question with the time, cost and papers read, and a summary
-at the end.
+**E2, trust score on** (the planted retracted paper should get flagged):
+
+```powershell
+python scripts/run_eval.py --feature demo --label e2_on --papers test_papers/e2_trust --set parsing.use_doc_details=true --clients openalex,journal_quality --set answer.use_trust_score=true --runs 1 --show-answer --question "Can large language models solve university mathematics and computer science course questions?"
+```
+
+**E3, source diversity on:**
+
+```powershell
+python scripts/run_eval.py --feature demo --label e3_on --papers test_papers/e3_diversity --set parsing.use_doc_details=true --clients openalex,journal_quality --set agent.show_source_diversity=true --runs 1 --show-answer --question "What makes a language agent's answers reliable and well cited?"
+```
+
+**You should see:** first `Indexing ...` (only the first time for each label,
+1-3 minutes), then the time, cost and papers read. After that come
+`What the enhancements told the agent` (the E1/E2/E3 lines) and the full `ANSWER`.
 
 **Where to look afterwards** (open these in VS Code, not Excel):
 
@@ -389,13 +444,24 @@ at the end.
 | `results\phase2\demo\logs\<label>_q1_run1.log` | The answer, plus what the tools told the agent. Search for `Year filter` (E1) or `Source diversity` (E3) |
 
 To compare, run the same command with the setting off (leave out the
-`--set agent....=true` part and use a different `--label`).
+`--set ...=true` part and use a different `--label`).
 
-**Useful options:** `--only 2 4` (only questions 2 and 4), `--runs 1` (one run
-per question), `--fresh-index` (reload all papers, e.g. after adding one).
+**Useful options:**
+
+| Option | What it does |
+|---|---|
+| `--questions <file>` | Ask every question in a file (instead of `--question "..."`) |
+| `--only 2 4` | Only questions 2 and 4 of the file |
+| `--runs 1` | One run per question (the answers are almost the same every time) |
+| `--show-answer` | Print the enhancement notes and the full answer |
+| `--fresh-index` | Reload all papers, e.g. after adding one or after a failed paper |
+| `--index-from <label>` | Reuse the papers already loaded by an earlier label, so nothing is loaded again |
+| `--index-only` | Only load the papers and write `papers_<label>.csv` (check years and trust scores) |
 
 The official before/after results of the team are in `results\phase2\e1`,
-`e2` and `e3`. Please don't add practice runs there.
+`e2` and `e3`, the regression check is in `results\phase2\regression`, and the
+code measurements (cloc, lizard) are in `results\phase2\code_metrics`. Please
+don't add practice runs there.
 
 ### Using a setting with `pqa`
 
@@ -427,8 +493,13 @@ While a question runs, paper-qa prints a status line after each step, like:
 At the very start, all of these are 0. That's normal: the AI hasn't read
 anything yet.
 
-With **E3** on, the agent also sees a line like
-`Source diversity: Institutions=3 | Countries=1 (from 2 relevant paper(s), ...)`.
+With the enhancements on, the agent also sees lines like these:
+
+| Line | Enhancement | Meaning |
+|---|---|---|
+| `Year filter 2023-: kept 3 paper(s) from these years and 0 with unknown year, skipped 9 outside these years.` | E1 | The search kept only papers from the asked years. Papers with an unknown year are kept, not hidden |
+| `Trust check: 1 of your top 2 source(s) are low-trust (trust score below 0.60): zhang2023... (0.00, RETRACTED, do not cite).` | E2 | Some of the best evidence comes from weak or retracted papers |
+| `Source diversity: Institutions=3 \| Countries=1 (from 2 relevant paper(s), ...)` | E3 | Where the evidence comes from |
 
 **Messages you can ignore:** `CROSSREF_MAILTO ... not set`, `OPENALEX_MAILTO ... not set` (Phase 1 commands only),
 `SEMANTIC_SCHOLAR_API_KEY ... not set`, `DeprecationWarning`, and a message
@@ -466,6 +537,10 @@ it describes every image with AI, which can cost several dollars per paper.
 | `echo $env:OPENALEX_MAILTO` prints nothing | Close **all** VS Code/PowerShell windows after `setx` and reopen |
 | `Unknown metadata client(s)` | A typo in `--clients`; use `crossref`, `semantic_scholar`, `openalex`, `unpaywall`, `journal_quality`, `retractions` |
 | `test_settings_default_instantiation` fails | Add `--basetemp C:\pqa_test_tmp` to the command (a Windows temp-folder issue, also in the original) |
+| Phase 2 tests fail with a "cassette" error | Your email is set; run `$env:CROSSREF_MAILTO = $null; $env:OPENALEX_MAILTO = $null` first (this window only) |
+| `No index from label ...` | `--index-from` needs a label you already ran for the same `--feature` |
+| `phase2_all` question runs until the 500 s timeout | A known limitation with all three on at once: the agent sometimes keeps resetting and searching again. Press **Ctrl + C**, or test the enhancements one at a time |
+| `claude_cheap.json not found` from `make_phase2_profiles.py` | Run `.\team_setup.ps1` first |
 
 ---
 
@@ -499,15 +574,29 @@ commits, and our changes are only the files listed above.
 
 | File | Change |
 |---|---|
-| `src/paperqa/clients/openalex.py` | Saves institutions and countries of the first 3 authors. **Bug fix:** translates field names (`author` → `authorships`, ...), because OpenAlex rejected every lookup during indexing with HTTP 400 |
+| `src/paperqa/clients/openalex.py` | Saves institutions and countries of the first 3 authors (E3), venue quality and retraction status (E2). **Bug fix:** translates field names (`author` → `authorships`, ...), because OpenAlex rejected every lookup during indexing with HTTP 400 |
 | `src/paperqa/clients/client_models.py` | **Bug fix:** an HTTP error such as `429 Too Many Requests` now skips that source instead of crashing indexing of the whole folder |
 | `src/paperqa/clients/__init__.py`, `docs.py` | Choose metadata sources by name (`parsing.metadata_clients`) |
-| `src/paperqa/types.py` | New paper fields `institutions` and `countries` |
-| `src/paperqa/settings.py`, `README.md` | New settings `parsing.metadata_clients`, `agent.apply_year_filter`, `agent.show_source_diversity`, `answer.use_trust_score` |
-| `src/paperqa/agents/tools.py`, `agents/env.py` | E1 year filter in `paper_search`; E3 diversity line in `gather_evidence` |
-| `tests/test_phase2_metadata.py`, `test_year_filter.py`, `test_diversity.py` | Offline tests (no API) |
-| `scripts/run_eval.py`, `scripts/get_phase2_papers.ps1`, `test_questions/` | Evaluation runner, test papers, test questions |
-| `results/phase2/` | Before/after results |
+| `src/paperqa/trust.py` (new) | E2 trust score formula and the 0.60 low-trust threshold |
+| `src/paperqa/university_rankings.py` (new) | E2: the THE 2027 top-100 university list |
+| `src/paperqa/types.py` | New paper fields `trust_score`, `top_university_rank`, `top_university_affiliations`, `institutions`, `countries`; E2 trust table in the answer |
+| `src/paperqa/settings.py`, `README.md` | New settings `parsing.metadata_clients`, `parsing.extract_author_affiliations_from_front_matter`, `agent.apply_year_filter`, `agent.show_source_diversity`, `answer.use_trust_score`; E2 ranks evidence by relevance × trust |
+| `src/paperqa/docs.py`, `prompts.py` | E2: optional author affiliations read from the PDF's first page (off by default), and the trust-score comparison answer |
+| `src/paperqa/agents/tools.py`, `agents/env.py` | E1 year filter in `paper_search`; E2 trust check and E3 diversity line in `gather_evidence` |
+| `tests/test_phase2_metadata.py`, `test_year_filter.py`, `test_trust.py`, `test_diversity.py` | 82 offline tests (no API) |
+| `scripts/run_eval.py`, `scripts/get_phase2_papers.ps1`, `scripts/make_phase2_profiles.py`, `test_questions/`, `test_papers/e2_trust_PLANTED.txt` | Evaluation runner, test papers, Phase 2 profiles, test questions |
+| `results/phase2/` | Before/after results, regression check, code metrics |
+
+**Bugs found by the regression check and fixed:** the year filter hid papers
+whose year was unknown, the E2 trust note appeared in "cannot answer" replies,
+and the trust table listed a paper once per cited page range.
+
+**New tools, for measuring only** (not needed to run the project):
+
+```powershell
+pip install lizard     # complexity (cyclomatic complexity per function)
+npx cloc --version     # lines of code; needs Node.js, and Perl (comes with Git for Windows)
+```
 
 To see every change since Phase 1: `git diff phase2-baseline phase2 --stat`.
 

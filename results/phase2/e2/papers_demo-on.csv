@@ -1,0 +1,17 @@
+file,status,docname,title,year,citation_count,source_quality,is_retracted,trust_score,institutions,countries
+1706.03762.pdf,ok,vaswani2017attentionisall,Attention Is All You Need,2017,136431,-1,False,0.82,Google (United States); University of Southern California,US
+1810.04805.pdf,ok,devlin2018bertpretrainingof,BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding,2018,77072,-1,False,0.72,Google (United States); National Technical University of Athens,US; GR
+2002.08909.pdf,ok,guu2020realmretrievalaugmentedlanguage,REALM: Retrieval-Augmented Language Model Pre-Training,2020,965,-1,False,0.72,Google (United States),US
+2004.04906.pdf,ok,karpukhin2020densepassageretrieval,Dense Passage Retrieval for Open-Domain Question Answering,2020,5446,1,False,0.82,Meta (Israel); University of Washington,IL; US
+2005.11401.pdf,ok,lewis2020retrievalaugmentedgenerationfor,Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks,2020,6223,-1,False,0.82,Meta (United States); University College London; New York University,US; GB
+2112.09332.pdf,ok,nakano2021webgptbrowserassistedquestionanswering,WebGPT: Browser-assisted question-answering with human feedback,2021,2226,-1,False,0.72,,
+2201.11903.pdf,ok,wei2022chainofthoughtpromptingelicits,Chain-Of-Thought Prompting Elicits Reasoning in Large Language Models,2022,14100,3,False,0.90,,
+2210.03629.pdf,ok,yao2022reactsynergizingreasoning,ReAct: Synergizing Reasoning and Acting in Language Models,2022,5910,-1,False,0.82,Princeton University; Google (United States),US
+2302.04761.pdf,ok,schick2023toolformerlanguagemodels,Toolformer: Language Models Can Teach Themselves to Use Tools,2023,3280,3,False,0.90,,
+2303.11366.pdf,ok,shinn2023reflexionlanguageagents,Reflexion: language agents with verbal reinforcement learning,2023,3358,3,False,0.90,,
+2306.08997v1.pdf,ok,zhang2023exploringthemit,Exploring the MIT Mathematics and EECS Curriculum Using Large Language Models,2023,33,-1,True,0.00,Massachusetts Institute of Technology; Boston University,US
+2310.11511.pdf,ok,asai2023selfraglearningto,"Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",2023,1091,-1,False,0.82,IBM (United States); University of Washington,US
+2409.13740.pdf,ok,skarlinski2024languageagentsachieve,Language agents achieve superhuman synthesis of scientific knowledge,2024,274,-1,False,0.72,"Future House, Inc.; University of Rochester",US
+2502.18877v1.pdf,ok,chen2025hierarchicalcorpusencoder,Hierarchical corpus encoder: Fusing generative retrieval and dense indices,2025,0,-1,False,0.41,Apple (United States),US
+2511.01059v1.pdf,ok,yin2025efficienttesttimeretrieval,Efficient Test-Time Retrieval Augmented Generation,2025,0,-1,False,0.41,,
+2511.22832v1.pdf,ok,bopardikar2025structuredmultistepreasoning,Structured Multi-Step Reasoning for Entity Matching Using Large Language Model,2025,0,-1,False,0.41,Arizona State University,US

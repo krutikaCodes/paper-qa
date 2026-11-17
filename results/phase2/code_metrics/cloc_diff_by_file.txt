@@ -1,0 +1,106 @@
+github.com/AlDanial/cloc v 2.12  T=1.06 s (3.8 files/s, 7259.8 lines/s)
+----------------------------------------------------------------------------------------------
+File                                                     blank        comment           code
+----------------------------------------------------------------------------------------------
+before/src/paperqa/types.py
+ same                                                        0            165           1062
+ modified                                                    0              0              6
+ added                                                       2              2             96
+ removed                                                     0              0              0
+before/src/paperqa/settings.py
+ same                                                        0            118           1038
+ modified                                                    0              1              3
+ added                                                       5              3             68
+ removed                                                     0              0             16
+before/src/paperqa/docs.py
+ same                                                        0             59            598
+ modified                                                    0              0              4
+ added                                                       7              0             93
+ removed                                                     0              0              5
+after/tests/test_phase2_metadata.py
+ same                                                        0              0              0
+ modified                                                    0              0              0
+ added                                                      90             13            492
+ removed                                                     0              0              0
+before/src/paperqa/agents/tools.py
+ same                                                        0            255            324
+ modified                                                    0              0              9
+ added                                                      13             30            138
+ removed                                                     0              0              0
+before/scripts/run_eval.py
+ same                                                        0             28            313
+ modified                                                    0              4             17
+ added                                                      12             10             87
+ removed                                                     0              0              0
+before/src/paperqa/agents/env.py
+ same                                                        0             22            322
+ modified                                                    0              0              0
+ added                                                       0              2              4
+ removed                                                     0              0              0
+before/src/paperqa/clients/openalex.py
+ same                                                        0             64            201
+ modified                                                    0              0              1
+ added                                                      16             19             80
+ removed                                                     0              0              0
+before/src/paperqa/prompts.py
+ same                                                        0             11            216
+ modified                                                    0              0              0
+ added                                                       1              0             10
+ removed                                                     0              0              0
+before/src/paperqa/clients/__init__.py
+ same                                                        0             28            200
+ modified                                                    0              0              0
+ added                                                       4              2             17
+ removed                                                     0              0              0
+after/src/paperqa/trust.py
+ same                                                        0              0              0
+ modified                                                    0              0              0
+ added                                                      41             12            196
+ removed                                                     0              0              0
+after/src/paperqa/university_rankings.py
+ same                                                        0              0              0
+ modified                                                    0              0              0
+ added                                                      14              1            178
+ removed                                                     0              0              0
+after/tests/test_trust.py
+ same                                                        0              0              0
+ modified                                                    0              0              0
+ added                                                      35              8            143
+ removed                                                     0              0              0
+after/tests/test_year_filter.py
+ same                                                        0              0              0
+ modified                                                    0              0              0
+ added                                                      38             10            135
+ removed                                                     0              0              0
+before/src/paperqa/clients/client_models.py
+ same                                                        0             23            128
+ modified                                                    0              0              0
+ added                                                       0              2              6
+ removed                                                     0              0              0
+after/tests/test_diversity.py
+ same                                                        0              0              0
+ modified                                                    0              0              0
+ added                                                      26              5            111
+ removed                                                     0              0              0
+before/scripts/get_phase2_papers.ps1
+ same                                                        0             15             66
+ modified                                                    0              2              2
+ added                                                       0              2              9
+ removed                                                     0              0              0
+before/src/paperqa/__init__.py
+ same                                                        0              0             47
+ modified                                                    0              0              0
+ added                                                       0              0              8
+ removed                                                     0              0              0
+after/trust.py
+ same                                                        0              0              0
+ modified                                                    0              0              0
+ added                                                       4              0             13
+ removed                                                     0              0              0
+----------------------------------------------------------------------------------------------
+SUM:
+ same                                                        0            788           4515
+ modified                                                    0              7             42
+ added                                                     308            121           1884
+ removed                                                     0              0             21
+----------------------------------------------------------------------------------------------

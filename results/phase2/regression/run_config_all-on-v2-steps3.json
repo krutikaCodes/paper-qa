@@ -1,0 +1,21 @@
+{
+  "profile": "claude_cheap",
+  "overrides": [
+    "parsing.use_doc_details=true",
+    "agent.apply_year_filter=true",
+    "answer.use_trust_score=true",
+    "agent.show_source_diversity=true",
+    "agent.max_timesteps=3"
+  ],
+  "metadata_clients": [
+    "OpenAlexProvider",
+    "JournalQualityPostProcessor"
+  ],
+  "papers": "my_papers",
+  "questions": "test_questions\\regression_questions.txt",
+  "runs": 1,
+  "index": "phase2_regression_all_on_v2",
+  "llm": "anthropic/claude-haiku-4-5",
+  "agent_llm": "anthropic/claude-haiku-4-5",
+  "embedding": "sparse"
+}

@@ -1,0 +1,4 @@
+file,status,docname,title,year,citation_count,source_quality,is_retracted,trust_score,institutions,countries
+2210.03629v3.pdf,ok,yao2022reactsynergizingreasoning,ReAct: Synergizing Reasoning and Acting in Language Models,2022,9617,-1,False,0.82,Princeton University; Google (United States),US
+2302.04761v1.pdf,ok,schick2023toolformerlanguagemodels,Toolformer: Language Models Can Teach Themselves to Use Tools,2023,7661,3,False,0.90,,
+2409.13740v2.pdf,ok,skarlinski2024languageagentsachieve,Language agents achieve superhuman synthesis of scientific knowledge,2024,304,-1,False,0.72,"Future House, Inc.; University of Rochester",US

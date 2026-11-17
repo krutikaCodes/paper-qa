@@ -1,0 +1,18 @@
+{
+  "profile": "claude_cheap",
+  "overrides": [
+    "parsing.use_doc_details=true",
+    "agent.show_source_diversity=true"
+  ],
+  "metadata_clients": [
+    "OpenAlexProvider",
+    "JournalQualityPostProcessor"
+  ],
+  "papers": "test_papers\\e3_diversity",
+  "questions": "What makes a language agent's answers reliable and well cited?",
+  "runs": 1,
+  "index": "phase2_e3_after",
+  "llm": "anthropic/claude-haiku-4-5",
+  "agent_llm": "anthropic/claude-haiku-4-5",
+  "embedding": "sparse"
+}

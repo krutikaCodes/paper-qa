@@ -1,0 +1,17 @@
+{
+  "profile": "claude_cheap",
+  "overrides": [
+    "parsing.use_doc_details=true"
+  ],
+  "metadata_clients": [
+    "OpenAlexProvider",
+    "JournalQualityPostProcessor"
+  ],
+  "papers": "my_papers",
+  "questions": "test_questions\\regression_questions.txt",
+  "runs": 1,
+  "index": "phase2_regression_all_on_v2",
+  "llm": "anthropic/claude-haiku-4-5",
+  "agent_llm": "anthropic/claude-haiku-4-5",
+  "embedding": "sparse"
+}

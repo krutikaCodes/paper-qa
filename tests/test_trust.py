@@ -160,3 +160,27 @@ async def test_trust_note_only_added_with_evidence(with_evidence: bool) -> None:
         embedding="sparse", answer={"use_trust_score": True}
     ).context_serializer(contexts, question="q", pre_str=None)
     assert ("weigh each source's trust score" in context_str) is with_evidence
+
+
+def test_trust_table_has_one_row_per_paper() -> None:
+    # Regression check: the table listed ReAct twice, once per cited page range
+    doc = DocDetails(
+        docname="react", dockey="react", citation="c", title="ReAct", trust_score=0.82
+    )
+    session = PQASession(
+        question="q",
+        raw_answer="A (pqac-aaaaaaaa) and B (pqac-bbbbbbbb).",
+        contexts=[
+            Context(
+                id=f"pqac-{key * 8}",
+                context="evidence",
+                text=Text(text="t", name=f"react pages {pages}", doc=doc),
+                score=8,
+            )
+            for key, pages in (("a", "2-3"), ("b", "5-7"))
+        ],
+    )
+    session.populate_formatted_answers_and_bib_from_raw_answer(use_trust_score=True)
+    table = session.formatted_answer.split("ranked by trust score", maxsplit=1)[1]
+    assert table.count("| ReAct |") == 1
+    assert session.references.count("react pages") == 2, "References unchanged"

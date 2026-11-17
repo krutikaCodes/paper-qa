@@ -541,9 +541,13 @@ class PQASession(BaseModel):
                 ]
                 table_heading = "Papers ranked by trust score"
             else:
-                docs_with_scores = [
-                    (name, name_to_doc_map[name], get_trust_score(name_to_doc_map[name]))
+                # One row per paper: name_bib has one entry per cited page range
+                cited_docs = {
+                    name_to_doc_map[name].dockey: name_to_doc_map[name]
                     for name in name_bib
+                }.values()
+                docs_with_scores = [
+                    (doc.docname, doc, get_trust_score(doc)) for doc in cited_docs
                 ]
                 table_heading = "Papers cited, ranked by trust score"
 

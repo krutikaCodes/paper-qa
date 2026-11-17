@@ -85,8 +85,14 @@ PAPER_COLUMNS = [
 
 def parse_questions(path: Path) -> list[tuple[int | None, int | None, str]]:
     """Read 'question' or '[MIN-MAX] question' lines, skipping blanks and # comments."""
+    return parse_question_lines(path.read_text(encoding="utf-8").splitlines(), str(path))
+
+
+def parse_question_lines(
+    lines: list[str], source: str
+) -> list[tuple[int | None, int | None, str]]:
     questions = []
-    for raw in path.read_text(encoding="utf-8").splitlines():
+    for raw in lines:
         line = raw.strip()
         if not line or line.startswith("#"):
             continue
@@ -96,7 +102,7 @@ def parse_questions(path: Path) -> list[tuple[int | None, int | None, str]]:
         else:
             questions.append((None, None, line))
     if not questions:
-        sys.exit(f"No questions found in {path}")
+        sys.exit(f"No questions found in {source}")
     return questions
 
 
@@ -285,6 +291,9 @@ async def build_index(settings: Settings, out_dir: Path, label: str) -> None:
 
 # ---------- one question ----------
 
+# Log lines written by the Phase 2 enhancements (E1, E2, E3), shown by --show-answer
+DEMO_NOTE_MARKERS = ("Year filter", "Trust check", "Source diversity")
+
 
 async def run_one(
     settings: Settings, args: argparse.Namespace, q_no: int, run: int,
@@ -328,6 +337,20 @@ async def run_one(
 
     with (out_dir / "logs" / log_name).open("a", encoding="utf-8") as f:
         f.write(f"\n\n===== STATUS: {response.status} =====\n{session.formatted_answer}\n")
+
+    if args.show_answer:  # For demos: what the enhancements told the agent, then the answer
+        notes = [
+            line.split("paperqa.agents.tools: ", 1)[1]
+            for line in log_text.splitlines()
+            if "paperqa.agents.tools: " in line
+            and any(marker in line for marker in DEMO_NOTE_MARKERS)
+        ]
+        print("\n----- What the enhancements told the agent -----")
+        for note in dict.fromkeys(notes):  # each distinct note once, in order
+            print(f"  {note}")
+        if not notes:
+            print("  (nothing: the enhancement switches are off)")
+        print(f"\n----- ANSWER (status: {response.status}) -----\n{session.formatted_answer}")
 
     return {
         "timestamp": datetime.now().isoformat(timespec="seconds"),
@@ -398,13 +421,30 @@ async def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--feature", required=True, help="e1, e2, e3 or regression")
     parser.add_argument("--label", required=True, help="e.g. before, after, after-off")
-    parser.add_argument("--questions", required=True, type=Path)
+    asked = parser.add_mutually_exclusive_group(required=True)
+    asked.add_argument("--questions", type=Path, help="file of questions, one per line")
+    asked.add_argument(
+        "--question",
+        help="one question typed in the command, e.g. \"[2023-] What ...?\""
+        " (the optional [MIN-MAX] years are only used for scoring)",
+    )
     parser.add_argument("--papers", required=True, type=Path)
     parser.add_argument("--profile", default="claude_cheap")
     parser.add_argument("--runs", type=int, default=2)
     parser.add_argument("--only", type=int, nargs="*", help="only these question numbers (1-based)")
     parser.add_argument("--set", dest="overrides", action="append", default=[], help="setting override key=value")
     parser.add_argument("--fresh-index", action="store_true", help="delete and rebuild this run's index")
+    parser.add_argument(
+        "--index-from",
+        metavar="LABEL",
+        help="reuse the index already built by an earlier run with this label"
+        " (same feature), instead of building a new one",
+    )
+    parser.add_argument(
+        "--show-answer",
+        action="store_true",
+        help="print the enhancement notes and the full answer after each question",
+    )
     parser.add_argument(
         "--clients",
         help="comma-separated metadata services, e.g. crossref,journal_quality"
@@ -416,7 +456,11 @@ async def main() -> None:
     if not args.index_only and not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("Set ANTHROPIC_API_KEY first (see MY_SETUP_LOG.md).")
 
-    questions = parse_questions(args.questions)
+    questions = (
+        parse_question_lines([args.question], "--question")
+        if args.question
+        else parse_questions(args.questions)
+    )
     out_dir = REPO / "results" / "phase2" / args.feature
     (out_dir / "logs").mkdir(parents=True, exist_ok=True)
     (out_dir / "screenshots").mkdir(exist_ok=True)
@@ -432,7 +476,12 @@ async def main() -> None:
             sys.exit(f"Unknown --clients {unknown}; choose from {sorted(CLIENT_CLASSES)}")
         paperqa.docs.DEFAULT_CLIENTS = tuple(getattr(paperqa.clients, CLIENT_CLASSES[n]) for n in names)
     settings.agent.index.paper_directory = str(args.papers.resolve())
-    settings.agent.index.name = f"phase2_{args.feature}_{args.label}".replace("-", "_")
+    index_label = args.index_from or args.label
+    settings.agent.index.name = f"phase2_{args.feature}_{index_label}".replace("-", "_")
+    if args.index_from and not (
+        Path(settings.agent.index.index_directory) / settings.agent.index.name
+    ).exists():
+        sys.exit(f"No index from label '{args.index_from}': run that label first.")
     if args.fresh_index:
         shutil.rmtree(Path(settings.agent.index.index_directory) / settings.agent.index.name, ignore_errors=True)
 
@@ -440,7 +489,7 @@ async def main() -> None:
         json.dumps({
             "profile": args.profile, "overrides": args.overrides,
             "metadata_clients": [c.__name__ for c in paperqa.docs.DEFAULT_CLIENTS], "papers": str(args.papers),
-            "questions": str(args.questions), "runs": args.runs, "index": settings.agent.index.name,
+            "questions": args.question or str(args.questions), "runs": args.runs, "index": settings.agent.index.name,
             "llm": settings.llm, "agent_llm": settings.agent.agent_llm, "embedding": settings.embedding,
         }, indent=2),
         encoding="utf-8",
